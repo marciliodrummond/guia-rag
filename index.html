@@ -17,6 +17,9 @@ body{margin:0;background:#030409}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-30px) scale(1.05)}66%{transform:translate(-15px,15px) scale(0.95)}}
 @keyframes scaleIn{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
+@keyframes shakeX{0%,100%{transform:translateX(0)}10%,30%,50%,70%,90%{transform:translateX(-6px)}20%,40%,60%,80%{transform:translateX(6px)}}
+@keyframes particleFloat{0%{transform:translateY(0) rotate(0deg);opacity:0.6}50%{opacity:1}100%{transform:translateY(-120px) rotate(180deg);opacity:0}}
+@keyframes hexGlow{0%,100%{filter:drop-shadow(0 0 8px rgba(226,192,116,0.3))}50%{filter:drop-shadow(0 0 20px rgba(226,192,116,0.6))}}
 .comparison-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;margin:16px 0;font-size:13px}
 .comparison-table th{padding:12px 16px;text-align:left;font-family:'Sora',sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
 .comparison-table td{padding:10px 16px;border-top:1px solid var(--border-line,rgba(255,255,255,0.06))}
@@ -87,6 +90,7 @@ compass:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 users:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
 cloud:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>,
 link2:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line x1="8" x2="16" y1="12" y2="12"/></svg>,
+eye:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>,
 sliders:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="1" x2="7" y1="14" y2="14"/><line x1="9" x2="15" y1="8" y2="8"/><line x1="17" x2="23" y1="16" y2="16"/></svg>,
 barChart:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>,
 package:(p)=><svg {...p} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="16.5" x2="7.5" y1="9.4" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>,
@@ -2691,9 +2695,49 @@ function ExpandableCard({card,sectionId,cardIdx,state}){
 }
 
 // ─── Main App ───
+function LoginGate({onAuth}){
+  const[pw,setPw]=useState("");
+  const[err,setErr]=useState(false);
+  const[show,setShow]=useState(false);
+  const[particles]=useState(()=>Array.from({length:20},(_,i)=>({id:i,left:Math.random()*100,delay:Math.random()*5,dur:3+Math.random()*4,size:2+Math.random()*3})));
+  const handleSubmit=(e)=>{e.preventDefault();if(pw==="RAG1270Super40"){sessionStorage.setItem("si-rag-auth","1");onAuth();}else{setErr(true);setTimeout(()=>setErr(false),600);}};
+  return(
+    <div style={{position:"fixed",inset:0,zIndex:9999,background:"#030409",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'DM Sans', sans-serif"}}>
+      <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(226,192,116,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(226,192,116,0.03) 1px, transparent 1px)",backgroundSize:"60px 60px"}}/>
+      <div style={{position:"absolute",width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle, rgba(226,192,116,0.06) 0%, transparent 70%)",top:"15%",left:"20%",animation:"orbFloat 18s ease-in-out infinite"}}/>
+      <div style={{position:"absolute",width:350,height:350,borderRadius:"50%",background:"radial-gradient(circle, rgba(226,192,116,0.04) 0%, transparent 70%)",bottom:"10%",right:"10%",animation:"orbFloat 22s ease-in-out infinite reverse"}}/>
+      {particles.map(p=>(
+        <div key={p.id} style={{position:"absolute",bottom:0,left:`${p.left}%`,width:p.size,height:p.size,borderRadius:"50%",background:"#e2c074",opacity:0,animation:`particleFloat ${p.dur}s ${p.delay}s ease-in-out infinite`}}/>
+      ))}
+      <div style={{position:"relative",zIndex:1,textAlign:"center",animation:"scaleIn 0.5s ease both",maxWidth:380,width:"100%",padding:"0 20px"}}>
+        <div style={{margin:"0 auto 28px",animation:"hexGlow 3s ease-in-out infinite"}}>
+          <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+            <path d="M40 4L72 22V58L40 76L8 58V22L40 4Z" stroke="#e2c074" strokeWidth="2" fill="rgba(226,192,116,0.06)"/>
+            <path d="M40 16L60 28V52L40 64L20 52V28L40 16Z" stroke="#e2c074" strokeWidth="1.5" fill="rgba(226,192,116,0.04)"/>
+            <path d="M40 28L50 34V46L40 52L30 46V34L40 28Z" fill="rgba(226,192,116,0.15)" stroke="#e2c074" strokeWidth="1"/>
+          </svg>
+        </div>
+        <h1 style={{fontFamily:"'Sora', sans-serif",fontSize:26,fontWeight:800,color:"#edeef2",marginBottom:6}}>Academia <span style={{color:"#e2c074"}}>RAG</span></h1>
+        <p style={{fontSize:13,color:"#8c90a0",marginBottom:32,lineHeight:1.5}}>Conteúdo exclusivo e premium. Insira a senha de acesso para continuar.</p>
+        <form onSubmit={handleSubmit}>
+          <div style={{position:"relative",marginBottom:16,animation:err?"shakeX 0.4s ease":"none"}}>
+            <div style={{position:"absolute",left:14,top:"50%",transform:"translateY(-50%)",color:"#555869"}}><Icon name="lock" size={16}/></div>
+            <input type={show?"text":"password"} value={pw} onChange={e=>setPw(e.target.value)} placeholder="Senha de acesso" autoFocus style={{width:"100%",padding:"14px 46px 14px 42px",background:"#0a0c12",border:`1.5px solid ${err?"#fca5a5":"rgba(255,255,255,0.06)"}`,borderRadius:12,color:"#edeef2",fontSize:14,fontFamily:"'DM Sans', sans-serif",outline:"none",transition:"border-color 0.2s"}} onFocus={e=>e.target.style.borderColor=err?"#fca5a5":"#e2c074"} onBlur={e=>e.target.style.borderColor=err?"#fca5a5":"rgba(255,255,255,0.06)"}/>
+            <button type="button" onClick={()=>setShow(!show)} style={{position:"absolute",right:14,top:"50%",transform:"translateY(-50%)",background:"none",border:"none",color:"#555869",cursor:"pointer",padding:2}}><Icon name={show?"eye":"lock"} size={16}/></button>
+          </div>
+          {err&&<p style={{color:"#fca5a5",fontSize:12,marginBottom:12,fontFamily:"'JetBrains Mono', monospace"}}>Senha incorreta. Tente novamente.</p>}
+          <button type="submit" style={{width:"100%",padding:"14px 24px",background:"linear-gradient(135deg, #e2c074, #d4a84e)",color:"#030409",border:"none",borderRadius:12,fontSize:14,fontWeight:700,fontFamily:"'Sora', sans-serif",cursor:"pointer",transition:"all 0.2s",boxShadow:"0 0 20px rgba(226,192,116,0.15)"}} onMouseEnter={e=>{e.target.style.boxShadow="0 0 30px rgba(226,192,116,0.3)";e.target.style.transform="translateY(-1px)"}} onMouseLeave={e=>{e.target.style.boxShadow="0 0 20px rgba(226,192,116,0.15)";e.target.style.transform="translateY(0)"}}>Acessar Conteúdo Premium</button>
+        </form>
+        <p style={{fontSize:11,color:"#555869",marginTop:24,fontFamily:"'JetBrains Mono', monospace"}}>Super Inteligênc[IA] — Acesso Restrito</p>
+      </div>
+    </div>
+  );
+}
+
 function App(){
   const state=useAppState();
   const{t,theme,toggleTheme,activeSection,setActiveSection,activeLevel,setActiveLevel,searchQuery,setSearchQuery,searchFocused,setSearchFocused,getProgress,getGlobalProgress,setExpandedCard,showOnboarding,setShowOnboarding}=state;
+  const[authed,setAuthed]=useState(()=>sessionStorage.getItem("si-rag-auth")==="1");
   const[showHero,setShowHero]=useState(true);
   const[onboardingStep,setOnboardingStep]=useState(0);
   const searchResults=useMemo(()=>advancedSearch(searchQuery,sections),[searchQuery]);
@@ -2706,6 +2750,7 @@ function App(){
     {icon:"search",title:"Explore e Aprenda",desc:"Use a busca para encontrar temas, filtre por nível de dificuldade e acompanhe seu progresso."},
     {icon:"lightbulb",title:"Prática e Teoria",desc:"Cada card tem analogias simples, código Python funcional, dicas práticas e checklists interativos."},
   ];
+  if(!authed) return <LoginGate onAuth={()=>setAuthed(true)}/>;
   return(
     <div style={{minHeight:"100vh",background:t.bgPage,color:t.fgPrimary,fontFamily:"'DM Sans', sans-serif",transition:"background 0.3s, color 0.3s"}}>
       {showOnboarding&&(<div style={{position:"fixed",inset:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.7)",backdropFilter:"blur(8px)"}}><div style={{background:t.bgRaised,borderRadius:20,padding:"32px 28px",maxWidth:420,width:"90%",border:`1px solid ${t.borderLine}`,animation:"scaleIn 0.3s ease"}}><div style={{textAlign:"center"}}><div style={{width:56,height:56,borderRadius:16,background:`linear-gradient(135deg, ${t.bgAccent}, ${t.bgAccentHover})`,display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px",color:t.fgOnAccent}}><Icon name={onboardingSteps[onboardingStep].icon} size={26}/></div><h2 style={{fontSize:20,fontWeight:700,fontFamily:"'Sora', sans-serif",marginBottom:8}}>{onboardingSteps[onboardingStep].title}</h2><p style={{fontSize:14,color:t.fgSecondary,lineHeight:1.6}}>{onboardingSteps[onboardingStep].desc}</p></div><div style={{display:"flex",justifyContent:"center",gap:6,margin:"20px 0 16px"}}>{onboardingSteps.map((_,i)=>(<div key={i} style={{width:8,height:8,borderRadius:"50%",background:i===onboardingStep?t.fgAccent:t.borderLine,transition:"background 0.3s"}}/>))}</div><div style={{display:"flex",justifyContent:"space-between",gap:10}}><button onClick={()=>setShowOnboarding(false)} style={{flex:1,padding:"10px",borderRadius:10,border:`1px solid ${t.borderLine}`,background:"transparent",color:t.fgSecondary,cursor:"pointer",fontSize:13,fontWeight:500}}>Pular</button><button onClick={()=>{if(onboardingStep<2)setOnboardingStep(onboardingStep+1);else setShowOnboarding(false)}} style={{flex:1,padding:"10px",borderRadius:10,border:"none",background:`linear-gradient(135deg, ${t.bgAccent}, ${t.bgAccentHover})`,color:t.fgOnAccent,cursor:"pointer",fontSize:13,fontWeight:600}}>{onboardingStep<2?"Próximo":"Começar!"}</button></div></div></div>)}
