@@ -231,13 +231,13 @@ E o banco de dados especializado que armazena os embeddings e permite buscas por
 
 **Educacao:** Criar tutores virtuais que respondem perguntas baseadas no material didatico real do curso, não em informações genericas da internet.
 
-**Financas:** Consultar legislacao tributária, relatórios financeiros e normas contábeis que mudam constantemente.`,
+**Financas:** Consultar legislação tributária, relatórios financeiros e normas contábeis que mudam constantemente.`,
         analogy:{tag:"Analogia do Bibliotecário",text:"Imagine que você contratou um **bibliotecário particular** que conhece cada página de cada livro do seu escritório. Quando você pergunta algo, ele vai direto na estante certa, abre o livro na página exata e te mostra o trecho relevante. **RAG é esse bibliotecário** — mas digital, instantâneo e incansável."},
         checklist:["Você tem documentos próprios que precisam ser consultados?","Suas informações mudam com frequência?","Precisão é mais importante que criatividade nas respostas?","Você precisa citar fontes nas respostas?","Seu domínio é especializado (jurídico, médico, técnico)?","Você quer respostas baseadas em dados internos, não públicos?"],
         tips:["Se você respondeu SIM para 3 ou mais itens do checklist, RAG é para você.","RAG funciona especialmente bem com documentos internos que não estão na internet.","O custo de um RAG básico é muito menor que contratar um especialista para cada consulta."],
       },
       {
-        title:"Glossario Visual: Termos Técnicos Traduzidos",subtitle:"Cada termo explicado em português simples.",level:"iniciante",icon:"bookOpen",
+        title:"Glossário Visual: Termos Técnicos Traduzidos",subtitle:"Cada termo explicado em português simples.",level:"iniciante",icon:"bookOpen",
         content:`Aqui esta um dicionario completo dos termos que você vai encontrar neste guia. Volte a esta página sempre que encontrar uma palavra desconhecida.
 
 **Termos Fundamentais:**
@@ -315,7 +315,7 @@ Se dois vetores apontam na mesma direção, os textos são similares. Se apontam
 
 **Na prática, o que isso significa?**
 
-Quando você pergunta "Qual é a capital da Franca?", o embedding da pergunta sera muito próximo do embedding de um documento que diz "Paris é a capital da Franca". O sistema encontra esse documento automaticamente.`,
+Quando você pergunta "Qual é a capital da França?", o embedding da pergunta sera muito próximo do embedding de um documento que diz "Paris é a capital da Franca". O sistema encontra esse documento automaticamente.`,
         relationshipRows:[{left:"Rei - Homem",right:"Rainha - Mulher",connector:"=",details:"Embeddings capturam relações semanticas entre conceitos"},{left:"Gato",right:"Felino",connector:"≈",details:"Palavras com significado similar tem vetores próximos"}],
         tips:["Nao se preocupe com a matemática - as bibliotecas fazem tudo automaticamente.","Quanto mais dimensões, mais nuances de significado o modelo captura.","Embeddings diferentes podem ter qualidades diferentes para idiomas diferentes."],
       },
@@ -451,13 +451,13 @@ Modelos como CLIP (OpenAI) e ImageBind (Meta) foram treinados para alinhar repre
     id:"bancos-vetoriais",title:"Bancos de Dados Vetoriais",description:"Onde armazenar e buscar seus embeddings de forma eficiente.",icon:"database",
     cards:[
       {
-        title:"O que é um Banco Vetorial? O Armario Mágico",subtitle:"Um armario que encontra coisas pelo significado.",level:"iniciante",icon:"folder",
+        title:"O que é um Banco Vetorial? O Armário Mágico",subtitle:"Um armário que encontra coisas pelo significado.",level:"iniciante",icon:"folder",
         analogy:{tag:"Analogia do Armario",text:"Imagine um **armario mágico** onde você guarda documentos. Em um armario normal, você organiza por nome ou data. Neste armario mágico, você guarda pelo **significado**. Quando pede 'me de algo sobre animais de estimacao', ele automaticamente te entrega documentos sobre gatos, cachorros e passaros - mesmo que nenhum deles tenha as palavras exatas 'animal de estimacao'."},
         content:`Um **banco de dados vetorial** (vector database) é um banco de dados especializado em armazenar e buscar embeddings (vetores numericos).
 
 **Por que não usar um banco de dados normal?**
 
-Bancos tradicionais (como MySQL ou PostgreSQL) buscam por correspondência exata: "encontre onde nome = 'Joao'". Bancos vetoriais buscam por **proximidade**: "encontre os vetores mais próximos deste vetor". É uma lógica completamente diferente.
+Bancos tradicionais (como MySQL ou PostgreSQL) buscam por correspondência exata: "encontre onde nome = 'João'". Bancos vetoriais buscam por **proximidade**: "encontre os vetores mais próximos deste vetor". É uma lógica completamente diferente.
 
 **Como funciona a busca vetorial:**
 
@@ -535,15 +535,15 @@ print(resultados["documents"])
 
 **Pinecone** — Serviço gerenciado na nuvem. Você não precisa se preocupar com infraestrutura. Tem plano gratuito. Ideal para quem quer simplicidade em produção.
 
-**Weaviate** — Open-source com funcionalidades avançadas: busca hibrida (vetorial + keywords), GraphQL, modulos de IA integrados. Pode rodar local ou na nuvem.
+**Weaviate** — Open-source com funcionalidades avançadas: busca híbrida (vetorial + keywords), GraphQL, modulos de IA integrados. Pode rodar local ou na nuvem.
 
 **Qdrant** — Open-source com API moderna. Ótimo filtro por metadados. Excelente documentação. Crescendo rapidamente em popularidade.`,
         tableData:{headers:["Banco","Tipo","Melhor Para","Custo","Escala"],rows:[["ChromaDB","Local","Protótipos, aprendizado","Gratuito","Ate 100K docs"],["FAISS","Biblioteca","Performance maxima","Gratuito","Milhoes de docs"],["Pinecone","Nuvem","Produção sem DevOps","Freemium","Ilimitado"],["Weaviate","Híbrido","Busca hibrida avancada","Gratuito/Pago","Milhoes de docs"],["Qdrant","Híbrido","API moderna, filtros","Gratuito/Pago","Milhoes de docs"]]},
-        flowSteps:["Protótipo / aprendizado? → ChromaDB","Precisa de velocidade maxima? → FAISS","Nao quer gerenciar servidor? → Pinecone","Precisa de busca hibrida? → Weaviate","Quer API moderna e filtros? → Qdrant"],
+        flowSteps:["Protótipo / aprendizado? → ChromaDB","Precisa de velocidade maxima? → FAISS","Nao quer gerenciar servidor? → Pinecone","Precisa de busca híbrida? → Weaviate","Quer API moderna e filtros? → Qdrant"],
         tips:["Comece SEMPRE com ChromaDB. Migre quando necessário.","FAISS e ChromaDB rodam local - seus dados nunca saem do seu computador.","Pinecone é o mais fácil para ir de protótipo para produção."],
       },
       {
-        title:"Indexacao e Busca: Como Funciona por Dentro",subtitle:"Os algoritmos por tras da mágica.",level:"intermediario",icon:"settings",
+        title:"Indexação e Busca: Como Funciona por Dentro",subtitle:"Os algoritmos por trás da mágica.",level:"intermediario",icon:"settings",
         analogy:{tag:"Analogia da Biblioteca",text:"Imagine organizar uma biblioteca com **1 milhão de livros**. Se você verificar cada livro um por um para encontrar o que procura, vai demorar anos. Mas se organizar em seções (ficcao, ciência, historia) e dentro de cada seção em subsecoes, encontra em minutos. Algoritmos de indexacao fazem exatamente isso com vetores."},
         content:`Quando você tem milhares ou milhões de vetores, comparar um por um (busca exaustiva) é muito lento. Por isso existem algoritmos de indexacao que organizam os vetores para busca rápida:
 
@@ -751,7 +751,7 @@ print(f"Documento dividido em {len(pedacos)} chunks")
         tips:["Comece com chunk_size=500 e overlap=50. Ajuste se as respostas não forem boas.","Para documentos técnicos densos, use chunks menores (200-300).","Para textos narrativos, use chunks maiores (800-1000).","Estrategias avançadas dividem por paragrafos ou seções em vez de caracteres fixos."],
       },
       {
-        title:"Fase 3: Criando Embeddings dos Chunks",subtitle:"Transformando texto em números pesquisaveis.",level:"intermediario",icon:"cpu",
+        title:"Fase 3: Criando Embeddings dos Chunks",subtitle:"Transformando texto em números pesquisáveis.",level:"intermediario",icon:"cpu",
         content:`Agora que temos os chunks, precisamos transformar cada um em embedding para armazenar no banco vetorial:
 
 \`\`\`python
@@ -857,7 +857,7 @@ def recuperar(pergunta, colecao, modelo, top_k=5):
     return docs
 
 # Uso
-resultados = recuperar("Como funciona a fotossintese?", colecao, modelo, top_k=3)
+resultados = recuperar("Como funciona a fotossíntese?", colecao, modelo, top_k=3)
 for r in resultados:
     print(f"[{r['similaridade']:.2f}] [{r['fonte']}] {r['texto'][:100]}...")
 \`\`\`
@@ -897,8 +897,8 @@ RESPOSTA (baseada apenas no contexto acima):"""
     return prompt
 
 # Uso
-docs = recuperar("Como funciona a fotossintese?", colecao, modelo)
-prompt = montar_prompt("Como funciona a fotossintese?", docs)
+docs = recuperar("Como funciona a fotossíntese?", colecao, modelo)
+prompt = montar_prompt("Como funciona a fotossíntese?", docs)
 print(prompt)
 \`\`\`
 
@@ -935,7 +935,7 @@ def gerar_resposta(prompt):
     return resposta.choices[0].message.content
 
 # Pipeline completo
-pergunta = "Como funciona a fotossintese?"
+pergunta = "Como funciona a fotossíntese?"
 docs = recuperar(pergunta, colecao, modelo)
 prompt = montar_prompt(pergunta, docs)
 resposta = gerar_resposta(prompt)
@@ -1052,16 +1052,16 @@ if __name__ == "__main__":
     id:"rag-memoria",title:"RAG com Memória",description:"Chatbots que lembram o que você disse antes.",icon:"messageSquare",
     cards:[
       {
-        title:"O Problema da Amnesia",subtitle:"Quando o chatbot esquece o que você acabou de falar.",level:"iniciante",icon:"alertTriangle",
+        title:"O Problema da Amnésia",subtitle:"Quando o chatbot esquece o que você acabou de falar.",level:"iniciante",icon:"alertTriangle",
         analogy:{tag:"Analogia do Amigo Esquecido",text:"Imagine conversar com um amigo que tem **amnesia de curto prazo**. Você diz: 'Visitei Paris ontem.' Ele responde sobre Paris. Ai você pergunta: 'Quanto custou a passagem?' E ele responde: 'Passagem para onde? Do que você esta falando?' E exatamente assim que um RAG sem memória funciona: cada pergunta e tratada como se fosse a primeira da conversa."},
         content:`**O problema:** Por padrão, cada pergunta enviada ao RAG e tratada de forma isolada. O sistema não lembra o que foi discutido antes. Isso gera situacoes frustrantes:
 
 **Exemplo da falha:**
 
 - Usuario: "Quem foi o fundador da empresa X?"
-- RAG: "A empresa X foi fundada por Joao Silva em 2015."
+- RAG: "A empresa X foi fundada por João Silva em 2015."
 - Usuario: "Onde ele nasceu?"
-- RAG: "Nao entendi. Quem e 'ele'?" (Porque não sabe que 'ele' = Joao Silva)
+- RAG: "Nao entendi. Quem e 'ele'?" (Porque não sabe que 'ele' = João Silva)
 
 **Por que isso acontece?**
 
@@ -1070,7 +1070,7 @@ Cada chamada ao modelo de linguagem e independente. O modelo não guarda histór
 **Como resolver?**
 
 Precisamos adicionar uma **camada de memória** que guarda o histórico da conversa e usa essas informações para contextualizar novas perguntas. E isso que vamos construir nas próximas etapas.`,
-        flowSteps:["Pergunta 1: 'Quem fundou a empresa X?' → Responde corretamente","Pergunta 2: 'Onde ele nasceu?' → Sem memória, 'ele' não tem referencia","Com memória: sistema sabe que 'ele' = 'Joao Silva' da pergunta anterior","Reescreve pergunta: 'Onde Joao Silva nasceu?'","Busca e responde corretamente"],
+        flowSteps:["Pergunta 1: 'Quem fundou a empresa X?' → Responde corretamente","Pergunta 2: 'Onde ele nasceu?' → Sem memória, 'ele' não tem referencia","Com memória: sistema sabe que 'ele' = 'João Silva' da pergunta anterior","Reescreve pergunta: 'Onde João Silva nasceu?'","Busca e responde corretamente"],
         tips:["Memória não é apenas um 'nice to have' - é essencial para conversas naturais.","Sem memória, o usuario precisa repetir contexto em cada pergunta.","A maioria dos chatbots comerciais (ChatGPT, Claude) já tem memória integrada."],
       },
       {
@@ -1085,9 +1085,9 @@ Armazenar as últimas N mensagens da conversa (perguntas e respostas). Esse hist
 
 Antes de buscar no banco vetorial, reescrever a pergunta do usuario para incluir contexto do histórico. Exemplo:
 
-- Histórico: "Quem fundou a empresa X?" → "Joao Silva em 2015"
+- Histórico: "Quem fundou a empresa X?" → "João Silva em 2015"
 - Pergunta atual: "Onde ele nasceu?"
-- Pergunta reescrita: "Onde Joao Silva, fundador da empresa X, nasceu?"
+- Pergunta reescrita: "Onde João Silva, fundador da empresa X, nasceu?"
 
 A pergunta reescrita é muito melhor para busca vetorial, porque contem todas as informações necessarias.
 
@@ -1148,7 +1148,7 @@ def obter_historico(session_id):
 
 # Uso
 salvar_mensagem("user123", "user", "Quem fundou a empresa X?")
-salvar_mensagem("user123", "assistant", "Joao Silva em 2015.")
+salvar_mensagem("user123", "assistant", "João Silva em 2015.")
 hist = obter_historico("user123")
 print(hist)
 \`\`\``,
@@ -1316,7 +1316,7 @@ print(chat("Onde ele nasceu?"))  # Agora funciona!
     id:"rag-agentes",title:"RAG Autônomo com Agentes",description:"Quando o RAG decide sozinho quais ferramentas usar.",icon:"bot",
     cards:[
       {
-        title:"O que é um Agente de IA?",subtitle:"O investigador que escolhe suas proprias ferramentas.",level:"iniciante",icon:"compass",
+        title:"O que é um Agente de IA?",subtitle:"O investigador que escolhe suas próprias ferramentas.",level:"iniciante",icon:"compass",
         analogy:{tag:"Analogia do Detetive",text:"Imagine um **detetive** investigando um caso. Ele não segue um roteiro fixo. Ele **decide** a cada momento: 'Preciso interrogar a testemunha? Preciso analisar a evidencia? Preciso consultar o banco de dados?' Um **agente de IA** funciona assim: ele recebe um objetivo e **decide sozinho** quais ferramentas usar para alcanca-lo."},
         content:`Um **agente de IA** é um programa que recebe um objetivo e decide autonomamente quais acoes tomar para alcanca-lo. Diferente de um pipeline fixo (que sempre segue os mesmos passos), o agente pensa, planeja e age.
 
@@ -1463,7 +1463,7 @@ print(resultado)
         tips:["Use verbose=True para ver o 'raciocinio' do agente em tempo real.","CrewAI permite criar multiplos agentes que colaboram entre si.","Comece com um agente simples e adicione complexidade gradualmente."],
       },
       {
-        title:"O Agente em Acao: Pipeline Completo",subtitle:"Multi-agente com decisão autônoma.",level:"avancado",icon:"workflow",
+        title:"O Agente em Ação: Pipeline Completo",subtitle:"Multi-agente com decisão autônoma.",level:"avancado",icon:"workflow",
         content:`Veja um pipeline completo onde o agente decide autonomamente como responder:
 
 \`\`\`python
@@ -1525,11 +1525,11 @@ O agente analisa a pergunta, escolhe a melhor ferramenta, executa e gera a respo
         analogy:{tag:"Analogia do Editor de Jornal",text:"Imagine um **editor de jornal** que recebe um artigo de um reporter. Antes de publicar, ele verifica: 'As fontes são confiáveis? Os fatos conferem? Falta informação?' Se o artigo estiver bom, publica. Se estiver ruim, manda reescrever. Se estiver mais ou menos, complementa com informações adicionais. O **CRAG** faz exatamente isso com as buscas do RAG."},
         content:`**CRAG** (Corrective RAG) adiciona uma etapa de avaliação após a recuperação. Um avaliador classifica a qualidade dos documentos encontrados e decide o próximo passo:
 
-**As tres classificações:**
+**As três classificações:**
 
-- **CORRETO**: Os documentos são relevantes é suficientes. Segue para geração normalmente.
+- **CORRETO**: Os documentos são relevantes e suficientes. Segue para geração normalmente.
 - **INCORRETO**: Os documentos não são relevantes. Descarta e faz busca web como fallback.
-- **AMBIGUO**: Os documentos são parcialmente relevantes. Complementa com busca web.
+- **AMBÍGUO**: Os documentos são parcialmente relevantes. Complementa com busca web.
 
 **Fluxo do CRAG:**
 
@@ -1537,7 +1537,7 @@ O agente analisa a pergunta, escolhe a melhor ferramenta, executa e gera a respo
 2. Avaliador analisa a relevância dos documentos encontrados.
 3. Se CORRETO → Gera resposta com documentos da base.
 4. Se INCORRETO → Faz busca web e gera com resultados web.
-5. Se AMBIGUO → Combina documentos da base com resultados web.
+5. Se AMBÍGUO → Combina documentos da base com resultados web.
 
 **Implementação simplificada:**
 
@@ -1547,7 +1547,7 @@ def avaliar_relevancia(pergunta, documentos, client_llm):
     prompt = f"""Avalie se estes documentos respondem a pergunta.
 Pergunta: {pergunta}
 Documentos: {docs_texto}
-Classifique como: CORRETO, INCORRETO ou AMBIGUO.
+Classifique como: CORRETO, INCORRETO ou AMBÍGUO.
 Responda apenas a classificação."""
     r = client_llm.chat.completions.create(
         model="gpt-4o-mini",
@@ -1556,17 +1556,17 @@ Responda apenas a classificação."""
     )
     return r.choices[0].message.content.strip()
 \`\`\``,
-        flowSteps:["Busca vetorial retorna documentos","Avaliador classifica: CORRETO / INCORRETO / AMBIGUO","CORRETO → usa documentos da base","INCORRETO → descarta e busca na web","AMBIGUO → combina base + web","Gera resposta final com documentos selecionados"],
-        tips:["CRAG aumenta a qualidade drasticamente mas adiciona latência (uma chamada LLM extra).","E especialmente util quando sua base pode não ter a resposta para tudo.","O avaliador pode ser um modelo menor é mais barato que o gerador."],
+        flowSteps:["Busca vetorial retorna documentos","Avaliador classifica: CORRETO / INCORRETO / AMBÍGUO","CORRETO → usa documentos da base","INCORRETO → descarta e busca na web","AMBÍGUO → combina base + web","Gera resposta final com documentos selecionados"],
+        tips:["CRAG aumenta a qualidade drasticamente mas adiciona latência (uma chamada LLM extra).","É especialmente útil quando sua base pode não ter a resposta para tudo.","O avaliador pode ser um modelo menor e mais barato que o gerador."],
       },
       {
         title:"Adaptive RAG: O Triagista Inteligente",subtitle:"Rotear perguntas por complexidade.",level:"intermediario",icon:"gitBranch",
-        analogy:{tag:"Analogia do Hospital",text:"Em um pronto-socorro, o **triagista** avalia cada paciente: 'Caso leve? Vai para a sala de espera. Caso moderado? Consulta rápida. Caso grave? Emergencia imediata.' O **Adaptive RAG** faz triagem das perguntas: perguntas simples não precisam de busca, perguntas médias usam busca simples e perguntas complexas usam busca multi-etapa."},
-        content:`**Adaptive RAG** analisa a complexidade da pergunta antes de decidir qual estrategia usar:
+        analogy:{tag:"Analogia do Hospital",text:"Em um pronto-socorro, o **triagista** avalia cada paciente: 'Caso leve? Vai para a sala de espera. Caso moderado? Consulta rápida. Caso grave? Emergência imediata.' O **Adaptive RAG** faz triagem das perguntas: perguntas simples não precisam de busca, perguntas médias usam busca simples e perguntas complexas usam busca multi-etapa."},
+        content:`**Adaptive RAG** analisa a complexidade da pergunta antes de decidir qual estratégia usar:
 
 **Rota 1 - Sem Recuperação (perguntas simples):**
 
-"Quanto e 2+2?" ou "Qual a capital da Franca?" - O modelo já sabe a resposta. Não precisa buscar em nenhum lugar.
+"Quanto é 2+2?" ou "Qual a capital da França?" - O modelo já sabe a resposta. Não precisa buscar em nenhum lugar.
 
 **Rota 2 - Busca Simples (perguntas médias):**
 
@@ -1574,7 +1574,7 @@ Responda apenas a classificação."""
 
 **Rota 3 - Busca Multi-Etapa (perguntas complexas):**
 
-"Compare a política de devolução da empresa X com a da empresa Y e recomende qual é melhor para eletrônicos" - Precisa de multiplas buscas, sintese e análise.
+"Compare a política de devolução da empresa X com a da empresa Y e recomende qual é melhor para eletrônicos" - Precisa de múltiplas buscas, síntese e análise.
 
 \`\`\`python
 def classificar_complexidade(pergunta, client_llm):
@@ -1583,7 +1583,7 @@ def classificar_complexidade(pergunta, client_llm):
 
 A = Simples (conhecimento geral, não precisa de busca)
 B = Média (uma busca resolve)
-C = Complexa (precisa de multiplas buscas e análise)
+C = Complexa (precisa de múltiplas buscas e análise)
 
 Responda apenas A, B ou C."""
     r = client_llm.chat.completions.create(
@@ -1593,30 +1593,39 @@ Responda apenas A, B ou C."""
     )
     return r.choices[0].message.content.strip()
 \`\`\``,
-        flowSteps:["Pergunta chega ao classificador","Classificador avalia: A (simples), B (média), C (complexa)","A → resposta direta do LLM, sem busca","B → busca vetorial simples + geração","C → multiplas buscas + sintese + geração"],
-        tips:["Adaptive RAG economiza recursos: perguntas simples não gastam busca.","A classificação e rápida e barata (modelo pequeno é suficiente).","Na prática, cerca de 30% das perguntas são simples e não precisam de busca."],
+        flowSteps:["Pergunta chega ao classificador","Classificador avalia: A (simples), B (média), C (complexa)","A → resposta direta do LLM, sem busca","B → busca vetorial simples + geração","C → múltiplas buscas + síntese + geração"],
+        tips:["Adaptive RAG economiza recursos: perguntas simples não gastam busca.","A classificação é rápida e barata (modelo pequeno é suficiente).","Na prática, cerca de 30% das perguntas são simples e não precisam de busca."],
       },
       {
         title:"GraphRAG: Conhecimento em Rede",subtitle:"Quando relações importam tanto quanto fatos.",level:"avancado",icon:"network",
-        analogy:{tag:"Analogia do Quadro de Investigacao",text:"Imagine o **quadro de investigação** de um detetive: fotos conectadas por fios vermelhos, notas adesivas com relações ('trabalha com', 'vizinho de', 'visto em'). Cada foto é um **no** e cada fio é uma **aresta**. O **GraphRAG** organiza conhecimento assim: não apenas armazena fatos, mas também as **relações** entre eles."},
+        analogy:{tag:"Analogia do Quadro de Investigacao",text:"Imagine o **quadro de investigação** de um detetive: fotos conectadas por fios vermelhos, notas adesivas com relações ('trabalha com', 'vizinho de', 'visto em'). Cada foto é um **nó** e cada fio é uma **aresta**. O **GraphRAG** organiza conhecimento assim: não apenas armazena fatos, mas também as **relações** entre eles."},
         content:`**GraphRAG** combina RAG vetorial com grafos de conhecimento. Em vez de apenas buscar documentos similares, ele entende e navega as relações entre conceitos.
 
 **Quando usar GraphRAG?**
 
-- Quando as relações entre entidades são tao importantes quanto os fatos em si.
-- Perguntas como "Quais empresas são subsidiarias da empresa X e quais produtos elas fabricam?"
-- Dominios com hierarquias complexas (organizacoes, legislacao, biologia).
+- Quando as relações entre entidades são tão importantes quanto os fatos em si.
+- Perguntas como "Quais empresas são subsidiárias da empresa X e quais produtos elas fabricam?"
+- Domínios com hierarquias complexas (organizações, legislação, biologia).
 
 **Componentes:**
 
-1. **Nos** (Nodes): Entidades (pessoas, empresas, conceitos).
-2. **Arestas** (Edges): Relacoes entre entidades ("trabalha em", "pertence a").
-3. **Propriedades**: Atributos dos nos e arestas.
+1. **Nós** (Nodes): Entidades como pessoas, empresas, conceitos, lugares. Cada nó tem propriedades (nome, tipo).
+2. **Arestas** (Edges): Relações entre entidades ("trabalha em", "pertence a", "inventou").
+3. **Comunidades**: Grupos de nós densamente conectados — úteis para gerar resumos temáticos.
+
+**Neo4j e a linguagem Cypher:**
+
+O **Neo4j** é o banco de grafos mais popular. Rode via Docker: \`docker run -p 7474:7474 -p 7687:7687 neo4j\`. Ele usa a linguagem **Cypher** para consultas:
+- Criar nó: \`CREATE (p:Pessoa {nome: "Maria", cargo: "CEO"})\`
+- Criar relação: \`MATCH (a:Pessoa), (b:Empresa) WHERE a.nome="Maria" AND b.nome="TechCorp" CREATE (a)-[:LIDERA]->(b)\`
+- Consultar: \`MATCH (p:Pessoa)-[:LIDERA]->(e:Empresa) RETURN p.nome, e.nome\`
+
+**Extração automática com LLM:** Você pode usar um LLM para extrair entidades e relações dos documentos automaticamente. O LLM lê cada chunk e identifica: "Maria (Pessoa) LIDERA TechCorp (Empresa)".
 
 **Ferramentas:**
 
-- **Neo4j**: Banco de grafos mais popular. Usa a linguagem Cypher para consultas.
-- **NetworkX**: Biblioteca Python para grafos em memória. Bom para protótipos.
+- **Neo4j**: Banco de grafos para produção. Cypher para consultas. Docker para setup.
+- **NetworkX**: Biblioteca Python para grafos em memória. Excelente para protótipos.
 
 \`\`\`python
 # Exemplo conceitual com NetworkX
@@ -1625,9 +1634,9 @@ import networkx as nx
 G = nx.DiGraph()
 G.add_node("Empresa X", tipo="empresa", setor="tecnologia")
 G.add_node("Produto A", tipo="produto")
-G.add_node("Joao", tipo="pessoa", cargo="CEO")
-G.add_edge("Empresa X", "Produto A", relacao="fabrica")
-G.add_edge("Joao", "Empresa X", relacao="lidera")
+G.add_node("João", tipo="pessoa", cargo="CEO")
+G.add_edge("Empresa X", "Produto A", relação="fabrica")
+G.add_edge("João", "Empresa X", relação="lidera")
 
 # Consulta: quem lidera a empresa que fabrica o Produto A?
 for predecessor in G.predecessors("Empresa X"):
@@ -1636,7 +1645,7 @@ for predecessor in G.predecessors("Empresa X"):
         print(f"{predecessor} lidera a Empresa X")
 \`\`\``,
         flowSteps:["Documentos são analisados para extrair entidades","Relações entre entidades são identificadas","Grafo de conhecimento é construído","Pergunta do usuário ativa busca no grafo","Subgrafo relevante é extraído como contexto","LLM gera resposta com relações explícitas"],
-        tips:["GraphRAG é mais complexo que RAG vetorial - use apenas quando relações são essenciais.","Comece com NetworkX para prototipar, migre para Neo4j em produção.","A extracao automática de entidades e relações pode usar LLMs."],
+        tips:["GraphRAG é mais complexo que RAG vetorial - use apenas quando relações são essenciais.","Comece com NetworkX para prototipar, migre para Neo4j em produção.","A extração automática de entidades e relações pode usar LLMs."],
       },
       {
         title:"Hybrid RAG: O Melhor de Dois Mundos",subtitle:"Combinando busca vetorial com busca por palavras-chave.",level:"avancado",icon:"link2",
@@ -1644,12 +1653,12 @@ for predecessor in G.predecessors("Empresa X"):
 
 **Busca Vetorial** (semântica): Encontra documentos com significado similar, mesmo sem as mesmas palavras. Boa para perguntas conceituais.
 
-**Busca BM25** (keywords): Encontra documentos com as mesmas palavras exatas. Boa para termos técnicos, nomes proprios, códigos.
+**Busca BM25** (keywords): Encontra documentos com as mesmas palavras exatas. Boa para termos técnicos, nomes próprios, códigos.
 
-**Quando a busca hibrida é melhor?**
+**Quando a busca híbrida é melhor?**
 
 - "Qual a dosagem do medicamento ABC-123?" → BM25 encontra "ABC-123" exato; vetorial pode errar.
-- "Qual remedio tomar para dor de cabeca?" → Vetorial entende a intenção; BM25 precisa das palavras exatas.
+- "Qual remedio tomar para dor de cabeça?" → Vetorial entende a intenção; BM25 precisa das palavras exatas.
 - Híbrido encontra nos DOIS casos.
 
 **Reciprocal Rank Fusion (RRF):**
@@ -1665,9 +1674,9 @@ def rrf(resultados_vetorial, resultados_bm25, k=60):
         scores[doc_id] = scores.get(doc_id, 0) + 1 / (k + rank + 1)
     return sorted(scores.items(), key=lambda x: x[1], reverse=True)
 \`\`\``,
-        relationshipRows:[{left:"Busca Vetorial",right:"Busca BM25",connector:"+",details:"Semântica (significado) + Lexica (palavras exatas) = cobertura completa"},{left:"Conceitos",right:"Termos exatos",connector:"+",details:"'remedio para dor' + 'ibuprofeno 400mg' encontrados pelo metodo mais adequado"}],
+        relationshipRows:[{left:"Busca Vetorial",right:"Busca BM25",connector:"+",details:"Semântica (significado) + Léxica (palavras exatas) = cobertura completa"},{left:"Conceitos",right:"Termos exatos",connector:"+",details:"'remedio para dor' + 'ibuprofeno 400mg' encontrados pelo método mais adequado"}],
         flowSteps:["Pergunta do usuário é recebida","Busca vetorial (semântica) é executada","Busca BM25 (palavras-chave) é executada","Resultados são combinados (Reciprocal Rank Fusion)","Documentos ranqueados por relevância combinada","Contexto final enviado ao LLM"],
-        tips:["Hybrid RAG é quase sempre melhor que qualquer busca isolada.","Weaviate e Qdrant tem busca hibrida nativa.","O parametro k no RRF controla o balanceamento entre as buscas. 60 é um bom padrão."],
+        tips:["Hybrid RAG é quase sempre melhor que qualquer busca isolada.","Weaviate e Qdrant tem busca híbrida nativa.","O parâmetro k no RRF controla o balanceamento entre as buscas. 60 é um bom padrão."],
       },
       {
         title:"RAG-Fusion: Multiplicando Perspectivas",subtitle:"Varias perguntas, melhores resultados.",level:"avancado",icon:"repeat",
@@ -1721,9 +1730,9 @@ def rag_fusion(pergunta, colecao, modelo_emb, client_llm):
 
 **Exemplo:**
 
-- Pergunta: "Como funciona a fotossintese?"
-- Resposta hipotetica: "A fotossintese é o processo pelo qual plantas convertem luz solar em energia quimica, usando clorofila para absorver luz e CO2 para produzir glicose e oxigenio."
-- O embedding dessa resposta hipotetica é muito mais próximo de um documento real sobre fotossintese do que o embedding da pergunta.
+- Pergunta: "Como funciona a fotossíntese?"
+- Resposta hipotetica: "A fotossíntese é o processo pelo qual plantas convertem luz solar em energia quimica, usando clorofila para absorver luz e CO2 para produzir glicose e oxigenio."
+- O embedding dessa resposta hipotetica é muito mais próximo de um documento real sobre fotossíntese do que o embedding da pergunta.
 
 \`\`\`python
 def hyde_busca(pergunta, colecao, modelo_emb, client_llm):
@@ -1955,7 +1964,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 **Problema:** Um advogado gasta em média 4 horas pesquisando jurisprudência para cada caso. Com centenas de casos por ano, são milhares de horas desperdicadas.
 
-**Solucao RAG:** Indexe toda a legislacao, jurisprudência e documentos internos. O advogado pergunta em linguagem natural e recebe respostas fundamentadas com citacoes.
+**Solucao RAG:** Indexe toda a legislação, jurisprudência e documentos internos. O advogado pergunta em linguagem natural e recebe respostas fundamentadas com citacoes.
 
 **Exemplo de prompt configurado:**
 
@@ -2043,7 +2052,7 @@ EXPLICACAO (simples e encorajadora):"""
         tips:["Indexe apostilas, slides, videoaulas transcritas e exercicios resolvidos.","O tom encorajador é importante para manter o aluno motivado.","Use os relatórios de duvidas frequentes para melhorar o material didatico."],
       },
       {
-        title:"RAG para Atendimento ao Cliente",subtitle:"Suporte rápido é preciso com base na documentação.",level:"iniciante",icon:"users",
+        title:"RAG para Atendimento ao Cliente",subtitle:"Suporte rápido e preciso com base na documentação.",level:"iniciante",icon:"users",
         content:`Chatbots de suporte com RAG respondem perguntas usando a base de conhecimento oficial da empresa:
 
 **Beneficios:**
@@ -2076,12 +2085,12 @@ RESPOSTA:"""
         tips:["Tenha sempre um fallback para atendente humano.","Monitore respostas incorretas e atualize a base de conhecimento.","Inclua informações sobre status de pedidos, prazos de entrega, etc."],
       },
       {
-        title:"RAG para Financas e Contabilidade",subtitle:"Legislacao tributária e relatórios sempre atualizados.",level:"intermediario",icon:"barChart",
-        content:`O setor financeiro lida com legislacao que muda constantemente e normas complexas. RAG é ideal para consultas rápidas:
+        title:"RAG para Finanças e Contabilidade",subtitle:"Legislação tributária e relatórios sempre atualizados.",level:"intermediario",icon:"barChart",
+        content:`O setor financeiro lida com legislação que muda constantemente e normas complexas. RAG é ideal para consultas rápidas:
 
 **Casos de uso:**
 
-- Consulta de legislacao tributária (ICMS, ISS, PIS/Cofins).
+- Consulta de legislação tributária (ICMS, ISS, PIS/Cofins).
 - Normas contábeis (CPC, IFRS).
 - Relatórios financeiros e balancetes.
 - Compliance e auditoria.
@@ -2090,7 +2099,7 @@ RESPOSTA:"""
 
 \`\`\`python
 prompt_financeiro = """Você é um assistente contábil/tributário.
-Responda APENAS com base na legislacao e normas fornecidas.
+Responda APENAS com base na legislação e normas fornecidas.
 Cite artigos, incisos e paragrafos quando relevante.
 Mencione a data de vigência da norma citada.
 Se houver duvida, recomende consultar o contador responsável.
@@ -2103,7 +2112,7 @@ CONSULTA: {pergunta}
 PARECER (com citacoes legais):"""
 \`\`\`
 
-**IMPORTANTE:** Legislacao tributária muda frequentemente. Configure atualização automática da base no minimo semanalmente.`,
+**IMPORTANTE:** Legislação tributária muda frequentemente. Configure atualização automática da base no minimo semanalmente.`,
         elementGrid:[{icon:"barChart",label:"Relatórios",desc:"Consulta instantânea em relatórios financeiros"},{icon:"shield",label:"Compliance",desc:"Verifica normas contábeis e tributárias"},{icon:"fileText",label:"Legislação",desc:"Acesso à legislação tributária atualizada"},{icon:"target",label:"Auditoria",desc:"Suporte na verificação de conformidade"}],
         flowSteps:["Contador faz consulta sobre norma tributária","RAG busca na legislação e normas contábeis","Recupera artigos, instruções e pareceres","Compara com atualizações recentes","Gera parecer fundamentado com referências"],
         tips:["Atualize a base tributária semanalmente ou sempre que houver mudanca legislativa.","Inclua a data de vigência de cada norma nos metadados.","Sempre cite artigos e paragrafos específicos nas respostas."],
@@ -2259,7 +2268,7 @@ BACKEND (Python/FastAPI):
 3. ChromaDB como banco vetorial persistente.
 4. Endpoint de chat: recebe pergunta, faz busca vetorial (top_k=5), monta prompt augmentado, envia para LLM (Claude via API Anthropic), retorna resposta com citações.
 5. Memória de conversa com Redis (últimas 10 mensagens por sessão).
-6. Avaliação CRAG: classificar chunks como CORRECT/INCORRECT/AMBIGUOUS antes da geração.
+6. Avaliação CRAG: classificar chunks como CORRECT/INCORRECT/AMBÍGUOUS antes da geração.
 
 FRONTEND (React/TypeScript/Tailwind):
 1. Interface de chat moderna com tema escuro.
@@ -2322,7 +2331,7 @@ Faça tudo production-ready com tratamento de erros, logging e tipagem completa.
 
 **Dica:** Você pode combinar prompts. Comece com o RAG Clássico e depois peça: "Agora adicione o pipeline CRAG a este projeto" ou "Integre memória de conversa com Redis".`,
         tips:["Comece sempre pelo RAG Clássico — é a base para todos os outros.","Após gerar o RAG Clássico, peça iterações incrementais para adicionar funcionalidades.","Adapte os prompts para seu caso: troque 'documentos jurídicos' por seu domínio específico.","Estes prompts funcionam em qualquer plataforma — Lovable, AI Studio, Claude Code, Bolt.new, Replit.","Para projetos de produção, use o prompt de Pipeline Completo com Claude Code.","Sempre teste com documentos reais do seu domínio antes de publicar."],
-        steps:["RAG CLÁSSICO: 'Crie um app RAG com upload de PDF, chunking (500 chars, overlap 100), embeddings (text-embedding-3-small), ChromaDB, busca vetorial top_k=5, e geração com GPT-5.4. Interface de chat com tema escuro.'","RAG COM MEMÓRIA: 'Adicione memória de conversa ao RAG: armazene as últimas 10 mensagens em Redis com TTL de 1 hora. Antes de buscar no banco vetorial, reescreva perguntas ambíguas usando o histórico. Exemplo: se o usuário perguntou sobre Santos Dumont e depois diz 'onde ele nasceu?', reescreva para 'Onde Santos Dumont nasceu?'.'","CRAG (Corretivo): 'Adicione um pipeline CRAG: após buscar chunks, use a LLM para avaliar se são CORRECT, INCORRECT ou AMBIGUOUS. Se CORRECT, use diretamente. Se AMBIGUOUS, complemente com busca web (DuckDuckGo). Se INCORRECT, descarte e use apenas resultados da web.'","ADAPTIVE RAG: 'Implemente roteamento adaptativo: classifique cada pergunta como SIMPLES, PADRÃO ou COMPLEXA. SIMPLES → responda direto sem busca. PADRÃO → busca vetorial padrão. COMPLEXA → decomponha em sub-perguntas, busque cada uma, sintetize.'","HYBRID RAG: 'Implemente busca híbrida combinando similaridade vetorial (cosine) com busca lexical (BM25). Use Reciprocal Rank Fusion para mesclar os rankings. Pesos configuráveis: 60% semântico, 40% lexical.'","RAG-FUSION: 'Antes da busca, gere 4 variações da pergunta do usuário usando a LLM. Busque cada variação no banco vetorial separadamente. Combine todos os resultados usando Reciprocal Rank Fusion (k=60). Envie os top 5 chunks mesclados para geração.'","PIPELINE COMPLETO (Produção): 'Crie um sistema RAG production-ready com: ingestão de documentos (PDF/DOCX/TXT), chunking recursivo, embeddings, ChromaDB, busca híbrida (vetorial + BM25), avaliação CRAG, memória Redis, autenticação JWT, API REST FastAPI, frontend React, Docker Compose, testes unitários, logging estruturado e documentação.'"],
+        steps:["RAG CLÁSSICO: 'Crie um app RAG com upload de PDF, chunking (500 chars, overlap 100), embeddings (text-embedding-3-small), ChromaDB, busca vetorial top_k=5, e geração com GPT-5.4. Interface de chat com tema escuro.'","RAG COM MEMÓRIA: 'Adicione memória de conversa ao RAG: armazene as últimas 10 mensagens em Redis com TTL de 1 hora. Antes de buscar no banco vetorial, reescreva perguntas ambíguas usando o histórico. Exemplo: se o usuário perguntou sobre Santos Dumont e depois diz 'onde ele nasceu?', reescreva para 'Onde Santos Dumont nasceu?'.'","CRAG (Corretivo): 'Adicione um pipeline CRAG: após buscar chunks, use a LLM para avaliar se são CORRECT, INCORRECT ou AMBÍGUOUS. Se CORRECT, use diretamente. Se AMBÍGUOUS, complemente com busca web (DuckDuckGo). Se INCORRECT, descarte e use apenas resultados da web.'","ADAPTIVE RAG: 'Implemente roteamento adaptativo: classifique cada pergunta como SIMPLES, PADRÃO ou COMPLEXA. SIMPLES → responda direto sem busca. PADRÃO → busca vetorial padrão. COMPLEXA → decomponha em sub-perguntas, busque cada uma, sintetize.'","HYBRID RAG: 'Implemente busca híbrida combinando similaridade vetorial (cosine) com busca lexical (BM25). Use Reciprocal Rank Fusion para mesclar os rankings. Pesos configuráveis: 60% semântico, 40% lexical.'","RAG-FUSION: 'Antes da busca, gere 4 variações da pergunta do usuário usando a LLM. Busque cada variação no banco vetorial separadamente. Combine todos os resultados usando Reciprocal Rank Fusion (k=60). Envie os top 5 chunks mesclados para geração.'","GRAPHRAG: 'Crie um sistema GraphRAG com: 1) Ingestão de documentos, 2) Extração automática de entidades e relações usando LLM, 3) Armazenamento em Neo4j (via Docker), 4) Detecção de comunidades com algoritmo de Leiden, 5) Geração de resumos por comunidade, 6) Busca híbrida: vetorial para perguntas específicas + busca no grafo para perguntas sobre relações, 7) Interface de chat que mostra o subgrafo usado na resposta.'","INTERFACE STREAMLIT: 'Crie uma interface Streamlit para meu RAG existente com: 1) Sidebar com upload de documentos e configurações (chunk_size, top_k, modelo), 2) Área principal de chat com streaming de respostas, 3) Exibição das fontes usadas em cada resposta, 4) Botão para limpar histórico, 5) Tema escuro. Use st.chat_message e st.chat_input para a interface de chat.'","PIPELINE COMPLETO (Produção): 'Crie um sistema RAG production-ready com: ingestão de documentos (PDF/DOCX/TXT), chunking recursivo, embeddings, ChromaDB, busca híbrida (vetorial + BM25), avaliação CRAG, memória Redis, autenticação JWT, API REST FastAPI, frontend React, Docker Compose, testes unitários, logging estruturado e documentação.'"],
       },
       {
         title:"Comparativo Atualizado: Plataformas de Vibe Coding para RAG",subtitle:"Tabela completa com dados de março de 2026.",level:"iniciante",icon:"barChart",
@@ -2335,7 +2344,8 @@ Faça tudo production-ready com tratamento de erros, logging e tipagem completa.
 - **Quer RAG em Python com deploy fácil?** → Replit Agent.
 - **Quer protótipo web rápido no navegador?** → Bolt.new.
 - **Já usa ecossistema Google (Drive, Gmail)?** → Google AI Studio + Firebase.
-- **Projeto enterprise com muitos documentos?** → Claude Code + Docker + CI/CD.`,
+- **Projeto enterprise com muitos documentos?** → Claude Code + Docker + CI/CD.
+- **Já tem um RAG em Python e quer uma interface rápida?** → Streamlit (a mais rápida para criar UI de chat).`,
         comparisonTable:{
           headers:["Plataforma","Modelo IA","Facilidade","Backend RAG","Banco Vetorial","Deploy","Melhor Para"],
           rows:[
@@ -2344,6 +2354,7 @@ Faça tudo production-ready com tratamento de erros, logging e tipagem completa.
             {name:"Claude Code",values:["Claude Opus 4","Intermediário","Qualquer stack","Qualquer","Manual/CI","Projetos sérios, produção"],colors:["purple","yellow","green","green","yellow",""]},
             {name:"Bolt.new",values:["Claude Sonnet","Fácil","Node.js/API Routes","Via API","Netlify","Protótipos web rápidos"],colors:["purple","green","yellow","yellow","green",""]},
             {name:"Replit Agent",values:["GPT-5.4 / Claude","Médio","Python (Flask/FastAPI)","ChromaDB/pgvector","1 clique","Pipelines Python, aprendizado"],colors:["green","yellow","green","green","green",""]},
+            {name:"Streamlit",values:["—","Fácil","Python nativo","ChromaDB/FAISS","Streamlit Cloud","Interface rápida para RAG Python"],colors:["","green","green","green","green",""]},
             {name:"Cursor",values:["Claude/GPT-5.4","Avançado","Qualquer stack","Qualquer","Manual","Devs experientes"],colors:["yellow","red","green","green","red",""]},
           ]
         },
@@ -2456,7 +2467,7 @@ Gratuito (Ollama + ChromaDB)? Ou com APIs pagas (OpenAI + Pinecone)?
         tips:["Um bom planejamento evita refazer trabalho depois.","Comece pequeno: poucos documentos, poucas funcionalidades.","Valide o conceito com 5-10 perguntas antes de investir tempo em infraestrutura."],
       },
       {
-        title:"Estrutura do Projeto",subtitle:"Organizacao de arquivos e pastas.",level:"intermediario",icon:"folder",
+        title:"Estrutura do Projeto",subtitle:"Organização de arquivos e pastas.",level:"intermediario",icon:"folder",
         content:`Organize seu projeto de forma profissional desde o inicio:
 
 \`\`\`
@@ -2565,7 +2576,7 @@ if __name__ == "__main__":
         tips:["Teste cada modulo isoladamente antes de integrar.","Use print() estrategicos no inicio para debugar problemas.","Comece com 2-3 documentos e expanda gradualmente."],
       },
       {
-        title:"Testando e Avaliando seu RAG",subtitle:"Métricas e estrategias de validacao.",level:"avancado",icon:"check",
+        title:"Testando e Avaliando seu RAG",subtitle:"Métricas e estratégias de validação.",level:"avancado",icon:"check",
         content:`Testar um RAG é diferente de testar software tradicional. Você precisa avaliar a qualidade das respostas:
 
 **Métricas importantes:**
@@ -2613,7 +2624,7 @@ print(f"\\nTaxa de acerto: {acertos}/{len(testes)} = {acertos/len(testes)*100:.1
 
 **Melhorias Imediatas:**
 
-- Adicione busca hibrida (vetorial + BM25) para melhor cobertura.
+- Adicione busca híbrida (vetorial + BM25) para melhor cobertura.
 - Implemente CRAG para avaliar qualidade da recuperação.
 - Adicione memória de conversa para chatbot mais natural.
 
@@ -2862,7 +2873,7 @@ function App(){
   const filteredCards=activeLevel?currentSection.cards.filter(c=>c.level===activeLevel):currentSection.cards;
   const sectionProgress=getProgress(currentSection.id);
   const onboardingSteps=[
-    {icon:"brain",title:"Bem-vindo a Academia RAG!",desc:"Um guia interativo e completo para dominar Retrieval-Augmented Generation, do zero ao avançado."},
+    {icon:"brain",title:"Bem-vindo à Academia RAG!",desc:"Um guia interativo e completo para dominar Retrieval-Augmented Generation, do zero ao avançado."},
     {icon:"search",title:"Explore e Aprenda",desc:"Use a busca para encontrar temas, filtre por nível de dificuldade e acompanhe seu progresso."},
     {icon:"lightbulb",title:"Prática e Teoria",desc:"Cada card tem analogias simples, código Python funcional, dicas práticas e checklists interativos."},
   ];
