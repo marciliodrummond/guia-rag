@@ -223,13 +223,13 @@ E o banco de dados especializado que armazena os embeddings e permite buscas por
         title:"Quando Usar RAG na Prática",subtitle:"Casos reais onde RAG brilha.",level:"iniciante",icon:"target",
         content:`RAG não é teoria - é uma ferramenta prática usada por empresas reais todos os dias. Veja onde ele se encaixa perfeitamente:
 
-**Escritorios de Advocacia:** Buscar jurisprudência, leis e pareceres em milhares de documentos PDF. Em vez de um advogado gastar horas pesquisando, o RAG encontra os trechos relevantes em segundos.
+**Escritórios de Advocacia:** Buscar jurisprudência, leis e pareceres em milhares de documentos PDF. Em vez de um advogado gastar horas pesquisando, o RAG encontra os trechos relevantes em segundos.
 
 **Hospitais e Clinicas:** Consultar protocolos médicos, bulas de medicamentos e prontuários. O RAG ajuda médicos a tomar decisões baseadas em evidências atualizadas.
 
 **Suporte ao Cliente:** Responder perguntas frequentes usando a base de conhecimento da empresa. O chatbot com RAG não inventa - busca a resposta oficial.
 
-**Educacao:** Criar tutores virtuais que respondem perguntas baseadas no material didatico real do curso, não em informações genericas da internet.
+**Educação:** Criar tutores virtuais que respondem perguntas baseadas no material didático real do curso, não em informações genéricas da internet.
 
 **Financas:** Consultar legislação tributária, relatórios financeiros e normas contábeis que mudam constantemente.`,
         analogy:{tag:"Analogia do Bibliotecário",text:"Imagine que você contratou um **bibliotecário particular** que conhece cada página de cada livro do seu escritório. Quando você pergunta algo, ele vai direto na estante certa, abre o livro na página exata e te mostra o trecho relevante. **RAG é esse bibliotecário** — mas digital, instantâneo e incansável."},
@@ -266,6 +266,249 @@ E o banco de dados especializado que armazena os embeddings e permite buscas por
         elementGrid:[{icon:"brain",label:"Embedding",desc:"Números que representam significado do texto"},{icon:"database",label:"Vector Store",desc:"Banco que armazena vetores para busca"},{icon:"layers",label:"Chunk",desc:"Pedaço de texto dividido para processamento"},{icon:"cpu",label:"LLM",desc:"Modelo de linguagem que gera respostas"},{icon:"search",label:"Top K",desc:"Quantidade de resultados mais relevantes"},{icon:"zap",label:"Pipeline",desc:"Sequência automatizada de etapas"}],
         tips:["Não tente decorar tudo - use este glossário como referência rápida.","Os termos em inglês são usados mundialmente, mesmo em projetos brasileiros.","A prática é a melhor forma de fixar: use os termos enquanto constrói seu RAG."],
         analogy:{tag:"Analogia do Idioma",text:"Aprender esses termos é como aprender o **vocabulário de um novo idioma**. No início parece confuso, mas depois de praticar, você usa as palavras sem nem pensar. Este glossário é seu **dicionário de bolso** — consulte sempre que precisar."},
+      },
+    ],
+  },
+  {
+    id:"guia-leigos",title:"Guia Passo a Passo para Leigos",description:"Se você nunca programou, comece aqui. Vamos te guiar como se fosse a primeira vez.",icon:"bookOpen",
+    cards:[
+      {
+        title:"Você NÃO Precisa Saber Programar",subtitle:"Sério. Zero código. Zero inglês. Zero conhecimento técnico.",level:"iniciante",icon:"heart",
+        analogy:{tag:"Analogia do Restaurante",text:"Criar um app com IA em 2026 é como **pedir comida num restaurante**. Você não precisa saber cozinhar — só precisa saber descrever o que quer comer. Você diz: 'Quero uma massa com molho branco e frango'. O chef (a IA) prepara tudo. Com vibe coding, você descreve o que quer em português e a IA constrói o app inteiro para você."},
+        content:`Se você chegou até aqui pensando "isso não é para mim, eu não entendo nada de tecnologia" — respire fundo. Este guia foi feito exatamente para você.
+
+**O que é "vibe coding" (programação por vibração)?**
+
+É uma forma nova de criar aplicativos (apps) onde você simplesmente **descreve em português o que quer** e uma inteligência artificial constrói tudo para você. Não precisa escrever nenhuma linha de código. Não precisa saber inglês. Não precisa ter formação em tecnologia.
+
+**O que você PRECISA ter:**
+
+- Um computador com internet (pode ser notebook ou desktop, Windows ou Mac).
+- Uma conta Google (aquela do Gmail que você já usa).
+- 30 minutos de paciência na primeira vez.
+- Vontade de experimentar algo novo.
+
+**O que você NÃO precisa:**
+
+- Conhecimento de programação (zero, nada, nenhum).
+- Fluência em inglês (vamos traduzir tudo para você).
+- Formação técnica ou diploma em tecnologia.
+- Computador potente (qualquer computador com internet funciona).
+- Dinheiro (as plataformas tem planos gratuitos para começar).
+
+**Três plataformas que vamos usar neste guia:**
+
+1. **Lovable** (lovable.dev) — A mais fácil de todas. Você descreve o que quer e ela cria o app completo. Tem plano gratuito.
+2. **Google AI Studio** (aistudio.google.com) — Do Google, se integra com seu Google Drive. Também gratuito.
+3. **Claude Code** — Para quando você quiser ir mais longe. Mais poderoso, mas precisa de um pouco mais de confiança.
+
+**Dica de ouro:** Não tenha medo de errar. A IA não se ofende, não julga e não cobra hora extra. Peça quantas vezes quiser até ficar do jeito que você quer.`,
+        tips:["Você já usa IA todos os dias sem perceber: Google, Netflix, Spotify. Criar um app com IA é o próximo passo natural.","Se você sabe usar WhatsApp e Google, você consegue criar um RAG. É sério.","Comece pelo Lovable — é o mais visual e amigável para quem nunca programou.","Não tente entender tudo de uma vez. Siga passo a passo e celebre cada pequena vitória."],
+      },
+      {
+        title:"Seu Primeiro RAG em 5 Minutos com Lovable",subtitle:"Passo a passo ultra-detalhado — como se fosse a primeira vez.",level:"iniciante",icon:"heart",
+        content:`Vamos criar seu primeiro app de perguntas e respostas (RAG) usando o Lovable. Siga cada passo exatamente como descrito:
+
+**Passo 1:** Abra o navegador do seu computador (Chrome, Edge ou Safari — aquele programa que você usa para acessar a internet).
+
+**Passo 2:** Na barra de endereço (aquela barra no topo onde aparece "google.com"), digite: **lovable.dev** e aperte Enter.
+
+**Passo 3:** Vai aparecer a página do Lovable. Procure o botão **"Sign Up"** (que significa "Criar Conta") ou **"Get Started"** (que significa "Começar"). Clique nele.
+
+**Passo 4:** Clique no botão do Google (aquele com o logo colorido do G) para fazer login com sua conta Google. É a mesma conta do Gmail.
+
+**Passo 5:** Você vai ver a tela principal do Lovable. Procure o botão **"New Project"** (Novo Projeto) e clique nele.
+
+**Passo 6:** Vai aparecer uma caixa de texto grande. É ali que a mágica acontece — você vai descrever o que quer.
+
+**Passo 7:** Copie o texto abaixo (selecione tudo, aperte Ctrl+C no teclado) e cole na caixa de texto (clique na caixa e aperte Ctrl+V):
+
+\`\`\`
+Crie um aplicativo simples de perguntas e respostas para um escritório
+de advocacia. O app deve ter: uma tela bonita com tema escuro, um campo
+para o advogado digitar perguntas, um botão de enviar, e uma área onde
+aparece a resposta. Use Supabase para guardar os dados. O app deve
+parecer profissional e moderno. Coloque tudo em português brasileiro.
+\`\`\`
+
+**Passo 8:** Clique no botão **"Create"** (Criar) e **AGUARDE**. Pode levar de 30 a 60 segundos. Você vai ver a IA trabalhando — é normal, ela está construindo seu app.
+
+**Passo 9:** Pronto! Seu app aparece na tela. Clique em **"Preview"** (Visualizar) para ver como ele fica funcionando.
+
+**Passo 10:** Para publicar na internet (para outras pessoas acessarem), clique em **"Share"** (Compartilhar) e depois em **"Publish"** (Publicar).
+
+**Se algo aparecer em inglês**, escreva na caixa de texto: "Traduza toda a interface para português brasileiro" e clique em "Create" novamente.
+
+**Se quiser mudar algo**, descreva a mudança em português. Exemplo: "Mude as cores para azul marinho e branco" ou "Adicione um logo no topo da página".`,
+        flowSteps:["Abra o navegador e digite lovable.dev","Crie conta com Google (botão do G colorido)","Clique em New Project (Novo Projeto)","Cole o prompt na caixa de texto","Clique em Create e aguarde 30-60 segundos","Clique em Preview para ver funcionando","Clique em Share > Publish para publicar"],
+        tips:["Se a tela ficar branca ou der erro, clique em 'Undo' (Desfazer) no canto superior.","O Lovable tem plano gratuito — você não precisa pagar para experimentar.","Salve o link do seu projeto — ele fica disponível para você voltar depois.","Se aparecer algo em inglês, peça: 'Traduza toda a interface para português brasileiro'."],
+      },
+      {
+        title:"Seu Primeiro RAG em 5 Minutos com Google AI Studio",subtitle:"Use o poder do Google com seus documentos do Drive.",level:"iniciante",icon:"brain",
+        content:`O Google AI Studio é outra plataforma excelente para criar seu RAG, especialmente se você já usa Google Drive para guardar documentos.
+
+**Passo 1:** Abra o navegador e digite: **aistudio.google.com** e aperte Enter.
+
+**Passo 2:** Faça login com sua conta Google (a mesma do Gmail).
+
+**Passo 3:** Você vai ver a tela do AI Studio. Procure o botão **"Create new"** (Criar novo) ou **"New prompt"** (Novo prompt). Clique nele.
+
+**Passo 4:** Escolha **"Structured prompt"** (Prompt estruturado) se disponível, ou simplesmente use o chat.
+
+**Passo 5:** No campo de sistema (System Instructions), cole esta instrução:
+
+\`\`\`
+Você é um assistente especializado para um negócio de serviços.
+Responda APENAS com base nos documentos que foram enviados.
+Se não encontrar a resposta nos documentos, diga: "Não encontrei
+essa informação nos documentos disponíveis."
+Responda sempre em português brasileiro, de forma clara e objetiva.
+Quando possível, cite o documento e a página onde encontrou a informação.
+\`\`\`
+
+**Passo 6:** Para adicionar seus documentos, procure o botão de **upload** (ícone de clipe ou seta para cima) e selecione seus PDFs do computador ou do Google Drive.
+
+**Passo 7:** Agora teste! Digite uma pergunta sobre seus documentos na caixa de chat e veja a resposta.
+
+**Passo 8:** Se gostar do resultado, você pode compartilhar o link com colegas do escritório.
+
+**Vantagem do Google AI Studio:** Ele se integra diretamente com o Google Drive. Se você já guarda documentos lá, é muito prático.
+
+**Dica importante:** O Google AI Studio é gratuito para uso básico. Para uso mais intenso, pode ter custos — mas para começar, é perfeito.`,
+        flowSteps:["Abra aistudio.google.com no navegador","Faça login com sua conta Google","Clique em Create new (Criar novo)","Cole as instruções do sistema","Faça upload dos seus documentos (PDFs)","Teste fazendo perguntas no chat","Compartilhe o link com colegas"],
+        tips:["O Google AI Studio funciona melhor com documentos do Google Drive.","Comece com poucos documentos (5-10) para testar. Adicione mais depois.","Se a resposta não for boa, melhore as instruções do sistema — seja mais específico.","Você pode usar o AI Studio no celular também, direto pelo navegador."],
+      },
+      {
+        title:"Como Adicionar seus Documentos ao RAG",subtitle:"Organize sua biblioteca digital — é mais fácil do que parece.",level:"iniciante",icon:"folder",
+        analogy:{tag:"Analogia da Biblioteca",text:"Adicionar documentos ao RAG é como **organizar uma biblioteca**. Quanto melhor organizados os livros (por assunto, por autor, por data), mais fácil encontrar o que você precisa. Se os livros estiverem jogados numa pilha, até o melhor bibliotecário vai ter dificuldade. O mesmo vale para o RAG: documentos bem organizados geram respostas melhores."},
+        content:`Agora que você criou seu primeiro RAG, vamos alimentá-lo com seus documentos. Pense nisso como abastecer o tanque de um carro — sem combustível (documentos), o carro (RAG) não anda.
+
+**Formatos de documentos que funcionam:**
+
+- **PDF** — O mais comum. Contratos, petições, relatórios, legislação. Funciona perfeitamente.
+- **DOCX** — Documentos do Word. Também funciona muito bem.
+- **TXT** — Arquivos de texto simples (Bloco de Notas). O mais básico, mas funciona.
+- **CSV/Excel** — Planilhas com dados estruturados. Bom para listas e tabelas.
+
+**Como preparar seus documentos:**
+
+1. **Remova senhas:** Se o PDF está protegido por senha, o RAG não consegue ler. Abra o PDF, vá em "Arquivo" > "Salvar como" e salve sem senha.
+2. **Verifique a qualidade:** Documentos escaneados (fotografados) podem ter texto ilegível. Se o texto não é selecionável, o RAG não consegue ler.
+3. **Organize por assunto:** Crie pastas no computador — "Contratos", "Legislação", "Petições", "Pareceres". Quanto mais organizado, melhor.
+4. **Dê nomes claros:** Em vez de "doc1.pdf", use "contrato-aluguel-joao-silva-2025.pdf". Nomes claros ajudam o RAG.
+
+**Como fazer upload no Lovable:**
+
+Escreva na caixa de texto do Lovable: "Adicione um botão de upload de PDF que permita o usuário enviar documentos para a base de conhecimento" e clique em Create.
+
+**Como fazer upload no Google AI Studio:**
+
+Clique no ícone de clipe (anexar arquivo) e selecione os documentos do seu computador ou Google Drive.
+
+**Checklist: Meus documentos estão prontos para o RAG?**
+
+Use esta lista para verificar antes de fazer upload:`,
+        checklist:["Documentos estão em PDF, DOCX ou TXT?","PDFs não estão protegidos por senha?","O texto é selecionável (não é imagem escaneada)?","Documentos estão organizados por assunto/pasta?","Nomes dos arquivos são descritivos?","Documentos estão atualizados (versão mais recente)?"],
+        tips:["Comece com 5 a 10 documentos. Não tente subir tudo de uma vez.","Se o PDF é escaneado (foto), use o Google Drive para converter em texto — ele tem OCR gratuito.","Documentos menores (até 50 páginas) funcionam melhor que documentos enormes (500+ páginas).","Organize uma pasta no computador chamada 'Documentos RAG' com tudo que vai usar."],
+      },
+      {
+        title:"Personalizando seu RAG: Cores, Logo e Idioma",subtitle:"Deixe seu app com a cara do seu escritório.",level:"iniciante",icon:"sparkles",
+        content:`Agora que seu RAG está funcionando, vamos deixá-lo bonito e profissional. Afinal, seus clientes e colegas vão usar isso — tem que ter a cara do seu negócio.
+
+**Como mudar as cores:**
+
+No Lovable, escreva na caixa de texto exatamente o que quer. Exemplos:
+
+- "Mude as cores para azul marinho e dourado" (cores clássicas para escritórios de advocacia).
+- "Use as cores verde escuro e branco" (elegante para contabilidade).
+- "Mude o fundo para branco e os botões para azul" (clean e moderno).
+- "Use tema claro em vez de escuro" (se preferir fundo branco).
+
+**Como adicionar logo:**
+
+- "Adicione meu logo no topo da página. O logo é [descreva seu logo ou envie o arquivo]."
+- "Coloque o nome 'Escritório Silva & Associados' no topo com fonte elegante."
+- "Adicione um ícone de balança da justiça ao lado do nome do escritório."
+
+**Como garantir que tudo está em português:**
+
+- "Traduza todos os textos, botões e mensagens para português brasileiro."
+- "Mude o placeholder do campo de busca para 'Digite sua pergunta aqui...'"
+- "Mude o botão de 'Submit' para 'Enviar Pergunta'."
+- "Mude a mensagem de erro para 'Desculpe, não encontrei essa informação. Tente reformular sua pergunta.'"
+
+**Exemplos de prompts de personalização completos:**
+
+\`\`\`
+Faça as seguintes mudanças visuais no app:
+1. Cores: azul marinho (#1a2744) para o cabeçalho e dourado (#c9a84c)
+   para botões e destaques.
+2. Fonte: use uma fonte profissional e elegante.
+3. No topo, coloque "Assistente Jurídico - Escritório Silva & Associados"
+   com fonte grande.
+4. Todos os textos em português brasileiro.
+5. Adicione um rodapé com "Powered by IA - Uso interno"
+\`\`\`
+
+**Dica de branding para diferentes negócios:**
+
+- **Advocacia:** Azul marinho, dourado, fontes serifadas. Transmite confiança e tradição.
+- **Contabilidade:** Verde escuro, cinza, fontes limpas. Transmite organização e precisão.
+- **Consultoria:** Preto, branco, toques de laranja. Transmite modernidade e inovação.
+- **Imobiliária:** Azul claro, branco, fotos grandes. Transmite leveza e acessibilidade.`,
+        tips:["Peça uma mudança de cada vez. É mais fácil ajustar do que refazer tudo de uma vez.","Se não gostou do resultado, peça: 'Desfaça a última mudança' ou clique em 'Undo'.","Teste como o app fica no celular também — peça: 'Garanta que o app funciona bem no celular'.","As cores do seu app devem combinar com as cores do seu site e cartão de visita."],
+      },
+      {
+        title:"Problemas Comuns e Como Resolver",subtitle:"Não se preocupe — todo mundo passa por isso no começo.",level:"iniciante",icon:"wrench",
+        content:`É completamente normal encontrar problemas quando está começando. Aqui estão os mais comuns e como resolver cada um:
+
+**"A tela ficou branca / deu erro"**
+
+Calma, isso acontece. Soluções:
+- Clique em **"Undo"** (Desfazer) no canto superior do Lovable. Isso volta para a versão anterior.
+- Se o Undo não funcionar, escreva: "Desfaça a última alteração e mostre a versão anterior."
+- Em último caso, crie um novo projeto e cole o prompt novamente.
+
+**"O app está em inglês"**
+
+Solução simples — escreva: "Traduza toda a interface, todos os botões, todas as mensagens e todo o texto para português brasileiro."
+
+**"Não consigo fazer upload de PDF"**
+
+Verificações:
+- O arquivo está protegido por senha? Abra no Adobe Reader, vá em Arquivo > Salvar Como e salve sem senha.
+- O arquivo é muito grande (mais de 50MB)? Divida em partes menores.
+- O formato é PDF mesmo? Verifique a extensão do arquivo (.pdf).
+
+**"As respostas estão erradas ou inventando coisas"**
+
+Isso significa que o RAG precisa de ajustes:
+- Melhore seus documentos — quanto mais completos, melhores as respostas.
+- Peça: "Responda APENAS com base nos documentos enviados. Se não encontrar a informação, diga que não encontrou."
+- Adicione mais documentos sobre o tema das perguntas.
+
+**"Quero mudar alguma coisa no app"**
+
+Simplesmente descreva a mudança em português! Exemplos:
+- "Aumente o tamanho da fonte das respostas."
+- "Adicione um botão para copiar a resposta."
+- "Mude a cor do botão de enviar para verde."
+- "Adicione uma página de login com senha."
+
+**"O app sumiu / não encontro mais"**
+
+- No Lovable: acesse lovable.dev e faça login. Seus projetos ficam salvos na sua conta.
+- No AI Studio: acesse aistudio.google.com e faça login. Seus prompts ficam salvos.
+
+**"Estou com medo de estragar tudo"**
+
+Relaxe! Você não consegue estragar nada de forma permanente:
+- O Lovable tem histórico — você pode voltar para qualquer versão anterior.
+- Se tudo der errado, crie um novo projeto. Leva 5 minutos.
+- A IA não se ofende se você pedir várias vezes. Peça quantas vezes quiser até ficar do jeito que você quer.
+
+**Lembre-se:** Todo especialista já foi iniciante. Cada erro é um aprendizado. Se chegou até aqui, você já está na frente de 95% das pessoas.`,
+        tips:["Lembre-se: a IA não se ofende se você pedir várias vezes. Peça quantas vezes quiser até ficar do jeito que você quer.","Salve o link do seu projeto em algum lugar seguro (favoritos do navegador, por exemplo).","Se algo não funcionar, tente descrever o problema de forma diferente. A IA entende português.","Não tenha pressa. Melhor fazer devagar e certo do que correr e se frustrar."],
       },
     ],
   },
@@ -340,7 +583,7 @@ Especializado em multiplos idiomas, incluindo português. Excelente para projeto
 Modelo open-source multilingue com ótimo desempenho. Roda localmente. Um dos melhores para português sem custo.`,
         tableData:{headers:["Modelo","Custo","Qualidade PT-BR","Dimensoes","Local/API"],rows:[["all-MiniLM-L6-v2","Gratuito","Boa","384","Local"],["text-embedding-3-small","Pago","Muito Boa","1536","API"],["embed-multilingual-v3","Pago","Excelente","1024","API"],["bge-m3","Gratuito","Excelente","1024","Local"]]},
         analogy:{tag:"Analogia dos Sapatos",text:"Escolher um modelo de embedding é como **escolher um sapato**: cada tipo serve melhor para uma ocasião. Um tênis de corrida não serve para um casamento, assim como um modelo treinado em inglês pode não ser o melhor para português."},
-        tips:["Para começar, use all-MiniLM-L6-v2: é gratuito e funciona bem.","Se seu projeto e em português e precisa de qualidade maxima, considere bge-m3.","Modelos locais não tem custo por requisição, mas exigem mais memória do computador.","Nunca misture modelos: use o mesmo modelo para gerar embeddings de documentos e de perguntas."],
+        tips:["Para começar, use all-MiniLM-L6-v2: é gratuito e funciona bem.","Se seu projeto e em português e precisa de qualidade máxima, considere bge-m3.","Modelos locais não tem custo por requisição, mas exigem mais memória do computador.","Nunca misture modelos: use o mesmo modelo para gerar embeddings de documentos e de perguntas."],
       },
       {
         title:"Similaridade de Cosseno: A Régua Mágica",subtitle:"Como medir a distância entre ideias.",level:"intermediario",icon:"target",
@@ -538,8 +781,8 @@ print(resultados["documents"])
 **Weaviate** — Open-source com funcionalidades avançadas: busca híbrida (vetorial + keywords), GraphQL, modulos de IA integrados. Pode rodar local ou na nuvem.
 
 **Qdrant** — Open-source com API moderna. Ótimo filtro por metadados. Excelente documentação. Crescendo rapidamente em popularidade.`,
-        tableData:{headers:["Banco","Tipo","Melhor Para","Custo","Escala"],rows:[["ChromaDB","Local","Protótipos, aprendizado","Gratuito","Ate 100K docs"],["FAISS","Biblioteca","Performance maxima","Gratuito","Milhoes de docs"],["Pinecone","Nuvem","Produção sem DevOps","Freemium","Ilimitado"],["Weaviate","Híbrido","Busca hibrida avancada","Gratuito/Pago","Milhoes de docs"],["Qdrant","Híbrido","API moderna, filtros","Gratuito/Pago","Milhoes de docs"]]},
-        flowSteps:["Protótipo / aprendizado? → ChromaDB","Precisa de velocidade maxima? → FAISS","Nao quer gerenciar servidor? → Pinecone","Precisa de busca híbrida? → Weaviate","Quer API moderna e filtros? → Qdrant"],
+        tableData:{headers:["Banco","Tipo","Melhor Para","Custo","Escala"],rows:[["ChromaDB","Local","Protótipos, aprendizado","Gratuito","Ate 100K docs"],["FAISS","Biblioteca","Performance máxima","Gratuito","Milhoes de docs"],["Pinecone","Nuvem","Produção sem DevOps","Freemium","Ilimitado"],["Weaviate","Híbrido","Busca hibrida avancada","Gratuito/Pago","Milhoes de docs"],["Qdrant","Híbrido","API moderna, filtros","Gratuito/Pago","Milhoes de docs"]]},
+        flowSteps:["Protótipo / aprendizado? → ChromaDB","Precisa de velocidade máxima? → FAISS","Nao quer gerenciar servidor? → Pinecone","Precisa de busca híbrida? → Weaviate","Quer API moderna e filtros? → Qdrant"],
         tips:["Comece SEMPRE com ChromaDB. Migre quando necessário.","FAISS e ChromaDB rodam local - seus dados nunca saem do seu computador.","Pinecone é o mais fácil para ir de protótipo para produção."],
       },
       {
@@ -748,7 +991,7 @@ pedacos = chunkar(texto, tamanho=500, sobreposição=50)
 print(f"Documento dividido em {len(pedacos)} chunks")
 \`\`\``,
         flowSteps:["Documento completo (ex: 10.000 caracteres)","Definir chunk_size (ex: 500) e overlap (ex: 50)","Fatiar: chunk 1 = chars 0-500","chunk 2 = chars 450-950 (overlap de 50)","chunk 3 = chars 900-1400","Continuar até o final do documento"],
-        tips:["Comece com chunk_size=500 e overlap=50. Ajuste se as respostas não forem boas.","Para documentos técnicos densos, use chunks menores (200-300).","Para textos narrativos, use chunks maiores (800-1000).","Estrategias avançadas dividem por paragrafos ou seções em vez de caracteres fixos."],
+        tips:["Comece com chunk_size=500 e overlap=50. Ajuste se as respostas não forem boas.","Para documentos técnicos densos, use chunks menores (200-300).","Para textos narrativos, use chunks maiores (800-1000).","Estrategias avançadas dividem por parágrafos ou seções em vez de caracteres fixos."],
       },
       {
         title:"Fase 3: Criando Embeddings dos Chunks",subtitle:"Transformando texto em números pesquisáveis.",level:"intermediario",icon:"cpu",
@@ -911,7 +1154,7 @@ O prompt é a instrução que você da ao modelo. Um bom prompt:
 - Separa claramente contexto, pergunta e instruções.`,
         analogy:{tag:"Analogia do Chef",text:"O Aumento é como um **chef montando um prato**: ele pega os ingredientes (documentos recuperados), organiza na ordem certa, tempera com instruções e apresenta para o modelo gerar a melhor resposta."},
         flowSteps:["Documentos recuperados são ranqueados","Contexto é montado com os mais relevantes","System prompt é configurado com instruções","Pergunta do usuário é adicionada","Prompt completo é enviado ao LLM"],
-        tips:["Sempre instrua o modelo a basear a resposta APENAS no contexto fornecido.","Inclua uma instrução para o modelo admitir quando não encontra a resposta.","Separe contexto de diferentes fontes com marcadores claros (---, fonte, etc).","Teste diferentes templates de prompt - pequenas mudancas geram grandes melhorias."],
+        tips:["Sempre instrua o modelo a basear a resposta APENAS no contexto fornecido.","Inclua uma instrução para o modelo admitir quando não encontra a resposta.","Separe contexto de diferentes fontes com marcadores claros (---, fonte, etc).","Teste diferentes templates de prompt - pequenas mudanças geram grandes melhorias."],
       },
       {
         title:"Fase 7: Geração — A Resposta Final",subtitle:"Enviando para o modelo de linguagem e obtendo a resposta.",level:"intermediario",icon:"sparkles",
@@ -1810,7 +2053,7 @@ Não se preocupe com precisao - gere algo plausivel."""
     ],
   },
   {
-    id:"seguranca",title:"Seguranca e Boas Praticas",description:"Proteja seus dados e evite armadilhas comuns.",icon:"shield",
+    id:"seguranca",title:"Segurança e Boas Práticas",description:"Proteja seus dados e evite armadilhas comuns.",icon:"shield",
     cards:[
       {
         title:"Dados Entram, Respostas Saem: A Qualidade Importa",subtitle:"Lixo entra, lixo sai.",level:"iniciante",icon:"filter",
@@ -1844,7 +2087,7 @@ Não se preocupe com precisao - gere algo plausivel."""
 **2. Use temperature baixa (0.1 a 0.3):**
 Quanto menor a temperature, mais deterministico e factual o modelo.
 
-**3. Peca citacoes:**
+**3. Peca citações:**
 "Cite o trecho exato do documento que suporta sua resposta."
 
 **4. Implemente verificacao cruzada:**
@@ -1872,7 +2115,7 @@ Valide a resposta antes de entregar ao usuario (filtros de conteúdo, checagem d
 
 **Amarelo (Dados Internos):** Informações internas da organização que não são publicas. Precisam de controle de acesso. Exemplo: políticas internas, relatórios financeiros.
 
-**Vermelho (Dados Sensiveis/Pessoais):** Dados que identificam pessoas ou são sensíveis. Requerem consentimento e proteção especial. Exemplo: nomes, CPFs, dados de saude, informações financeiras pessoais.
+**Vermelho (Dados Sensiveis/Pessoais):** Dados que identificam pessoas ou são sensíveis. Requerem consentimento e proteção especial. Exemplo: nomes, CPFs, dados de saúde, informações financeiras pessoais.
 
 **Boas práticas para LGPD em RAG:**
 
@@ -1881,12 +2124,12 @@ Valide a resposta antes de entregar ao usuario (filtros de conteúdo, checagem d
 3. Registre quem acessou qual dado e quando (log de auditoria).
 4. Permita exclusão de dados a pedido do titular (direito ao esquecimento).
 5. Não envie dados sensíveis para APIs externas (use modelos locais).`,
-        elementGrid:[{icon:"check",label:"Verde",desc:"Dados publicos. Uso livre."},{icon:"alertTriangle",label:"Amarelo",desc:"Dados internos. Controle de acesso."},{icon:"lock",label:"Vermelho",desc:"Dados pessoais. Proteção maxima."}],
+        elementGrid:[{icon:"check",label:"Verde",desc:"Dados publicos. Uso livre."},{icon:"alertTriangle",label:"Amarelo",desc:"Dados internos. Controle de acesso."},{icon:"lock",label:"Vermelho",desc:"Dados pessoais. Proteção máxima."}],
         checklist:["Dados pessoais foram anonimizados antes da indexacao?","Controle de acesso implementado na base vetorial?","Logs de auditoria registram acessos?","Processo de exclusão de dados definido?","Dados sensíveis não são enviados para APIs externas?","Política de retenção de dados definida?"],
-        tips:["Na duvida, trate o dado como Vermelho (mais proteção).","Use Ollama (local) para processar dados sensíveis em vez de APIs externas.","Consulte um advogado especializado em LGPD para casos complexos."],
+        tips:["Na dúvida, trate o dado como Vermelho (mais proteção).","Use Ollama (local) para processar dados sensíveis em vez de APIs externas.","Consulte um advogado especializado em LGPD para casos complexos."],
       },
       {
-        title:"Seguranca da Infraestrutura",subtitle:"Proteja chaves, APIs e servidores.",level:"avancado",icon:"key",
+        title:"Segurança da Infraestrutura",subtitle:"Proteja chaves, APIs e servidores.",level:"avancado",icon:"key",
         content:`Alem dos dados, a infraestrutura do seu RAG precisa estar segura:
 
 **1. Chaves de API:**
@@ -1938,7 +2181,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 - Taxa de acerto acima de 80% em testes.
 - Respostas revisadas por especialistas do dominio.
 
-**Seguranca:**
+**Segurança:**
 - Chaves e segredos protegidos.
 - Controle de acesso configurado.
 - LGPD/compliance verificado.
@@ -1956,166 +2199,174 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     ],
   },
   {
-    id:"casos-uso",title:"Casos de Uso por Segmento",description:"Exemplos praticos de RAG em diferentes indústrias.",icon:"target",
+    id:"casos-uso",title:"RAG para Advocacia e Serviços",description:"Implementações práticas de RAG para escritórios de advocacia, contabilidade, consultoria e negócios de serviço — com prompts prontos.",icon:"target",
     cards:[
       {
-        title:"RAG para Escritorios de Advocacia",subtitle:"Pesquisa jurídica em segundos.",level:"iniciante",icon:"fileText",
-        content:`Escritorios de advocacia lidam com milhares de documentos: leis, jurisprudência, contratos, pareceres. RAG transforma a pesquisa jurídica:
+        title:"RAG para Escritórios de Advocacia",subtitle:"Pesquisa jurídica, contratos e petições com IA.",level:"iniciante",icon:"fileText",
+        analogy:{tag:"Analogia do Dia a Dia",text:"Imagine que você tem um **estagiário incansável** que leu TODAS as leis, TODOS os processos e TODOS os contratos do seu escritório — e consegue encontrar qualquer informação em 5 segundos. Esse estagiário nunca dorme, nunca erra a referência e sempre mostra exatamente onde encontrou a informação. **Isso é RAG para advocacia.**"},
+        content:`Escritórios de advocacia lidam com milhares de documentos: leis, jurisprudência, contratos, pareceres. RAG transforma a pesquisa jurídica de horas para segundos.
 
-**Problema:** Um advogado gasta em média 4 horas pesquisando jurisprudência para cada caso. Com centenas de casos por ano, são milhares de horas desperdicadas.
+**Casos de uso específicos para advocacia:**
 
-**Solucao RAG:** Indexe toda a legislação, jurisprudência e documentos internos. O advogado pergunta em linguagem natural e recebe respostas fundamentadas com citacoes.
+- **Pesquisa de jurisprudência:** Encontre decisões judiciais relevantes em segundos, em vez de horas no JusBrasil.
+- **Análise de contratos:** O RAG lê contratos inteiros e destaca cláusulas de risco, prazos e obrigações.
+- **Geração de petições iniciais:** Com base em modelos anteriores do escritório, o RAG sugere estrutura e fundamentação.
+- **Due diligence:** Analise centenas de documentos de uma empresa em minutos, não semanas.
+- **Consulta de legislação:** Pergunte em português simples e receba artigos de lei com citações completas.
 
-**Exemplo de prompt configurado:**
+**Cole este prompt no Lovable para criar seu assistente jurídico em 5 minutos:**
 
-\`\`\`python
-prompt_juridico = """Você é um assistente jurídico especializado.
-Responda APENAS com base nos documentos fornecidos.
-Cite artigos de lei, números de processos e páginas dos documentos.
-Se não encontrar a informação, diga claramente.
-
-DOCUMENTOS:
-{contexto}
-
-PERGUNTA DO ADVOGADO: {pergunta}
-
-RESPOSTA (com citacoes):"""
+\`\`\`
+Crie um aplicativo de assistente jurídico para um escritório de advocacia.
+O app deve ter: tema escuro profissional, campo de busca para o advogado
+digitar perguntas em linguagem natural, área de resposta com citações de
+artigos de lei e jurisprudência, botão para copiar a resposta, e histórico
+de consultas anteriores. Use Supabase para banco de dados. Interface toda
+em português brasileiro. Inclua um campo para upload de PDFs de leis e
+contratos. O sistema deve responder APENAS com base nos documentos enviados.
 \`\`\`
 
-**Fontes de dados sugeridas:** Diarios Oficiais, JusBrasil (jurisprudência), Vade Mecum digital, contratos e pareceres internos do escritorio.`,
-        elementGrid:[{icon:"fileText",label:"Petições",desc:"Busca em milhares de petições e pareceres anteriores"},{icon:"search",label:"Jurisprudência",desc:"Encontra decisões judiciais relevantes em segundos"},{icon:"shield",label:"Compliance",desc:"Verifica conformidade com legislação atualizada"},{icon:"clock",label:"Economia",desc:"Reduz horas de pesquisa de dias para minutos"}],
+**Checklist: Antes de implementar RAG no seu escritório:**
+
+- Organize seus documentos por área (cível, trabalhista, tributário, penal).
+- Remova senhas de PDFs protegidos.
+- Separe modelos de petições que funcionaram bem.
+- Liste as perguntas mais frequentes dos advogados do escritório.
+- Defina quem terá acesso ao sistema (sócios, associados, estagiários).
+
+**Problema comum resolvido:** Um advogado gasta em média 4 horas pesquisando jurisprudência para cada caso. Com centenas de casos por ano, são milhares de horas desperdiçadas.
+
+**Solução RAG:** Indexe toda a legislação, jurisprudência e documentos internos. O advogado pergunta em linguagem natural e recebe respostas fundamentadas com citações.
+
+**Fontes de dados sugeridas:** Diários Oficiais, JusBrasil (jurisprudência), Vade Mecum digital, contratos e pareceres internos do escritório.`,
+        elementGrid:[{icon:"fileText",label:"Petições",desc:"Busca em milhares de petições e pareceres anteriores"},{icon:"search",label:"Jurisprudência",desc:"Encontra decisões judiciais relevantes em segundos"},{icon:"shield",label:"Contratos",desc:"Analisa cláusulas de risco e prazos automaticamente"},{icon:"target",label:"Due Diligence",desc:"Analisa centenas de documentos em minutos"}],
         flowSteps:["Advogado faz pergunta em linguagem natural","RAG busca na base de documentos jurídicos","Recupera trechos de leis e jurisprudência","Monta contexto com citações e referências","Gera resposta fundamentada com fontes"],
-        tips:["Dados juridicos mudam constantemente - automatize a atualização da base.","Sempre exija citacoes de artigos e processos nas respostas.","RAG jurídico nunca substitui o advogado - ele auxilia na pesquisa."],
+        checklist:["Documentos organizados por área do direito?","PDFs sem senha e legíveis?","Modelos de petições bem-sucedidas separados?","Lista de perguntas frequentes dos advogados?","Política de acesso definida (quem pode usar)?","Backup dos documentos originais?"],
+        tips:["Comece com uma área só (ex: trabalhista) e expanda depois.","Sempre exija citações de artigos e processos nas respostas.","RAG jurídico nunca substitui o advogado — ele acelera a pesquisa em 90%.","Use o prompt acima no Lovable para ter um protótipo em 5 minutos."],
       },
       {
-        title:"RAG para Saúde e Medicina",subtitle:"Protocolos médicos na ponta dos dedos.",level:"iniciante",icon:"heart",
-        content:`Na area da saude, informação precisa e atualizada pode salvar vidas. RAG ajuda profissionais de saúde a consultar protocolos rapidamente:
+        title:"RAG para Escritórios de Contabilidade",subtitle:"Legislação tributária e normas contábeis sempre atualizadas.",level:"iniciante",icon:"barChart",
+        analogy:{tag:"Analogia do Dia a Dia",text:"Imagine ter um **contador auxiliar** que decorou TODA a legislação tributária brasileira — ICMS, ISS, PIS/Cofins, Simples Nacional — e consegue responder qualquer dúvida em segundos, sempre citando o artigo exato da lei. **Isso é RAG para contabilidade.**"},
+        content:`Escritórios de contabilidade lidam com legislação que muda constantemente. RAG mantém seu conhecimento sempre atualizado:
 
-**Casos de uso:**
+**Casos de uso específicos para contabilidade:**
 
-- Consulta de bulas e interações medicamentosas.
-- Protocolos de tratamento atualizados.
-- Diretrizes clínicas por especialidade.
-- Consulta rápida em prontuários eletrônicos.
+- **Consulta de legislação tributária:** Pergunte sobre ICMS, ISS, PIS/Cofins e receba respostas com artigos citados.
+- **Normas contábeis (CPC/IFRS):** Consulte normas e interpretações técnicas instantaneamente.
+- **Gestão de documentos de clientes:** Organize e consulte contratos sociais, balanços e declarações.
+- **Obrigações acessórias:** Calendário de obrigações com alertas automáticos.
+- **Consultoria tributária:** Responda dúvidas de clientes com fundamentação legal em minutos.
 
-**Exemplo de prompt médico:**
+**Prompt pronto para Google AI Studio:**
 
-\`\`\`python
-prompt_medico = """Você é um assistente médico de apoio a decisão clínica.
-Responda APENAS com base nos protocolos e diretrizes fornecidos.
-Sempre mencione o nível de evidência é a fonte.
-NUNCA recomende tratamentos que não estejam nos documentos.
-Em caso de duvida, recomende consultar o especialista.
-
-PROTOCOLOS E DIRETRIZES:
-{contexto}
-
-CONSULTA DO PROFISSIONAL: {pergunta}
-
-ORIENTACAO (com nível de evidencia):"""
+\`\`\`
+Crie um assistente tributário para um escritório de contabilidade.
+Ele deve consultar a legislação tributária brasileira (ICMS, ISS, IRPJ,
+CSLL, PIS/Cofins, Simples Nacional) e responder perguntas dos contadores
+em linguagem simples. Sempre cite o artigo de lei, decreto ou instrução
+normativa. Se não encontrar a informação nos documentos, diga claramente.
+Inclua um campo para upload de documentos PDF com novas legislações.
+Interface em português brasileiro, tema claro e profissional.
 \`\`\`
 
-**IMPORTANTE:** RAG médico é uma ferramenta de APOIO. A decisão final é sempre do profissional de saude. Erros em saúde podem custar vidas.`,
-        elementGrid:[{icon:"fileText",label:"Protocolos",desc:"Acesso instantâneo a protocolos clínicos atualizados"},{icon:"shield",label:"Bulas",desc:"Consulta interações medicamentosas"},{icon:"brain",label:"Diagnóstico",desc:"Suporte à decisão clínica baseada em evidências"},{icon:"database",label:"Prontuários",desc:"Busca inteligente no histórico do paciente"}],
-        flowSteps:["Médico consulta sobre caso clínico","RAG busca em protocolos e literatura","Recupera evidências e guidelines relevantes","Apresenta opções com nível de evidência","Médico toma decisão informada"],
-        tips:["Use APENAS fontes confiáveis: Anvisa, OMS, sociedades médicas.","Implemente revisão obrigatória por médico antes de confiar em respostas.","Dados de pacientes são Vermelho (LGPD) - proteção maxima obrigatória."],
+**Fontes de dados sugeridas:** Receita Federal, Diários Oficiais, Portal do Simples Nacional, normas CPC/CFC, regulamentos estaduais de ICMS.`,
+        elementGrid:[{icon:"barChart",label:"Relatórios",desc:"Consulta instantânea em relatórios e balanços"},{icon:"shield",label:"Compliance",desc:"Verifica conformidade com normas contábeis"},{icon:"fileText",label:"Legislação",desc:"Acesso à legislação tributária atualizada"},{icon:"target",label:"Obrigações",desc:"Calendário de obrigações acessórias"}],
+        flowSteps:["Contador faz consulta sobre norma tributária","RAG busca na legislação e normas contábeis","Recupera artigos, instruções normativas e pareceres","Compara com atualizações recentes","Gera parecer fundamentado com referências"],
+        tips:["Atualize a base tributária semanalmente ou sempre que houver mudança legislativa.","Inclua a data de vigência de cada norma nos metadados.","Sempre cite artigos e parágrafos específicos nas respostas.","Use o prompt acima no Google AI Studio com documentos do seu escritório."],
       },
       {
-        title:"RAG para Educacao e Treinamento",subtitle:"Tutores virtuais baseados no material do curso.",level:"iniciante",icon:"bookOpen",
-        content:`RAG pode criar tutores virtuais que respondem perguntas dos alunos baseados no material oficial do curso:
+        title:"RAG para Consultoria e Gestão",subtitle:"Análises de mercado e relatórios de gestão com IA.",level:"iniciante",icon:"compass",
+        analogy:{tag:"Analogia do Dia a Dia",text:"Imagine um **analista júnior super-rápido** que leu todos os relatórios de gestão, pesquisas de mercado e cases de sucesso da sua consultoria — e consegue cruzar informações de diferentes projetos em segundos. **Isso é RAG para consultoria.**"},
+        content:`Consultorias de gestão e negócios trabalham com grandes volumes de relatórios, pesquisas e análises. RAG acelera drasticamente o trabalho:
 
-**Vantagens:**
+**Casos de uso específicos para consultoria:**
 
-- Alunos tem suporte 24 horas, 7 dias por semana.
-- Respostas são baseadas no material do curso (nao em informações genericas).
-- Professores recebem relatórios sobre duvidas mais frequentes.
-- Escalabilidade: um tutor para milhares de alunos.
+- **Pesquisa de mercado:** Consulte relatórios de mercado e tendências setoriais instantaneamente.
+- **Análise de concorrência:** Compare dados de diferentes fontes sobre concorrentes.
+- **Cases de sucesso:** Encontre projetos anteriores similares ao novo cliente.
+- **Frameworks de gestão:** Consulte metodologias (OKR, BSC, Porter, SWOT) com exemplos práticos.
+- **Propostas comerciais:** Gere propostas baseadas em projetos anteriores bem-sucedidos.
 
-**Exemplo de prompt educacional:**
+**Prompt pronto para vibe coding:**
 
-\`\`\`python
-prompt_tutor = """Você é um tutor paciente e encorajador.
-Responda com base APENAS no material didatico fornecido.
-Use linguagem simples e exemplos do dia a dia.
-Se a resposta não estiver no material, diga:
-"Essa pergunta vai além do material do curso. Consulte seu professor."
-
-MATERIAL DO CURSO:
-{contexto}
-
-DUVIDA DO ALUNO: {pergunta}
-
-EXPLICACAO (simples e encorajadora):"""
-\`\`\``,
-        elementGrid:[{icon:"bookOpen",label:"Material Didático",desc:"Base de conhecimento com todo o conteúdo do curso"},{icon:"target",label:"Personalização",desc:"Respostas adaptadas ao nível do aluno"},{icon:"zap",label:"Instantâneo",desc:"Respostas imediatas 24/7 sem esperar o professor"},{icon:"layers",label:"Multiformat",desc:"Suporte a PDFs, vídeos transcritos e slides"}],
-        flowSteps:["Aluno faz pergunta sobre o conteúdo","RAG busca no material didático do curso","Recupera trechos relevantes das aulas","Gera explicação adaptada ao nível","Indica material complementar para estudo"],
-        tips:["Indexe apostilas, slides, videoaulas transcritas e exercicios resolvidos.","O tom encorajador é importante para manter o aluno motivado.","Use os relatórios de duvidas frequentes para melhorar o material didatico."],
-      },
-      {
-        title:"RAG para Atendimento ao Cliente",subtitle:"Suporte rápido e preciso com base na documentação.",level:"iniciante",icon:"users",
-        content:`Chatbots de suporte com RAG respondem perguntas usando a base de conhecimento oficial da empresa:
-
-**Beneficios:**
-
-- Respostas consistentes (todos recebem a mesma informação).
-- Tempo de resposta de segundos (vs minutos/horas de um humano).
-- Disponibilidade 24/7.
-- Reduzao de 40-60% no volume de tickets para agentes humanos.
-
-**Exemplo de prompt de suporte:**
-
-\`\`\`python
-prompt_suporte = """Você é o assistente virtual da empresa.
-Responda usando APENAS a documentação oficial fornecida.
-Seja cordial, objetivo e prático.
-Se não souber, diga: "Vou transferir para um atendente humano."
-Nunca invente procedimentos ou políticas.
-
-DOCUMENTACAO:
-{contexto}
-
-PERGUNTA DO CLIENTE: {pergunta}
-
-RESPOSTA:"""
+\`\`\`
+Crie um aplicativo de base de conhecimento para uma consultoria de gestão.
+O app deve permitir upload de relatórios em PDF, busca por palavras-chave
+e por significado (busca semântica), e gerar resumos executivos de
+documentos longos. Inclua categorias: Pesquisa de Mercado, Análise de
+Concorrência, Cases de Sucesso, Metodologias. Interface profissional em
+português brasileiro, com opção de exportar respostas em PDF.
 \`\`\`
 
-**Fontes de dados:** FAQ, manual do produto, políticas de devolução/garantia, procedimentos de suporte, tutoriais.`,
-        elementGrid:[{icon:"messageCircle",label:"FAQ Inteligente",desc:"Respostas baseadas na base de conhecimento oficial"},{icon:"clock",label:"24/7",desc:"Atendimento contínuo sem fila de espera"},{icon:"target",label:"Precisão",desc:"Respostas corretas em vez de genéricas"},{icon:"zap",label:"Escala",desc:"Atende centenas de clientes simultaneamente"}],
-        flowSteps:["Cliente envia pergunta no chat","RAG busca na base de conhecimento da empresa","Recupera políticas, manuais e FAQs relevantes","Gera resposta personalizada com tom da marca","Escala para humano se confiança for baixa"],
-        tips:["Tenha sempre um fallback para atendente humano.","Monitore respostas incorretas e atualize a base de conhecimento.","Inclua informações sobre status de pedidos, prazos de entrega, etc."],
+**Fontes de dados sugeridas:** Relatórios setoriais, pesquisas de mercado, cases internos, frameworks de gestão, propostas comerciais anteriores.`,
+        elementGrid:[{icon:"compass",label:"Mercado",desc:"Pesquisa de mercado e tendências setoriais"},{icon:"users",label:"Concorrência",desc:"Análise comparativa de concorrentes"},{icon:"star",label:"Cases",desc:"Base de projetos anteriores e lições aprendidas"},{icon:"target",label:"Propostas",desc:"Geração de propostas baseadas em histórico"}],
+        flowSteps:["Consultor faz pergunta sobre mercado ou metodologia","RAG busca em relatórios e cases internos","Recupera dados de diferentes fontes e projetos","Cruza informações e identifica padrões","Gera análise fundamentada com referências"],
+        tips:["Organize cases por setor, tamanho de empresa e tipo de projeto.","Inclua as lições aprendidas de cada projeto na base.","Use tags (metadados) para filtrar por indústria, região e tipo de análise.","Consultorias que usam RAG entregam propostas 3x mais rápido."],
       },
       {
-        title:"RAG para Finanças e Contabilidade",subtitle:"Legislação tributária e relatórios sempre atualizados.",level:"intermediario",icon:"barChart",
-        content:`O setor financeiro lida com legislação que muda constantemente e normas complexas. RAG é ideal para consultas rápidas:
+        title:"RAG para Atendimento ao Cliente em Serviços",subtitle:"Intake de clientes, agendamento e FAQ automatizados.",level:"iniciante",icon:"users",
+        analogy:{tag:"Analogia do Dia a Dia",text:"Imagine uma **recepcionista que nunca sai de férias**, conhece todos os serviços do escritório, todas as políticas de preço, e consegue responder as dúvidas mais comuns dos clientes em qualquer horário. **Isso é RAG para atendimento ao cliente.**"},
+        content:`Para escritórios de advocacia, contabilidade, clínicas e consultorias, o atendimento ao cliente pode ser transformado com RAG:
 
-**Casos de uso:**
+**Casos de uso por tipo de negócio:**
 
-- Consulta de legislação tributária (ICMS, ISS, PIS/Cofins).
-- Normas contábeis (CPC, IFRS).
-- Relatórios financeiros e balancetes.
-- Compliance e auditoria.
+- **Escritório de advocacia:** Triagem de novos clientes (intake), perguntas sobre andamento de processos, informações sobre honorários e prazos.
+- **Escritório de contabilidade:** Onboarding de novos clientes, dúvidas sobre documentação necessária, calendário de obrigações.
+- **Clínica ou consultório:** Agendamento inteligente, perguntas sobre convênios aceitos, preparação para exames.
+- **Consultoria:** Informações sobre serviços oferecidos, cases de sucesso, processo de contratação.
 
-**Exemplo de prompt financeiro:**
+**Prompt pronto para Lovable:**
 
-\`\`\`python
-prompt_financeiro = """Você é um assistente contábil/tributário.
-Responda APENAS com base na legislação e normas fornecidas.
-Cite artigos, incisos e paragrafos quando relevante.
-Mencione a data de vigência da norma citada.
-Se houver duvida, recomende consultar o contador responsável.
-
-LEGISLACAO E NORMAS:
-{contexto}
-
-CONSULTA: {pergunta}
-
-PARECER (com citacoes legais):"""
+\`\`\`
+Crie um chatbot de atendimento ao cliente para um escritório de advocacia.
+O chatbot deve: responder perguntas frequentes sobre serviços e áreas de
+atuação, coletar informações iniciais de novos clientes (nome, tipo de
+caso, urgência), informar sobre documentos necessários, e encaminhar
+para um advogado humano quando a pergunta for complexa. Use Supabase
+para salvar os dados dos clientes. Interface amigável em português,
+com tema profissional. Inclua a mensagem "Vou encaminhar para um
+advogado" quando não souber responder.
 \`\`\`
 
-**IMPORTANTE:** Legislação tributária muda frequentemente. Configure atualização automática da base no minimo semanalmente.`,
-        elementGrid:[{icon:"barChart",label:"Relatórios",desc:"Consulta instantânea em relatórios financeiros"},{icon:"shield",label:"Compliance",desc:"Verifica normas contábeis e tributárias"},{icon:"fileText",label:"Legislação",desc:"Acesso à legislação tributária atualizada"},{icon:"target",label:"Auditoria",desc:"Suporte na verificação de conformidade"}],
-        flowSteps:["Contador faz consulta sobre norma tributária","RAG busca na legislação e normas contábeis","Recupera artigos, instruções e pareceres","Compara com atualizações recentes","Gera parecer fundamentado com referências"],
-        tips:["Atualize a base tributária semanalmente ou sempre que houver mudanca legislativa.","Inclua a data de vigência de cada norma nos metadados.","Sempre cite artigos e paragrafos específicos nas respostas."],
+**Benefícios medidos em escritórios reais:**
+
+- Redução de 40-60% no volume de ligações para a recepção.
+- Atendimento 24 horas, 7 dias por semana.
+- Triagem automática de novos clientes (prioriza casos urgentes).
+- Respostas consistentes (todos recebem a mesma informação).`,
+        elementGrid:[{icon:"messageSquare",label:"FAQ Inteligente",desc:"Respostas baseadas na base de conhecimento oficial"},{icon:"refresh",label:"24/7",desc:"Atendimento contínuo sem fila de espera"},{icon:"target",label:"Intake",desc:"Triagem automática de novos clientes"},{icon:"zap",label:"Escala",desc:"Atende centenas de clientes simultaneamente"}],
+        flowSteps:["Cliente envia pergunta no chat do site","RAG busca na base de conhecimento do escritório","Recupera políticas, serviços e FAQs relevantes","Gera resposta personalizada com tom profissional","Escala para humano se confiança for baixa"],
+        tips:["Tenha sempre um fallback para atendente humano — nunca deixe o cliente sem saída.","Monitore as perguntas sem resposta para melhorar a base.","Inclua informações de preço, prazo e documentação necessária.","Use o prompt acima no Lovable para ter um chatbot em 10 minutos."],
+      },
+      {
+        title:"RAG para Corretores e Imobiliárias",subtitle:"Imóveis, contratos e dados de bairros na ponta dos dedos.",level:"iniciante",icon:"globe",
+        analogy:{tag:"Analogia do Dia a Dia",text:"Imagine um **corretor assistente** que conhece TODOS os imóveis da sua carteira, TODOS os contratos, TODOS os dados de cada bairro — e consegue responder qualquer pergunta de um cliente em segundos, 24 horas por dia. **Isso é RAG para imobiliárias.**"},
+        content:`Corretores e imobiliárias trabalham com grande volume de informações: listagens de imóveis, contratos, dados de bairros, legislação imobiliária. RAG organiza tudo isso:
+
+**Casos de uso específicos para imobiliárias:**
+
+- **Busca de imóveis:** Cliente descreve o que quer e o RAG encontra os imóveis mais compatíveis.
+- **Contratos e modelos:** Acesso instantâneo a modelos de contrato de compra, venda, aluguel.
+- **Dados de bairros:** Informações sobre infraestrutura, segurança, valorização, escolas, transporte.
+- **Legislação imobiliária:** Consulta sobre ITBI, registro, usucapião, direito de vizinhança.
+- **Matching cliente-imóvel:** Cruzamento inteligente entre perfil do cliente e imóveis disponíveis.
+
+**Prompt pronto para vibe coding:**
+
+\`\`\`
+Crie um aplicativo para uma imobiliária que permita: cadastrar imóveis
+com fotos, preço, localização e características; busca inteligente onde
+o cliente descreve o que quer em linguagem natural (ex: "apartamento de
+2 quartos perto do metrô até 500 mil"); comparação lado a lado de
+imóveis; e informações sobre o bairro (escolas, transporte, segurança).
+Use Supabase para banco de dados. Interface moderna em português
+brasileiro com filtros visuais.
+\`\`\`
+
+**Fontes de dados sugeridas:** Listagens de imóveis (CSV/Excel), contratos-modelo, dados do IBGE, prefeitura, cartórios de registro.`,
+        elementGrid:[{icon:"globe",label:"Imóveis",desc:"Busca inteligente por descrição em linguagem natural"},{icon:"fileText",label:"Contratos",desc:"Modelos de contrato prontos para cada situação"},{icon:"compass",label:"Bairros",desc:"Dados de infraestrutura, segurança e valorização"},{icon:"users",label:"Matching",desc:"Cruzamento automático cliente-imóvel"}],
+        flowSteps:["Cliente descreve o imóvel desejado","RAG busca na carteira de imóveis","Encontra imóveis compatíveis com o perfil","Apresenta comparativo com dados do bairro","Corretor fecha o negócio com informação completa"],
+        tips:["Mantenha a base de imóveis sempre atualizada — remova vendidos/alugados.","Inclua fotos e plantas nos dados do imóvel para referência.","Dados de bairro ajudam muito na decisão do cliente.","Use o prompt acima para ter um protótipo funcional em minutos."],
       },
     ],
   },
@@ -2446,7 +2697,7 @@ Responda as perguntas na ordem. A primeira resposta "SIM" indica sua arquitetura
         content:`Antes de escrever código, planeje seu projeto respondendo estas perguntas:
 
 **1. Qual problema você esta resolvendo?**
-Defina claramente: "Quero que meus advogados encontrem jurisprudência em segundos" ou "Quero que alunos tirem duvidas sobre o material do curso 24h."
+Defina claramente: "Quero que meus advogados encontrem jurisprudência em segundos" ou "Quero que alunos tirem dúvidas sobre o material do curso 24h."
 
 **2. Quais são suas fontes de dados?**
 Liste todos os documentos que farao parte da base: PDFs, TXTs, páginas web, APIs.
@@ -2616,7 +2867,7 @@ print(f"\\nTaxa de acerto: {acertos}/{len(testes)} = {acertos/len(testes)*100:.1
 \`\`\``,
         checklist:["Conjunto de teste com 30+ perguntas criado?","Respostas esperadas definidas para cada pergunta?","Testes executados e taxa de acerto calculada?","Taxa de acerto acima de 80%?","Respostas com alucinação identificadas e corrigidas?","Latência média aceitavel (menos de 5 segundos)?","Testes com perguntas fora do escopo (o sistema recusa corretamente)?"],
         flowSteps:["Preparar conjunto de perguntas de teste","Executar queries e coletar respostas","Avaliar relevância dos documentos recuperados","Medir qualidade das respostas geradas","Identificar pontos de melhoria","Ajustar parâmetros e re-testar"],
-        tips:["Uma taxa de acerto de 85%+ é considerada boa para a maioria dos casos.","Inclua perguntas que o sistema NAO deveria saber responder (testar recusa).","Repita os testes após cada mudanca significativa na base ou configuração."],
+        tips:["Uma taxa de acerto de 85%+ é considerada boa para a maioria dos casos.","Inclua perguntas que o sistema NAO deveria saber responder (testar recusa).","Repita os testes após cada mudança significativa na base ou configuração."],
       },
       {
         title:"Evoluindo: Próximos Passos",subtitle:"Para onde ir depois do RAG básico.",level:"expert",icon:"rocket",
@@ -2895,7 +3146,7 @@ function App(){
           <h1 style={{fontSize:"clamp(28px, 6vw, 48px)",fontWeight:800,fontFamily:"'Sora', sans-serif",lineHeight:1.15,marginBottom:16,background:`linear-gradient(135deg, ${t.fgPrimary}, ${t.fgAccent})`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>Academia RAG</h1>
           <p style={{fontSize:"clamp(14px, 2.5vw, 18px)",color:t.fgSecondary,maxWidth:560,margin:"0 auto 28px",lineHeight:1.6}}>Domine <strong style={{color:t.fgAccent}}>Retrieval-Augmented Generation</strong> do zero ao avançado. Explicado para qualquer pessoa, com analogias do dia a dia e código Python funcional.</p>
           <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:16,marginBottom:32}}>
-            {[{n:"12",l:"Seções"},{n:"70+",l:"Tutoriais"},{n:"Prontos",l:"Prompts"},{n:"4",l:"Níveis"}].map((m,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,fontFamily:"'Sora', sans-serif",color:t.fgAccent}}>{m.n}</div><div style={{fontSize:11,fontFamily:"'JetBrains Mono', monospace",color:t.fgMuted,textTransform:"uppercase"}}>{m.l}</div></div>))}
+            {[{n:"13",l:"Seções"},{n:"76",l:"Tutoriais"},{n:"Prontos",l:"Prompts"},{n:"4",l:"Níveis"}].map((m,i)=>(<div key={i} style={{textAlign:"center"}}><div style={{fontSize:22,fontWeight:700,fontFamily:"'Sora', sans-serif",color:t.fgAccent}}>{m.n}</div><div style={{fontSize:11,fontFamily:"'JetBrains Mono', monospace",color:t.fgMuted,textTransform:"uppercase"}}>{m.l}</div></div>))}
           </div>
           <button onClick={()=>setShowHero(false)} style={{padding:"14px 36px",borderRadius:12,border:"none",cursor:"pointer",background:`linear-gradient(135deg, ${t.bgAccent}, ${t.bgAccentHover})`,color:t.fgOnAccent,fontSize:15,fontWeight:700,fontFamily:"'Sora', sans-serif",boxShadow:"0 0 30px rgba(226,192,116,0.2)",transition:"transform 0.2s, box-shadow 0.2s"}} onMouseEnter={e=>{e.target.style.transform="translateY(-2px)";e.target.style.boxShadow="0 0 40px rgba(226,192,116,0.3)"}} onMouseLeave={e=>{e.target.style.transform="translateY(0)";e.target.style.boxShadow="0 0 30px rgba(226,192,116,0.2)"}}>Começar o Guia</button>
         </div>
