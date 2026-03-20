@@ -951,7 +951,7 @@ def gerar_resposta_local(prompt):
 - **0.8 a 1.0**: Mais criativo, menos previsível. Evite para RAG.`,
         analogy:{tag:"Analogia do Apresentador",text:"A geração é como um **apresentador de telejornal**: ele recebe as informações dos repórteres (documentos), organiza em uma narrativa coerente e apresenta de forma clara. O LLM sintetiza o contexto em uma resposta natural."},
         flowSteps:["Prompt completo chega ao LLM","LLM analisa contexto e pergunta","Gera resposta baseada nos documentos","Resposta é formatada e retornada","Opcionalmente: citações são adicionadas"],
-        tips:["Use temperature baixa (0.1 a 0.3) para RAG - você quer fatos, não criatividade.","Ollama permite rodar modelos gratuitamente no seu computador.","gpt-4o-mini é o modelo mais custo-efetivo da OpenAI para RAG.","Sempre valide respostas criticas - RAG reduz, mas não elimina alucinações."],
+        tips:["Use temperature baixa (0.1 a 0.3) para RAG - você quer fatos, não criatividade.","Ollama permite rodar modelos gratuitamente no seu computador.","gpt-4o-mini continua disponível e é custo-efetivo; para máxima qualidade, use gpt-5.4 ou Claude Sonnet 4.","Sempre valide respostas criticas - RAG reduz, mas não elimina alucinações."],
       },
       {
         title:"Pipeline Completo: Do Zero a Resposta",subtitle:"Todo o código junto, pronto para usar.",level:"avancado",icon:"code",
@@ -1094,7 +1094,7 @@ def reescrever_pergunta(pergunta, historico, client_llm):
 \`\`\``,
         flowSteps:["Usuario faz pergunta com pronome ('ele', 'isso', 'la')","Sistema consulta histórico de conversa","LLM reescreve pergunta incluindo contexto","Pergunta reescrita é usada para busca vetorial","Resposta inclui referência correta do histórico"],
         analogy:{tag:"Analogia do Caderno de Notas",text:"A memória do RAG funciona como um **caderno de anotações**: a cada conversa, o sistema anota os pontos importantes. Na próxima interação, ele consulta o caderno antes de responder."},
-        tips:["Guarde apenas as últimas 4-6 mensagens no histórico para não estourar o contexto.","A reescrita de pergunta é o passo mais importante da memória.","Modelos pequenos (gpt-4o-mini) são suficientes para reescrita de perguntas."],
+        tips:["Guarde apenas as últimas 4-6 mensagens no histórico para não estourar o contexto.","A reescrita de pergunta é o passo mais importante da memória.","Modelos rápidos (gpt-4o-mini, Claude Haiku 4, Gemini 2.5 Flash) são suficientes para reescrita de perguntas."],
       },
       {
         title:"Redis: O Caderno de Anotações Rápido",subtitle:"Armazenamento de memória de alta velocidade.",level:"intermediario",icon:"server",
@@ -2098,141 +2098,244 @@ PARECER (com citacoes legais):"""
     ],
   },
   {
-    id:"vibe-coding",title:"RAG via Vibe Coding",description:"Implemente RAG sem escrever código — usando plataformas visuais full-stack.",icon:"sparkles",
+    id:"vibe-coding",title:"RAG via Vibe Coding",description:"Implemente RAG sem escrever código — usando plataformas visuais e agentes de IA full-stack.",icon:"sparkles",
     cards:[
       {
-        title:"O que é Vibe Coding?",subtitle:"Construa apps descrevendo o que você quer em linguagem natural.",level:"iniciante",icon:"lightbulb",
-        analogy:{tag:"Analogia do Restaurante",text:"Imagine a diferença entre **cozinhar em casa** e **pedir num restaurante**. Na cozinha, você compra ingredientes, segue receitas, lava louça. No restaurante, você **descreve o que quer** e recebe o prato pronto. **Vibe Coding** é como pedir no restaurante: você descreve seu app em linguagem natural e a plataforma constrói para você. Não precisa saber cozinhar (programar)."},
-        content:`**Vibe Coding** é uma abordagem revolucionária de desenvolvimento de software onde você constrói aplicações **descrevendo o que quer em linguagem natural**, sem escrever código manualmente.
+        title:"O que é Vibe Coding?",subtitle:"Construa apps inteiros descrevendo o que você quer em português.",level:"iniciante",icon:"lightbulb",
+        analogy:{tag:"Analogia do Restaurante",text:"Imagine a diferença entre **cozinhar em casa** e **pedir num restaurante**. Na cozinha, você compra ingredientes, segue receitas, lava louça. No restaurante, você **descreve o que quer** e recebe o prato pronto. **Vibe Coding** é como pedir no restaurante: você descreve seu app em linguagem natural e a plataforma constrói para você. Não precisa saber cozinhar (programar). E em março de 2026, os **chefs de IA** (Claude 4, GPT-5.4, Gemini 2.5) são tão bons que entregam pratos dignos de estrela Michelin."},
+        content:`**Vibe Coding** é a revolução de 2025-2026 no desenvolvimento de software. Você descreve o que quer em **linguagem natural** — em português mesmo — e a IA gera todo o código automaticamente: frontend, backend, banco de dados, API e deploy.
 
-**Como funciona?**
+**Por que isso mudou tudo em 2026?**
 
-Plataformas de vibe coding usam modelos de IA avançados para interpretar sua descrição e gerar automaticamente todo o código necessário: frontend, backend, banco de dados, API e deploy.
+Os modelos de IA atuais (Claude Opus 4, GPT-5.4, Gemini 2.5 Pro) são capazes de gerar aplicações completas e funcionais. Não estamos falando de protótipos toscos — são apps **production-ready** com autenticação, banco de dados, API REST e deploy automático.
 
-**Por que isso é importante para RAG?**
+**Por que isso é revolucionário para RAG?**
 
-Construir um sistema RAG tradicionalmente exige conhecimento de Python, embeddings, bancos vetoriais, APIs de LLM e deployment. Com vibe coding, você pode ter um RAG funcional em **minutos, não dias**.
+Construir um sistema RAG tradicionalmente exige conhecimento de Python, embeddings, bancos vetoriais, APIs de LLM e deployment. Com vibe coding, você pode ter um RAG funcional em **minutos, não dias**. E o melhor: você pode iterar conversando com a IA — "agora adicione memória de conversa", "troque para busca híbrida", "adicione avaliação CRAG".
 
-**Principais plataformas para RAG:**
+**Principais plataformas para RAG em 2026:**
 
-- **Lovable** — Gera apps React completos com backend integrado.
-- **Google AI Studio** — Plataforma full-stack do Google com Gemini integrado.
-- **Bolt.new** — Ambiente StackBlitz com IA para gerar projetos completos.
-- **v0 (Vercel)** — Gera componentes e apps React com design profissional.
-- **Replit Agent** — Agente de IA que constrói projetos inteiros no Replit.`,
-        elementGrid:[{icon:"sparkles",label:"Lovable",desc:"Apps React + backend em minutos"},{icon:"brain",label:"Google AI Studio",desc:"Full-stack com Gemini integrado"},{icon:"zap",label:"Bolt.new",desc:"Projetos completos no navegador"},{icon:"code",label:"v0 (Vercel)",desc:"UI e apps com design profissional"},{icon:"bot",label:"Replit Agent",desc:"Agente que constrói projetos inteiros"},{icon:"globe",label:"Cursor / Windsurf",desc:"IDEs com IA integrada para devs"}],
-        tips:["Vibe coding não substitui o conhecimento — entender RAG ajuda a descrever melhor o que você quer.","Comece com Lovable ou Google AI Studio se você é iniciante completo.","O resultado do vibe coding pode ser customizado e expandido depois com código tradicional."],
+- **Lovable** — Apps React completos + Supabase + Lovable Cloud. A mais fácil para iniciantes.
+- **Google AI Studio** — Full-stack com Gemini 2.5 + Firebase nativo. Integração Google Drive perfeita.
+- **Claude Code** — Agente de terminal da Anthropic. O mais poderoso para projetos complexos.
+- **Bolt.new** — Ambiente StackBlitz com IA para gerar projetos Node.js/React completos.
+- **Replit Agent** — Agente autônomo que planeja, implementa e faz deploy.
+- **Cursor / Windsurf** — IDEs com IA para desenvolvedores que querem controle total.`,
+        elementGrid:[{icon:"heart",name:"Lovable",tech:"lovable.dev",description:"Apps React completos com **Supabase** ou **Lovable Cloud**. A mais visual e fácil.",whenToUse:"Iniciantes, protótipos rápidos, apps com banco de dados",highlight:true},{icon:"brain",name:"Google AI Studio",tech:"aistudio.google.com",description:"Full-stack com **Gemini 2.5** + integração nativa **Firebase** e Google Drive.",whenToUse:"Quem já usa ecossistema Google, apps com IA generativa",highlight:true},{icon:"terminal",name:"Claude Code",tech:"Terminal/CLI",description:"Agente de terminal da Anthropic com **Claude Opus 4**. Constrói projetos inteiros.",whenToUse:"Projetos complexos, pipelines RAG avançados, produção",highlight:true},{icon:"zap",name:"Bolt.new",tech:"bolt.new",description:"Projetos completos no navegador com StackBlitz. Node.js, React, Next.js.",whenToUse:"Protótipos full-stack rápidos no navegador"},{icon:"bot",name:"Replit Agent",tech:"replit.com",description:"Agente autônomo que planeja, implementa e faz deploy inteiro.",whenToUse:"Aprendizado, protótipos Python, deploy rápido"},{icon:"code",name:"Cursor / Windsurf",tech:"IDE local",description:"IDEs com IA integrada para devs que querem controle total do código.",whenToUse:"Desenvolvedores experientes, projetos enterprise"}],
+        tips:["Em 2026, vibe coding não é mais 'brinquedo' — empresas reais usam em produção.","Entender RAG ajuda a dar prompts melhores — quanto mais você sabe, melhor a IA entrega.","Comece com Lovable ou Google AI Studio se é iniciante. Use Claude Code para projetos sérios.","O código gerado é seu — exporte, customize, evolua. Você nunca fica preso à plataforma."],
+        flowSteps:[{title:"Escolha a plataforma",description:"Lovable para visual, AI Studio para Google, Claude Code para projetos complexos."},{title:"Descreva seu RAG em português",description:"Seja específico: tipo de documentos, interface desejada, funcionalidades."},{title:"A IA gera o código completo",description:"Frontend, backend, banco vetorial, API — tudo automaticamente."},{title:"Itere conversando",description:"'Adicione memória', 'troque para busca híbrida', 'melhore o design'."},{title:"Publique e compartilhe",description:"Deploy com um clique. Seu RAG está no ar."}],
       },
       {
-        title:"RAG com Lovable",subtitle:"App de perguntas e respostas em minutos.",level:"iniciante",icon:"heart",
-        content:`O **Lovable** (lovable.dev) é uma plataforma de vibe coding que gera aplicações React completas com backend integrado. É perfeita para criar seu primeiro RAG sem escrever código.
+        title:"RAG com Lovable",subtitle:"Apps completos com Supabase ou Lovable Cloud — do zero ao deploy.",level:"iniciante",icon:"heart",
+        analogy:{tag:"Analogia do Arquiteto Digital",text:"O Lovable é como ter um **arquiteto digital** que desenha, constrói e decora sua casa inteira enquanto você apenas descreve como quer morar. Você diz 'quero um quarto com vista para o mar' e ele entrega a planta, a construção e até a decoração. Para RAG, você diz 'quero um app que responda perguntas sobre meus documentos' e ele entrega o app completo funcionando."},
+        content:`O **Lovable** (lovable.dev) é a plataforma de vibe coding mais acessível para criar sistemas RAG. Em março de 2026, ele oferece duas opções de backend poderosas:
 
-**O que o Lovable gera automaticamente:**
+**Opção 1: Lovable Cloud (mais fácil)**
 
-- Frontend React com interface moderna e responsiva.
-- Backend com processamento de documentos.
-- Integração com APIs de embedding e LLM.
-- Sistema de upload de documentos.
-- Interface de chat para perguntas e respostas.
+O Lovable Cloud é a infraestrutura própria do Lovable. Você não precisa configurar nada — ele cuida de tudo: banco de dados, autenticação, storage, API. Ideal para quem quer zero complicação.
 
-**Limitações a considerar:**
+**Opção 2: Supabase (mais controle)**
 
-- Projetos mais complexos podem precisar de ajustes manuais.
-- O plano gratuito tem limites de uso.
-- Para dados sensíveis, considere alternativas self-hosted.`,
-        steps:["Acesse lovable.dev e crie uma conta gratuita","Descreva seu projeto usando o prompt sugerido abaixo","O Lovable gera automaticamente: frontend React + backend com embeddings + banco vetorial","Personalize o visual e adicione seus documentos","Teste fazendo perguntas sobre seus documentos","Publique com um clique e compartilhe o link"],
-        prompt:"Crie um app de perguntas e respostas que busca informações em documentos PDF usando RAG. O app deve ter: 1) Upload de documentos PDF, 2) Processamento automático com chunking e embeddings, 3) Interface de chat para fazer perguntas, 4) Respostas baseadas nos documentos com citação das fontes, 5) Design moderno e responsivo.",
-        tips:["Seja o mais específico possível na descrição — quanto mais detalhes, melhor o resultado.","Peça iterações: 'Agora adicione um histórico de conversas' ou 'Mude o visual para tema escuro'.","Exporte o código gerado para ter controle total do projeto."],
+O Supabase é um backend open-source com PostgreSQL, autenticação, storage e funções serverless. Você pode conectar o Supabase ao Lovable de duas formas:
+- **Via Lovable Cloud** — O Lovable gerencia a conexão automaticamente.
+- **Diretamente** — Você cria um projeto no supabase.com e conecta via URL e chave de API. Isso dá controle total sobre seus dados.
+
+**O que o Lovable gera para um RAG:**
+
+- Frontend React/TypeScript com interface de chat moderna e responsiva.
+- Backend com Edge Functions para processamento de documentos.
+- Integração com APIs de embedding (OpenAI, Voyage AI, Cohere).
+- Storage para upload de documentos (PDF, DOCX, TXT).
+- Banco de dados vetorial via pgvector no Supabase.
+- Autenticação de usuários (login/signup).
+- Deploy automático com domínio próprio.
+
+**Por que Supabase é perfeito para RAG?**
+
+O Supabase usa PostgreSQL com a extensão **pgvector** — que transforma seu banco de dados relacional em um banco vetorial. Isso significa que você guarda seus dados normais E seus embeddings no mesmo lugar. Sem precisar de ChromaDB ou Pinecone separados.`,
+        steps:["Acesse lovable.dev e crie uma conta gratuita.","Clique em 'New Project' e cole o prompt sugerido abaixo.","O Lovable gera o app completo em 30-60 segundos — frontend + backend + banco.","Escolha o backend: Lovable Cloud (mais fácil) ou Supabase (mais controle).","Se escolher Supabase direto: crie um projeto em supabase.com, copie a URL e a anon key, e conecte no Lovable via Settings > Supabase.","Personalize: 'Mude as cores para tema escuro', 'Adicione logo do meu escritório', 'Coloque em português'.","Teste fazendo upload de um PDF e perguntando sobre o conteúdo.","Publique com um clique — seu RAG está no ar com domínio .lovable.app."],
+        prompt:`Crie um aplicativo RAG (Retrieval-Augmented Generation) completo com as seguintes funcionalidades:
+
+1. INTERFACE: Tela de chat moderna com tema escuro, sidebar com histórico de conversas, botão de upload de documentos (PDF, DOCX, TXT).
+
+2. PROCESSAMENTO: Quando o usuário fizer upload de um documento, processe automaticamente: extraia o texto, divida em chunks de 500 caracteres com sobreposição de 100, gere embeddings usando a API da OpenAI (text-embedding-3-small).
+
+3. ARMAZENAMENTO: Use Supabase com pgvector para armazenar os chunks e embeddings. Crie as tabelas necessárias automaticamente.
+
+4. BUSCA: Quando o usuário fizer uma pergunta, gere o embedding da pergunta, busque os 5 chunks mais similares via busca vetorial no Supabase, e envie como contexto para a LLM.
+
+5. GERAÇÃO: Use a API da OpenAI (gpt-4o) para gerar respostas baseadas exclusivamente nos chunks recuperados. Inclua citação da fonte (nome do documento e trecho).
+
+6. EXTRAS: Histórico de conversas, indicador de loading, botão copiar resposta, responsivo para mobile.
+
+Stack: React, TypeScript, Tailwind CSS, Supabase, OpenAI API.`,
+        tips:["O prompt acima é longo de propósito — quanto mais detalhes, melhor o resultado do Lovable.","Depois de gerar, peça iterações: 'Adicione autenticação com Google' ou 'Mude para Gemini em vez de OpenAI'.","Para dados sensíveis, conecte o Supabase diretamente (não via Cloud) — assim você controla onde ficam seus dados.","O Lovable permite editar o código gerado diretamente — use isso para ajustes finos.","Se o plano gratuito acabar, exporte o código e rode localmente com 'npm run dev'."],
+        flowSteps:[{title:"Crie o projeto no Lovable",description:"Cole o prompt, o Lovable gera frontend React + backend + banco vetorial em 60 segundos."},{title:"Configure o backend",description:"Escolha Lovable Cloud (zero config) ou conecte seu Supabase (mais controle sobre dados)."},{title:"Adicione suas chaves de API",description:"OpenAI API key para embeddings e geração. Vá em Settings > Environment Variables."},{title:"Teste com seus documentos",description:"Faça upload de um PDF, espere o processamento, e faça perguntas."},{title:"Itere e melhore",description:"'Adicione memória de conversa', 'Mude para busca híbrida', 'Adicione filtro por documento'."},{title:"Publique",description:"Um clique → seu RAG está no ar com domínio .lovable.app ou seu domínio próprio."}],
       },
       {
-        title:"RAG com Google AI Studio",subtitle:"Plataforma full-stack do Google com Gemini.",level:"iniciante",icon:"brain",
-        content:`O **Google AI Studio** (aistudio.google.com) evoluiu para uma plataforma full-stack completa, permitindo construir apps com IA usando o modelo Gemini diretamente no navegador.
+        title:"RAG com Google AI Studio + Firebase",subtitle:"Full-stack com Gemini 2.5 e integração nativa Firebase.",level:"iniciante",icon:"brain",
+        analogy:{tag:"Analogia da Sede do Google",text:"Usar o Google AI Studio para RAG é como trabalhar **dentro da sede do Google**. Todos os seus documentos do Drive, sua autenticação Google, seu banco de dados Firebase — tudo já está conectado nativamente. É como ter acesso a todas as salas do prédio sem precisar de crachá extra. Nenhuma outra plataforma tem essa integração tão natural com o ecossistema que você já usa todo dia."},
+        content:`O **Google AI Studio** (aistudio.google.com) teve uma evolução massiva em 2025-2026. Agora é uma plataforma **full-stack completa** com integração nativa ao **Firebase** — o que o torna ideal para construir RAGs que se conectam ao ecossistema Google.
 
-**Recursos para RAG:**
+**Novidades de março de 2026:**
 
-- Modo "Build App" para criação visual de aplicações completas.
-- Integração nativa com Google Drive para documentos.
-- Modelo Gemini para geração de respostas de alta qualidade.
-- Deploy automático com link compartilhável.
-- Suporte nativo a múltiplos formatos de documento.
+- **Build App mode** — Gere aplicações web completas com Gemini 2.5 Pro descrevendo em linguagem natural.
+- **Firebase nativo** — Conexão direta com Firestore, Authentication, Cloud Storage e Cloud Functions sem configuração manual.
+- **Gemini 2.5 Pro** — Modelo mais recente com janela de contexto de 2M tokens, capacidade multimodal aprimorada e grounding automático.
+- **Grounding com Google Search** — O Gemini pode buscar informações atualizadas na web para complementar seus documentos.
+- **Deploy automático** — Apps publicados com domínio Firebase Hosting em um clique.
 
-**Por que usar o AI Studio para RAG?**
+**Por que a integração Firebase é revolucionária para RAG:**
 
-O Google AI Studio tem a vantagem única de integrar com o ecossistema Google: Drive, Docs, Sheets. Seus documentos já estão lá — é só conectar.`,
-        steps:["Acesse aistudio.google.com e faça login com sua conta Google","Use o modo 'Build App' (recurso full-stack)","Selecione o template 'RAG Application' ou descreva em linguagem natural","Conecte seus documentos via Google Drive ou upload direto","Configure o modelo Gemini para geração","O AI Studio gera o app completo com interface web + API + banco vetorial","Publique e compartilhe o link"],
-        prompt:"Crie uma aplicação RAG que permita aos usuários fazer perguntas sobre documentos do meu Google Drive. Use embeddings para busca semântica e Gemini para gerar respostas fundamentadas. Inclua interface de chat, upload de documentos e citação de fontes.",
-        tips:["Conecte seu Google Drive diretamente — evita o trabalho de upload manual.","O Gemini tem uma janela de contexto enorme (até 1M tokens) — ideal para documentos grandes.","Use o modo 'Grounding' do Gemini para reduzir alucinações automaticamente."],
+O Firebase oferece tudo que um RAG precisa em um só lugar:
+- **Firestore** — Banco de dados NoSQL para armazenar chunks, metadados e histórico de conversas.
+- **Cloud Storage** — Upload e armazenamento de documentos (PDF, imagens, áudio).
+- **Authentication** — Login com Google, e-mail ou telefone — pronto em 2 minutos.
+- **Cloud Functions** — Processamento serverless para chunking, embedding e busca vetorial.
+- **Vector Search** — O Firestore agora suporta busca vetorial nativa (lançado em 2025).
+
+**Gemini 2.5 vs outros modelos:**
+
+O Gemini 2.5 Pro tem a maior janela de contexto disponível (2M tokens). Isso significa que, para muitos casos, você pode simplesmente enviar o documento inteiro no prompt — sem precisar de chunking ou banco vetorial. Mas para bases de conhecimento grandes (centenas de documentos), o pipeline RAG completo ainda é necessário.`,
+        steps:["Acesse aistudio.google.com e faça login com sua conta Google.","Clique em 'Build' > 'New App' para entrar no modo de construção full-stack.","Cole o prompt sugerido abaixo ou descreva seu RAG em português.","O AI Studio gera: frontend web + Cloud Functions + Firestore + integração Gemini.","Na aba 'Firebase', clique em 'Connect' para vincular um projeto Firebase (novo ou existente).","Configure o Gemini: ative 'Grounding with Google Search' para respostas atualizadas.","Conecte seu Google Drive: o AI Studio lê documentos diretamente dos seus Drives.","Teste e publique — deploy automático via Firebase Hosting."],
+        prompt:`Crie uma aplicação RAG completa integrada ao Firebase com as seguintes funcionalidades:
+
+1. INTERFACE: App web com tema escuro profissional, tela de chat principal, sidebar com histórico, botão de upload de documentos, indicador de fontes usadas na resposta.
+
+2. DOCUMENTOS: Aceitar upload de PDF, DOCX e TXT. Armazenar no Firebase Cloud Storage. Também aceitar conexão direta com Google Drive para importar documentos automaticamente.
+
+3. PROCESSAMENTO: Ao receber um documento, usar Cloud Functions para: extrair texto, dividir em chunks de 600 caracteres com overlap de 150, gerar embeddings com a API textembedding-005 do Google.
+
+4. ARMAZENAMENTO: Salvar chunks e embeddings no Firestore com suporte a Vector Search nativo.
+
+5. BUSCA E GERAÇÃO: Quando o usuário perguntar algo, gerar embedding da pergunta, buscar os 5 chunks mais relevantes via Vector Search no Firestore, enviar como contexto para o Gemini 2.5 Pro com instrução de responder apenas com base nos documentos. Ativar Grounding com Google Search para complementar quando necessário.
+
+6. EXTRAS: Autenticação Firebase (login com Google), histórico de conversas persistente no Firestore, indicação visual das fontes, responsivo para mobile.`,
+        tips:["Se você já usa Gmail, Drive e Google Docs, o AI Studio é a escolha natural — tudo já está conectado.","O Gemini 2.5 Pro com 2M tokens de contexto é ideal para documentos longos — às vezes nem precisa de chunking.","Ative 'Grounding with Google Search' para que o RAG também possa buscar informações atualizadas na web.","O Firebase tem plano gratuito generoso (Spark) — suficiente para protótipos e pequenos projetos.","Para produção, habilite o plano Blaze (pay-as-you-go) e ative regras de segurança no Firestore."],
+        flowSteps:[{title:"Crie o app no AI Studio",description:"Descreva seu RAG em português. O Gemini 2.5 gera frontend + backend + banco."},{title:"Conecte o Firebase",description:"Um clique vincula Firestore, Auth, Storage e Cloud Functions ao seu app."},{title:"Importe documentos do Drive",description:"Conecte seu Google Drive — o AI Studio lê e processa automaticamente."},{title:"Configure o Gemini",description:"Ative Grounding, ajuste temperatura, escolha entre 2.5 Pro ou 2.5 Flash."},{title:"Teste e itere",description:"Faça perguntas, avalie respostas, peça melhorias ao AI Studio."},{title:"Publique via Firebase Hosting",description:"Deploy automático com domínio .web.app ou seu domínio personalizado."}],
       },
       {
-        title:"RAG com Bolt.new e v0",subtitle:"StackBlitz e Vercel para apps RAG profissionais.",level:"intermediario",icon:"zap",
-        content:`**Bolt.new** (bolt.new) e **v0** (v0.dev) são plataformas de vibe coding focadas em criar aplicações web profissionais.
+        title:"RAG com Claude Code",subtitle:"O agente de terminal mais poderoso para projetos RAG sérios.",level:"intermediario",icon:"terminal",
+        analogy:{tag:"Analogia do Engenheiro Chefe",text:"Se o Lovable é o arquiteto e o AI Studio é a sede do Google, o **Claude Code** é o **engenheiro chefe** que você contrata para um projeto sério. Ele não tem interface visual bonita — ele trabalha no terminal, como um profissional sênior. Mas a qualidade do que ele entrega é incomparável. Ele planeja a arquitetura, escreve o código, testa, corrige bugs e faz deploy. Tudo sozinho, enquanto você supervisiona."},
+        content:`O **Claude Code** é o agente de terminal oficial da Anthropic (a empresa que criou o Claude). Ele roda no seu computador e tem acesso direto ao seu sistema de arquivos, terminal e Git. Em março de 2026, ele usa o modelo **Claude Opus 4** — o mais poderoso disponível.
 
-**Bolt.new (StackBlitz):**
+**Por que Claude Code é especial para RAG:**
 
-- Ambiente de desenvolvimento completo no navegador.
-- Gera projetos Node.js/React/Next.js com IA.
-- Ideal para protótipos rápidos com backend funcional.
-- Permite edição manual do código gerado.
+- **Acesso total ao sistema** — Ele lê seus arquivos, instala dependências, roda comandos, cria projetos inteiros.
+- **Contexto de 1M tokens** — Pode processar repositórios inteiros, documentação completa e bases de código complexas.
+- **Planejamento autônomo** — Ele planeja antes de executar: cria arquitetura, define componentes, implementa em ordem lógica.
+- **Multi-arquivo nativo** — Cria projetos com dezenas de arquivos organizados (components/, hooks/, utils/, api/).
+- **Git integrado** — Faz commits, cria branches, gerencia versionamento automaticamente.
+- **Testes automáticos** — Escreve e roda testes para validar que tudo funciona.
 
-**v0 (Vercel):**
+**Claude Code vs Cursor/Windsurf:**
 
-- Especializado em interfaces React/Next.js com design excepcional.
-- Componentes gerados são production-ready.
-- Integração direta com Vercel para deploy.
-- Foco em UI/UX de alta qualidade.
+O Cursor e o Windsurf são IDEs com IA integrada — ótimas para editar código existente. Mas o Claude Code é um **agente autônomo**: ele não apenas edita, ele planeja, cria, testa e faz deploy de projetos inteiros. Para construir um RAG do zero, o Claude Code é imbatível.
 
-**Comparação para RAG:**`,
-        tableData:{headers:["Aspecto","Bolt.new","v0 (Vercel)"],rows:[["Foco","Full-stack (front + back)","Frontend (UI/UX)"],["Backend RAG","Gera completo","Precisa integrar separadamente"],["Deploy","Próprio","Vercel (automático)"],["Customização","Alta (código editável)","Média (componentes)"],["Melhor para","Protótipos RAG completos","UI profissional para RAG"]]},
-        steps:["Acesse bolt.new ou v0.dev e crie uma conta","Descreva seu projeto RAG com detalhes","Revise o código gerado e faça ajustes","Conecte APIs de embedding (OpenAI, Cohere) e banco vetorial","Teste com seus documentos","Faça deploy na plataforma"],
-        tips:["Bolt.new é melhor para RAG completo (front + back). v0 é melhor para a interface.","Combine: use v0 para gerar a UI e Bolt.new para o backend RAG.","Ambas permitem exportar o código — você não fica preso à plataforma."],
+**Modelos disponíveis no ecossistema Anthropic (março de 2026):**
+
+- **Claude Opus 4** — Modelo principal do Claude Code. O mais poderoso para tarefas complexas.
+- **Claude Sonnet 4** — Rápido e eficiente, ideal para implementação de código.
+- **Claude Haiku 4** — Ultra-rápido para buscas e operações simples.`,
+        steps:["Instale o Claude Code: abra o terminal e digite 'npm install -g @anthropic-ai/claude-code'.","Navegue até a pasta do seu projeto: 'cd meu-projeto-rag'.","Inicie o Claude Code: digite 'claude' no terminal.","Cole o prompt sugerido abaixo para criar o RAG completo.","O Claude Code planeja a arquitetura, pede sua aprovação, e implementa.","Ele instala dependências, cria arquivos, escreve testes — tudo automaticamente.","Revise o código, peça ajustes: 'Adicione CRAG ao pipeline', 'Troque para busca híbrida'.","Faça deploy: 'Faça deploy deste projeto no Vercel' ou 'Crie um Dockerfile para produção'."],
+        prompt:`Crie um sistema RAG completo e production-ready com a seguinte arquitetura:
+
+BACKEND (Python/FastAPI):
+1. API REST com FastAPI para upload de documentos, processamento e chat.
+2. Pipeline de ingestão: extrair texto de PDF/DOCX/TXT, chunking recursivo (500 chars, overlap 100), embeddings com sentence-transformers (all-MiniLM-L6-v2).
+3. ChromaDB como banco vetorial persistente.
+4. Endpoint de chat: recebe pergunta, faz busca vetorial (top_k=5), monta prompt augmentado, envia para LLM (Claude via API Anthropic), retorna resposta com citações.
+5. Memória de conversa com Redis (últimas 10 mensagens por sessão).
+6. Avaliação CRAG: classificar chunks como CORRECT/INCORRECT/AMBIGUOUS antes da geração.
+
+FRONTEND (React/TypeScript/Tailwind):
+1. Interface de chat moderna com tema escuro.
+2. Upload de documentos com drag-and-drop e barra de progresso.
+3. Sidebar com histórico de conversas.
+4. Citação visual das fontes usadas em cada resposta.
+5. Toggle para ativar/desativar CRAG e memória.
+
+INFRAESTRUTURA:
+1. Docker Compose com 3 serviços: backend, frontend, redis.
+2. .env.example com variáveis necessárias.
+3. README.md com instruções de setup.
+4. Testes unitários para o pipeline RAG.
+
+Faça tudo production-ready com tratamento de erros, logging e tipagem completa.`,
+        tips:["O Claude Code é gratuito durante o beta — aproveite para projetos ambiciosos.","Use '/plan' antes de implementar para revisar a arquitetura proposta.","Peça iterações incrementais: primeiro RAG básico, depois memória, depois CRAG, depois Hybrid.","O Claude Code funciona melhor em projetos com CLAUDE.md (instruções do projeto) — crie um.","Para RAG em produção, peça para ele criar Docker Compose e CI/CD.","Combine com Cursor/Windsurf: use Claude Code para criar o projeto e Cursor para editar depois."],
+        flowSteps:[{title:"Instale o Claude Code",description:"'npm install -g @anthropic-ai/claude-code' — funciona em Windows, Mac e Linux."},{title:"Inicie em uma pasta vazia",description:"'mkdir meu-rag && cd meu-rag && claude' — o Claude Code abre no terminal."},{title:"Descreva seu RAG completo",description:"Cole o prompt detalhado. Seja específico sobre stack, arquitetura e funcionalidades."},{title:"Revise o plano",description:"O Claude Code apresenta a arquitetura antes de implementar. Aprove ou ajuste."},{title:"Acompanhe a implementação",description:"Ele cria arquivos, instala dependências, escreve testes — em tempo real."},{title:"Itere e evolua",description:"'Adicione GraphRAG', 'Implemente Adaptive RAG', 'Otimize para produção'."},{title:"Faça deploy",description:"'Crie um Dockerfile' ou 'Faça deploy no Vercel/Railway/Fly.io'."}],
       },
       {
-        title:"RAG com Replit Agent",subtitle:"Agente de IA que constrói seu RAG inteiro.",level:"intermediario",icon:"bot",
-        content:`O **Replit Agent** é um agente de IA integrado ao Replit que pode construir projetos inteiros de forma autônoma. Você descreve o que quer e ele planeja, implementa e testa.
+        title:"RAG com Bolt.new e Replit Agent",subtitle:"Alternativas full-stack para construir RAG no navegador.",level:"intermediario",icon:"zap",
+        content:`**Bolt.new** (bolt.new) e **Replit Agent** (replit.com) são excelentes alternativas para construir RAGs diretamente no navegador, sem instalar nada no computador.
 
-**Como funciona:**
+**Bolt.new (StackBlitz) — O Rápido:**
 
-1. Você descreve seu projeto RAG em linguagem natural.
-2. O agente cria um plano de implementação.
-3. Ele escreve todo o código: backend, frontend, configurações.
-4. Instala dependências automaticamente.
-5. Testa e corrige erros.
-6. Faz deploy no Replit.
+- Ambiente de desenvolvimento completo rodando no navegador via WebContainers.
+- Gera projetos Node.js/React/Next.js com IA (usa Claude 3.5 Sonnet por padrão).
+- Ideal para protótipos full-stack rápidos: frontend + API routes + banco de dados.
+- Permite edição manual do código gerado — não é caixa-preta.
+- Deploy direto no Netlify ou exportação para GitHub.
 
-**Vantagens para RAG:**
+**Replit Agent — O Autônomo:**
 
-- Ambiente de desenvolvimento completo (editor + terminal + preview).
-- Suporte nativo a Python (perfeito para RAG).
-- Banco de dados integrado (Replit DB ou PostgreSQL).
-- Deploy com um clique.
-- Colaboração em tempo real.`,
-        steps:["Acesse replit.com e crie uma conta","Inicie um novo Repl e ative o Replit Agent","Use o prompt sugerido abaixo para descrever seu RAG","O agente criará o plano e pedirá sua aprovação","Acompanhe a implementação em tempo real","Teste o RAG diretamente no Replit","Faça deploy e compartilhe"],
-        prompt:"Construa um sistema RAG completo em Python com: 1) Carregamento de documentos PDF e TXT, 2) Chunking com sobreposição configurável, 3) Embeddings usando sentence-transformers, 4) ChromaDB como banco vetorial, 5) Interface web com Flask para chat, 6) Integração com OpenAI GPT-4o-mini para geração. Inclua tratamento de erros e logging.",
-        tips:["O Replit Agent funciona melhor com descrições detalhadas e específicas.","Peça para ele explicar as decisões técnicas — é uma ótima forma de aprender.","Use o Replit Agent para prototipar e depois migre para sua própria infraestrutura."],
+- Agente de IA que planeja, implementa, testa e faz deploy de forma autônoma.
+- Suporte nativo a Python (perfeito para pipelines RAG com LangChain, LlamaIndex).
+- Banco de dados integrado (PostgreSQL nativo no Replit).
+- Ambiente completo: editor + terminal + preview + deploy — tudo no navegador.
+- Colaboração em tempo real (pair programming com outras pessoas).
+
+**Quando usar cada um?**
+
+- **Bolt.new** — Quando você quer um protótipo RAG web rápido (React + API).
+- **Replit Agent** — Quando quer um pipeline RAG em Python com mais controle.`,
+        tableData:{headers:["Aspecto","Bolt.new","Replit Agent"],rows:[["Linguagem principal","JavaScript/TypeScript","Python (ou qualquer)"],["Modelo IA","Claude 3.5 Sonnet","GPT-5.4 / Claude"],["Backend RAG","API Routes (Node.js)","Flask/FastAPI (Python)"],["Banco vetorial","Via API externa","ChromaDB local ou pgvector"],["Deploy","Netlify","Replit Hosting"],["Melhor para","Protótipos web rápidos","Pipelines Python completos"]]},
+        steps:["Acesse bolt.new ou replit.com e crie uma conta gratuita.","Descreva seu projeto RAG detalhadamente (use os prompts desta seção como base).","Revise o código gerado e peça ajustes: 'Adicione memória', 'Melhore o design'.","Configure variáveis de ambiente: API keys para OpenAI, Anthropic ou Google.","Teste com documentos reais — faça upload e faça perguntas.","Publique: Bolt → Netlify, Replit → Replit Hosting."],
+        tips:["Bolt.new é mais rápido para protótipos web. Replit é mais flexível para pipelines Python.","No Replit, peça para o agente explicar cada decisão — é uma aula de RAG grátis.","Ambas as plataformas permitem exportar o código — você não fica preso.","Para RAG em Python, o Replit é imbatível: Python nativo + PostgreSQL + deploy integrado."],
+        analogy:{tag:"Analogia das Oficinas",text:"Bolt.new é como uma **oficina express** — você entra, descreve o que quer, e sai com o carro funcionando em 30 minutos. Rápido, eficiente, mas com opções limitadas. Replit Agent é como uma **oficina completa** com mecânico sênior — demora um pouco mais, mas pode fazer qualquer customização que você imaginar."},
       },
       {
-        title:"Comparativo: Qual Plataforma Escolher?",subtitle:"Tabela comparativa para decidir a melhor opção.",level:"iniciante",icon:"barChart",
-        content:`Cada plataforma de vibe coding tem pontos fortes diferentes. Use esta tabela para escolher a melhor para seu caso:
+        title:"Prompts para Ativar Diferentes RAGs via Vibe Coding",subtitle:"Copie e cole estes prompts para criar qualquer tipo de RAG.",level:"intermediario",icon:"copy",
+        analogy:{tag:"Receitas de RAG",text:"Estes prompts são como **receitas prontas** para diferentes tipos de RAG. Assim como um livro de receitas tem receita de bolo, pão e torta, aqui você tem a receita do RAG Clássico, RAG com Memória, CRAG e mais. Copie a receita, cole na plataforma de vibe coding, e o prato sai pronto."},
+        content:`Abaixo estão prompts otimizados para criar diferentes tipos de RAG em qualquer plataforma de vibe coding (Lovable, AI Studio, Claude Code, Bolt.new, Replit). Cada prompt é detalhado o suficiente para gerar um sistema funcional.
 
-**Resumo das recomendações:**
+**Como usar estes prompts:**
 
-- **Iniciante completo?** Lovable ou Google AI Studio.
-- **Quer controle sobre o código?** Bolt.new ou Replit.
-- **Prioriza design profissional?** v0 (Vercel).
-- **Já tem documentos no Google Drive?** Google AI Studio.
-- **Quer aprender programação enquanto constrói?** Replit Agent.`,
+1. Escolha o tipo de RAG que deseja.
+2. Copie o prompt correspondente.
+3. Cole na plataforma de sua escolha.
+4. A IA gera o sistema completo.
+5. Teste, itere e publique.
+
+**Dica:** Você pode combinar prompts. Comece com o RAG Clássico e depois peça: "Agora adicione o pipeline CRAG a este projeto" ou "Integre memória de conversa com Redis".`,
+        tips:["Comece sempre pelo RAG Clássico — é a base para todos os outros.","Após gerar o RAG Clássico, peça iterações incrementais para adicionar funcionalidades.","Adapte os prompts para seu caso: troque 'documentos jurídicos' por seu domínio específico.","Estes prompts funcionam em qualquer plataforma — Lovable, AI Studio, Claude Code, Bolt.new, Replit.","Para projetos de produção, use o prompt de Pipeline Completo com Claude Code.","Sempre teste com documentos reais do seu domínio antes de publicar."],
+        steps:["RAG CLÁSSICO: 'Crie um app RAG com upload de PDF, chunking (500 chars, overlap 100), embeddings (text-embedding-3-small), ChromaDB, busca vetorial top_k=5, e geração com GPT-5.4. Interface de chat com tema escuro.'","RAG COM MEMÓRIA: 'Adicione memória de conversa ao RAG: armazene as últimas 10 mensagens em Redis com TTL de 1 hora. Antes de buscar no banco vetorial, reescreva perguntas ambíguas usando o histórico. Exemplo: se o usuário perguntou sobre Santos Dumont e depois diz \"onde ele nasceu?\", reescreva para \"Onde Santos Dumont nasceu?\".'","CRAG (Corretivo): 'Adicione um pipeline CRAG: após buscar chunks, use a LLM para avaliar se são CORRECT, INCORRECT ou AMBIGUOUS. Se CORRECT, use diretamente. Se AMBIGUOUS, complemente com busca web (DuckDuckGo). Se INCORRECT, descarte e use apenas resultados da web.'","ADAPTIVE RAG: 'Implemente roteamento adaptativo: classifique cada pergunta como SIMPLES, PADRÃO ou COMPLEXA. SIMPLES → responda direto sem busca. PADRÃO → busca vetorial padrão. COMPLEXA → decomponha em sub-perguntas, busque cada uma, sintetize.'","HYBRID RAG: 'Implemente busca híbrida combinando similaridade vetorial (cosine) com busca lexical (BM25). Use Reciprocal Rank Fusion para mesclar os rankings. Pesos configuráveis: 60% semântico, 40% lexical.'","RAG-FUSION: 'Antes da busca, gere 4 variações da pergunta do usuário usando a LLM. Busque cada variação no banco vetorial separadamente. Combine todos os resultados usando Reciprocal Rank Fusion (k=60). Envie os top 5 chunks mesclados para geração.'","PIPELINE COMPLETO (Produção): 'Crie um sistema RAG production-ready com: ingestão de documentos (PDF/DOCX/TXT), chunking recursivo, embeddings, ChromaDB, busca híbrida (vetorial + BM25), avaliação CRAG, memória Redis, autenticação JWT, API REST FastAPI, frontend React, Docker Compose, testes unitários, logging estruturado e documentação.'"],
+      },
+      {
+        title:"Comparativo Atualizado: Plataformas de Vibe Coding para RAG",subtitle:"Tabela completa com dados de março de 2026.",level:"iniciante",icon:"barChart",
+        content:`O cenário de vibe coding mudou drasticamente em 2026. Esta tabela reflete o estado atual de cada plataforma — incluindo **Claude Code**, que se tornou referência para projetos sérios.
+
+**Resumo atualizado das recomendações:**
+
+- **Iniciante completo sem experiência técnica?** → Lovable (mais visual) ou Google AI Studio (mais integrado).
+- **Quer o máximo de poder e controle?** → Claude Code (agente autônomo no terminal).
+- **Quer RAG em Python com deploy fácil?** → Replit Agent.
+- **Quer protótipo web rápido no navegador?** → Bolt.new.
+- **Já usa ecossistema Google (Drive, Gmail)?** → Google AI Studio + Firebase.
+- **Projeto enterprise com muitos documentos?** → Claude Code + Docker + CI/CD.`,
         comparisonTable:{
-          headers:["Plataforma","Facilidade","Custo","Personalização","Deploy","Melhor Para"],
+          headers:["Plataforma","Modelo IA","Facilidade","Backend RAG","Banco Vetorial","Deploy","Melhor Para"],
           rows:[
-            {name:"Lovable",values:["Muito Fácil","Freemium","Média","1 clique","Protótipos rápidos"],colors:["green","green","yellow","green",""]},
-            {name:"Google AI Studio",values:["Fácil","Gratuito","Média","Automático","Integração Google"],colors:["green","green","yellow","green",""]},
-            {name:"Bolt.new",values:["Médio","Freemium","Alta","Próprio","Full-stack completo"],colors:["yellow","yellow","green","yellow",""]},
-            {name:"v0 (Vercel)",values:["Fácil","Freemium","Média","Vercel","UI profissional"],colors:["green","green","yellow","green",""]},
-            {name:"Replit Agent",values:["Médio","Freemium","Muito Alta","1 clique","Aprendizado + protótipo"],colors:["yellow","yellow","green","green",""]},
+            {name:"Lovable",values:["Claude Sonnet 4","Muito Fácil","Supabase/Cloud","pgvector","1 clique","Iniciantes, MVPs visuais"],colors:["purple","green","green","green","green",""]},
+            {name:"AI Studio",values:["Gemini 2.5 Pro","Fácil","Firebase nativo","Firestore Vector","Automático","Ecossistema Google"],colors:["blue","green","green","green","green",""]},
+            {name:"Claude Code",values:["Claude Opus 4","Intermediário","Qualquer stack","Qualquer","Manual/CI","Projetos sérios, produção"],colors:["purple","yellow","green","green","yellow",""]},
+            {name:"Bolt.new",values:["Claude Sonnet","Fácil","Node.js/API Routes","Via API","Netlify","Protótipos web rápidos"],colors:["purple","green","yellow","yellow","green",""]},
+            {name:"Replit Agent",values:["GPT-5.4 / Claude","Médio","Python (Flask/FastAPI)","ChromaDB/pgvector","1 clique","Pipelines Python, aprendizado"],colors:["green","yellow","green","green","green",""]},
+            {name:"Cursor",values:["Claude/GPT-5.4","Avançado","Qualquer stack","Qualquer","Manual","Devs experientes"],colors:["yellow","red","green","green","red",""]},
           ]
         },
-        analogy:{tag:"Analogia da Loja de Ferramentas",text:"Escolher uma plataforma de vibe coding é como escolher na **loja de ferramentas**: cada uma tem pontos fortes. Lovable é a furadeira sem fio (prática), AI Studio é a bancada profissional (poderosa), e Bolt.new é o kit multiuso."},
-        tips:["Todas as plataformas têm plano gratuito — teste antes de escolher.","Combine plataformas: use v0 para UI e Replit para backend.","O código gerado por vibe coding é seu — exporte e customize à vontade.","Vibe coding é perfeito para MVPs e protótipos. Para produção, revise o código gerado."],
+        analogy:{tag:"Analogia dos Transportes",text:"Lovable é o **Uber** (fácil, rápido, vai onde você quiser). AI Studio é o **metrô do Google** (conectado a tudo no ecossistema). Claude Code é o **carro próprio** (mais trabalho, mas liberdade total). Bolt.new é a **bicicleta elétrica** (leve e rápida para trajetos curtos). Replit é o **ônibus escolar** (te leva e te ensina no caminho). Cursor é o **carro de corrida** (potente, mas precisa de habilidade)."},
+        tips:["Em 2026, o modelo de IA da plataforma importa menos — todos são excelentes. O que importa é o ecossistema.","Lovable é o melhor para quem nunca programou. Claude Code é o melhor para quem quer qualidade de produção.","Google AI Studio é imbatível se você já vive no ecossistema Google (Drive, Gmail, Docs).","Todas permitem exportar código — comece em qualquer uma e migre depois se necessário.","Para projetos que vão crescer, comece com Claude Code desde o início — a migração posterior é trabalhosa."],
       },
     ],
   },
