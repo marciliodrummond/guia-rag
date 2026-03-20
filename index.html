@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guia Definitivo de RAG — Super Inteligenc[IA]</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--c-black:#030409;--c-char:#282A32;--c-char2:#1a1c24;--c-char3:#32343e;
+--c-gold:#e2c074;--c-gold2:#c9a456;--c-gold3:rgba(226,192,116,.12);--c-gold4:rgba(226,192,116,.06);
+--c-white:#fff;--c-body:rgba(255,255,255,.78);--c-muted:rgba(255,255,255,.42);
+--c-border:rgba(226,192,116,.18);--c-border2:rgba(255,255,255,.07);
+--c-green:#5eead4;--c-red:#fca5a5;--c-blue:#93c5fd;
+--f-d:'Sora',sans-serif;--f-b:'DM Sans',sans-serif;--f-m:'JetBrains Mono',monospace;
+--ease-out:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--f-b);color:var(--c-body);background:var(--c-black);line-height:1.7;overflow-x:hidden;
+background-image:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(226,192,116,.06) 0%,transparent 60%),
+radial-gradient(ellipse 60% 40% at 80% 100%,rgba(226,192,116,.03) 0%,transparent 50%);
+}
+/* PROGRESS BAR */
+#progress-bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:10000;
+background:linear-gradient(90deg,var(--c-gold2),var(--c-gold),var(--c-gold2));transition:width .15s linear}
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:9999;background:rgba(3,4,9,.85);backdrop-filter:blur(18px);
+border-bottom:1px solid var(--c-border2);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand img{width:32px;height:32px;border-radius:6px}
+.nav-brand span{font-family:var(--f-d);font-weight:700;font-size:1rem;color:var(--c-white)}
+.nav-brand .ia-hl{color:var(--c-gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-family:var(--f-d);font-size:.82rem;font-weight:500;color:var(--c-muted);text-decoration:none;
+transition:color .3s var(--ease-out)}
+.nav-links a:hover{color:var(--c-gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--c-white);border-radius:2px;transition:all .3s var(--ease-out)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(3,4,9,.97);
+z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--f-d);font-size:1.2rem;color:var(--c-body);text-decoration:none}
+.mobile-menu a:hover{color:var(--c-gold)}
+@media(max-width:768px){
+.nav-links{display:none}.hamburger{display:flex}
+}
+/* SECTIONS */
+section{padding:80px 24px;max-width:1100px;margin:0 auto}
+.section-label{font-family:var(--f-d);font-size:.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+color:var(--c-gold2);margin-bottom:8px}
+.section-title{font-family:var(--f-d);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--c-white);margin-bottom:16px}
+.section-sub{color:var(--c-muted);max-width:680px;margin-bottom:48px;font-size:1rem}
+/* HERO */
+.hero{min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+padding:120px 24px 80px;max-width:900px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:50px;
+background:var(--c-gold3);border:1px solid var(--c-border);font-family:var(--f-d);font-size:.72rem;
+font-weight:600;letter-spacing:2px;color:var(--c-gold);text-transform:uppercase;margin-bottom:28px}
+.hero h1{font-family:var(--f-d);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;color:var(--c-white);line-height:1.15;margin-bottom:20px}
+.hero h1 .gold{color:var(--c-gold)}
+.hero p{color:var(--c-muted);font-size:clamp(1rem,2vw,1.18rem);max-width:640px;margin-bottom:32px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
+.hero-stats span{font-family:var(--f-d);font-size:.82rem;font-weight:500;color:var(--c-body);
+padding:6px 16px;border-radius:8px;background:var(--c-gold4);border:1px solid var(--c-border)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:10px;
+background:linear-gradient(135deg,var(--c-gold2),var(--c-gold));color:var(--c-black);font-family:var(--f-d);
+font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;
+transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(226,192,116,.25)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:10px;
+background:transparent;border:1px solid var(--c-gold2);color:var(--c-gold);font-family:var(--f-d);
+font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;
+transition:all .3s var(--ease-out)}
+.btn-outline:hover{background:var(--c-gold3);transform:translateY(-2px)}
+/* XCARDS */
+.xcards-grid{display:flex;flex-direction:column;gap:16px}
+.xcard{border:1px solid var(--c-border2);border-radius:14px;background:var(--c-char2);overflow:hidden;
+transition:border-color .3s var(--ease-out)}
+.xcard:hover{border-color:var(--c-border)}
+.xcard-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;user-select:none}
+.xcard-header h3{font-family:var(--f-d);font-size:1.05rem;font-weight:600;color:var(--c-white);display:flex;align-items:center;gap:10px}
+.xcard-header .xcard-icon{width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+border-radius:8px;background:var(--c-gold3);flex-shrink:0}
+.xcard-header .xcard-icon svg{width:14px;height:14px;stroke:var(--c-gold);fill:none;stroke-width:2}
+.xcard-toggle{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+background:var(--c-char3);transition:transform .3s var(--ease-out);flex-shrink:0}
+.xcard-toggle svg{width:12px;height:12px;stroke:var(--c-muted);fill:none;stroke-width:2.5}
+.xcard.active .xcard-toggle{transform:rotate(180deg)}
+.xcard-body{max-height:0;overflow:hidden;transition:max-height .5s var(--ease-out)}
+.xcard.active .xcard-body{max-height:4000px}
+.xcard-content{padding:0 24px 24px;color:var(--c-body);font-size:.95rem;line-height:1.8}
+.xcard-content p{margin-bottom:14px}
+.xcard-content ul,.xcard-content ol{margin:12px 0 16px 20px}
+.xcard-content li{margin-bottom:6px}
+.xcard-content strong{color:var(--c-white)}
+.xcard-content .highlight{color:var(--c-gold);font-weight:500}
+/* PROMPT BLOCK (CODE) */
+.prompt-block{background:var(--c-char);border:1px solid var(--c-border2);border-radius:10px;
+padding:20px;margin:16px 0;overflow-x:auto;position:relative}
+.prompt-block code{font-family:var(--f-m);font-size:.82rem;color:var(--c-body);line-height:1.8;white-space:pre}
+.prompt-block .lang-label{position:absolute;top:8px;right:12px;font-family:var(--f-m);font-size:.65rem;
+color:var(--c-muted);text-transform:uppercase;letter-spacing:1px}
+.prompt-block .kw{color:var(--c-gold)}
+.prompt-block .fn{color:var(--c-blue)}
+.prompt-block .st{color:var(--c-green)}
+.prompt-block .cm{color:var(--c-muted)}
+.prompt-block .nr{color:var(--c-red)}
+/* COMPARISON TABLE */
+.table-wrap{overflow-x:auto;margin:24px 0;border-radius:14px;border:1px solid var(--c-border2)}
+.comp-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.comp-table thead{background:var(--c-char)}
+.comp-table th{font-family:var(--f-d);font-weight:600;color:var(--c-gold);padding:14px 16px;text-align:left;
+border-bottom:1px solid var(--c-border)}
+.comp-table td{padding:12px 16px;border-bottom:1px solid var(--c-border2);color:var(--c-body)}
+.comp-table tbody tr:hover{background:var(--c-gold4)}
+.pill{display:inline-block;padding:3px 12px;border-radius:50px;font-family:var(--f-d);font-size:.72rem;font-weight:600}
+.pill-green{background:rgba(94,234,212,.12);color:var(--c-green)}
+.pill-yellow{background:rgba(226,192,116,.12);color:var(--c-gold)}
+.pill-red{background:rgba(252,165,165,.12);color:var(--c-red)}
+/* FAQ */
+.faq-item{border:1px solid var(--c-border2);border-radius:12px;margin-bottom:12px;overflow:hidden;background:var(--c-char2)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;cursor:pointer;
+font-family:var(--f-d);font-size:.98rem;font-weight:600;color:var(--c-white)}
+.faq-q .faq-toggle{width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+border-radius:50%;background:var(--c-char3);transition:transform .3s var(--ease-out);flex-shrink:0}
+.faq-q .faq-toggle svg{width:10px;height:10px;stroke:var(--c-muted);fill:none;stroke-width:2.5}
+.faq-item.active .faq-toggle{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease-out)}
+.faq-item.active .faq-a{max-height:1000px}
+.faq-a-inner{padding:0 24px 20px;color:var(--c-body);font-size:.93rem;line-height:1.8}
+/* CTA SECTION */
+.cta-section{text-align:center;padding:80px 24px;max-width:700px;margin:0 auto}
+.cta-section h2{font-family:var(--f-d);font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:var(--c-white);margin-bottom:16px}
+.cta-section p{color:var(--c-muted);margin-bottom:32px;font-size:1rem}
+/* EXPERT SECTION */
+.expert-section{padding:60px 24px;max-width:900px;margin:0 auto}
+.expert-card{border:1px solid var(--c-border);border-radius:18px;background:linear-gradient(135deg,var(--c-char2),var(--c-char));
+padding:40px;display:flex;gap:32px;align-items:flex-start}
+@media(max-width:768px){.expert-card{flex-direction:column;align-items:center;text-align:center}}
+.expert-photo{width:140px;height:140px;border-radius:16px;object-fit:cover;border:2px solid var(--c-gold2);flex-shrink:0}
+.expert-info h3{font-family:var(--f-d);font-size:1.3rem;font-weight:700;color:var(--c-white);margin-bottom:4px}
+.expert-info .expert-role{font-size:.88rem;color:var(--c-gold);margin-bottom:16px}
+.expert-bio{list-style:none;margin-bottom:20px}
+.expert-bio li{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:.9rem;color:var(--c-body)}
+.expert-bio li svg{width:16px;height:16px;stroke:var(--c-gold);fill:none;stroke-width:2;flex-shrink:0;margin-top:4px}
+.expert-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.expert-tags span{font-size:.72rem;font-family:var(--f-d);font-weight:500;padding:4px 12px;border-radius:50px;
+background:var(--c-gold4);border:1px solid var(--c-border);color:var(--c-body)}
+.expert-stats{display:flex;flex-wrap:wrap;gap:16px}
+.expert-stats .stat{text-align:center}
+.expert-stats .stat-val{font-family:var(--f-d);font-size:1.1rem;font-weight:700;color:var(--c-gold)}
+.expert-stats .stat-lbl{font-size:.72rem;color:var(--c-muted)}
+/* FOOTER */
+.site-footer{border-top:1px solid var(--c-border2);padding:40px 24px;text-align:center}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap}
+.footer-links a{color:var(--c-muted);text-decoration:none;font-size:.88rem;transition:color .3s var(--ease-out)}
+.footer-links a:hover{color:var(--c-gold)}
+.footer-copy{font-size:.78rem;color:var(--c-muted)}
+/* POPUP */
+.popup-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(3,4,9,.8);
+z-index:99999;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.popup-overlay.active{display:flex}
+.popup-box{background:var(--c-char);border:1px solid var(--c-border);border-radius:18px;padding:40px;
+max-width:440px;width:90%;text-align:center;position:relative}
+.popup-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
+background:var(--c-char3);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.popup-close svg{width:12px;height:12px;stroke:var(--c-muted);fill:none;stroke-width:2.5}
+.popup-icon{margin:0 auto 20px;width:48px;height:48px;border-radius:50%;background:var(--c-gold3);
+display:flex;align-items:center;justify-content:center}
+.popup-icon svg{width:24px;height:24px;stroke:var(--c-gold);fill:none;stroke-width:2}
+.popup-box h3{font-family:var(--f-d);font-size:1.2rem;font-weight:700;color:var(--c-white);margin-bottom:10px}
+.popup-box p{color:var(--c-muted);font-size:.92rem;margin-bottom:24px}
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* FLOW DIAGRAM */
+.flow-diagram{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:20px 0;padding:16px;
+background:var(--c-char);border-radius:10px;border:1px solid var(--c-border2)}
+.flow-step{padding:8px 16px;border-radius:8px;background:var(--c-gold3);border:1px solid var(--c-border);
+font-family:var(--f-m);font-size:.78rem;color:var(--c-gold);white-space:nowrap}
+.flow-arrow{color:var(--c-muted);font-size:1.2rem}
+/* CHECKLIST */
+.checklist{list-style:none;margin:12px 0}
+.checklist li{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.93rem}
+.checklist li svg{width:16px;height:16px;stroke:var(--c-green);fill:none;stroke-width:2.5;flex-shrink:0;margin-top:4px}
+/* DIVIDER */
+.gold-divider{width:60px;height:2px;background:linear-gradient(90deg,var(--c-gold2),transparent);margin:48px auto}
+</style>
+</head>
+<body>
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<a href="#" class="nav-brand">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABAGlDQ1BpY2MAABiVY2BgPMEABCwGDAy5eSVFQe5OChGRUQrsDxgYgRAMEpOLCxhwA6Cqb9cgai/r4lGHC3CmpBYnA+kPQKxSBLQcaKQIkC2SDmFrgNhJELYNiF1eUlACZAeA2EUhQc5AdgqQrZGOxE5CYicXFIHU9wDZNrk5pckIdzPwpOaFBgNpDiCWYShmCGJwZ3AC+R+iJH8RA4PFVwYG5gkIsaSZDAzbWxkYJG4hxFQWMDDwtzAwbDuPEEOESUFiUSJYiAWImdLSGBg+LWdg4I1kYBC+wMDAFQ0LCBxuUwC7zZ0hHwjTGXIYUoEingx5DMkMekCWEYMBgyGDGQCm1j8/yRb+6wAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAAB3RJTUUH6gMFEgwOX9oNsw==" alt="Logo">
+<span>Super Inteligenc<span class="ia-hl">[IA]</span></span>
+</a>
+<ul class="nav-links">
+<li><a href="#conceitos">Conceitos</a></li>
+<li><a href="#arquiteturas">Arquiteturas</a></li>
+<li><a href="#implementacao">Implementacao</a></li>
+<li><a href="#seguranca">Seguranca</a></li>
+<li><a href="#comparativo">Comparativo</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+<button class="hamburger" id="hamburger-btn" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+<a href="#conceitos" class="mobile-link">Conceitos</a>
+<a href="#arquiteturas" class="mobile-link">Arquiteturas</a>
+<a href="#implementacao" class="mobile-link">Implementacao</a>
+<a href="#seguranca" class="mobile-link">Seguranca</a>
+<a href="#comparativo" class="mobile-link">Comparativo</a>
+<a href="#faq" class="mobile-link">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-badge">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+GUIA PREMIUM &mdash; SUPER INTELIG&Ecirc;NC[IA]
+</div>
+<h1>Guia Definitivo de <span class="gold">RAG</span></h1>
+<p>Domine Retrieval-Augmented Generation: da teoria a implementacao de sistemas inteligentes que combinam busca semantica e geracao de texto com precisao factual.</p>
+<div class="hero-stats">
+<span>10 Arquiteturas</span>
+<span>Implementacao Pratica</span>
+<span>Codigo Python</span>
+</div>
+<a href="#conceitos" class="btn-primary">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+Comecar Agora
+</a>
+</section>
+
+<!-- CONCEITOS FUNDAMENTAIS -->
+<section id="conceitos" class="reveal">
+<div class="section-label">Fundamentos</div>
+<h2 class="section-title">Conceitos Fundamentais</h2>
+<p class="section-sub">Antes de mergulhar nas arquiteturas e no codigo, e essencial compreender os pilares que sustentam toda a tecnologia RAG.</p>
+
+<div class="xcards-grid">
+
+<!-- XCARD 1: O que e RAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3>
+<span class="xcard-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+O que e RAG?
+</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body">
+<div class="xcard-content">
+<p>Imagine a seguinte situacao: voce tem ao seu lado um estudante brilhante, capaz de articular ideias de forma eloquente e construir argumentos sofisticados. Esse estudante e o <strong>Gerador</strong> &mdash; o grande modelo de linguagem (LLM). Contudo, por mais talentoso que seja, ele tem uma limitacao critica: sua memoria esta congelada no momento em que foi treinado, e ele ocasionalmente inventa informacoes quando nao sabe a resposta correta.</p>
+<p>Agora, coloque ao lado desse estudante um pesquisador meticuloso, que domina a arte de buscar e localizar informacoes precisas em vastos acervos de documentos. Esse pesquisador e o <strong>Recuperador</strong> (Retriever). Ele nao produz textos elegantes, mas encontra exatamente o trecho que fundamenta cada afirmacao.</p>
+<p><strong>RAG (Retrieval-Augmented Generation)</strong> e a uniao estrategica desses dois papeis. O Recuperador localiza as informacoes mais relevantes em uma base de conhecimento, e o Gerador utiliza esses trechos como contexto para produzir respostas fundamentadas, precisas e atualizadas.</p>
+<p>O resultado pratico e um sistema que resolve o maior problema dos LLMs modernos: a <span class="highlight">alucinacao</span>. Em vez de inventar dados, o modelo passa a ancorar cada resposta em evidencias concretas extraidas de documentos confiaveis. Isso transforma modelos generativos em ferramentas de consulta factual, sem a necessidade de retrainar toda a rede neural.</p>
+<p>Em termos tecnicos, RAG intercepta a pergunta do usuario antes de envia-la ao LLM, busca fragmentos relevantes no banco de dados vetorial e os injeta no prompt. O modelo, entao, gera a resposta com base exclusiva nesse contexto fornecido.</p>
+</div>
+</div>
+</div>
+
+<!-- XCARD 2: RAG vs Fine-Tuning -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3>
+<span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span>
+Quando usar RAG vs Fine-Tuning?
+</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body">
+<div class="xcard-content">
+<p>Essa e uma das duvidas mais frequentes entre profissionais que estao projetando solucoes com IA. A resposta depende fundamentalmente da <strong>natureza da informacao</strong> que voce deseja que o modelo domine.</p>
+<p><strong>Fine-Tuning</strong> e o processo de retreinar parcialmente o modelo com dados especificos do seu dominio. Ele altera os pesos internos da rede neural, mudando o <em>comportamento</em> e o <em>estilo</em> do modelo. E ideal quando voce precisa que o modelo adote um tom de voz especifico, siga formatos rigidos ou domine jargoes tecnicos de um setor. Porem, o custo computacional e alto, o ciclo de atualizacao e lento e qualquer mudanca nos dados exige novo treinamento.</p>
+<p><strong>RAG</strong>, por outro lado, separa a <em>inteligencia</em> do <em>conhecimento</em>. O modelo continua sendo o mesmo &mdash; o que muda e o acervo de documentos que ele consulta. Quando uma lei e atualizada, basta substituir o documento no banco vetorial. Quando um produto muda de preco, basta atualizar a ficha tecnica. Nao e necessario tocar nos parametros do modelo.</p>
+<p>Em cenarios onde a verdade e <span class="highlight">volatil</span> &mdash; legislacao, regulamentos, catalogos de produtos, bases de conhecimento corporativo, politicas internas &mdash; RAG e a escolha superior. E mais barato, mais rapido para atualizar e significativamente mais facil de manter ao longo do tempo.</p>
+<p>A boa pratica e combinar ambos quando necessario: Fine-Tuning para ajustar o comportamento do modelo e RAG para fornecer conhecimento atualizado e factual.</p>
+</div>
+</div>
+</div>
+
+<!-- XCARD 3: Embeddings e Vetores -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3>
+<span class="xcard-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+Embeddings e Vetores
+</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body">
+<div class="xcard-content">
+<p>Para que o sistema RAG consiga encontrar os trechos mais relevantes para uma pergunta, ele precisa compreender o <em>significado</em> dos textos, nao apenas as palavras exatas. E aqui entram os <strong>embeddings</strong>.</p>
+<p>Pense em embeddings como um <span class="highlight">mapa de coordenadas do significado</span>. Cada fragmento de texto recebe um conjunto de coordenadas matematicas que representam seu conteudo semantico em um espaco multidimensional. Textos com significados semelhantes recebem coordenadas proximas; textos sobre temas distintos ficam distantes uns dos outros.</p>
+<p>Uma analogia util: imagine uma galaxia onde cada estrela representa um conceito. Constelacoes inteiras se formam ao redor de temas relacionados &mdash; direito trabalhista perto de direito previdenciario, receitas de bolo perto de tecnicas de confeitaria. O modelo de embedding atua como um astronomo, mapeando cada texto em um ponto preciso dessa galaxia multidimensional.</p>
+<p>Na pratica, um modelo como o <strong>all-MiniLM-L6-v2</strong> do pacote Sentence Transformers converte textos em vetores de 384 dimensoes. Cada dimensao captura uma faceta do significado &mdash; formalidade, tema, tom, complexidade, entre outras. A similaridade entre dois vetores e tipicamente calculada usando <strong>similaridade de cosseno</strong>, que mede o angulo entre eles.</p>
+<p>Quanto menor o angulo (mais proximo de 1.0), mais semanticamente parecidos sao os textos. Essa mecanica e o coracao de todo sistema RAG: a capacidade de buscar por significado, nao por coincidencia de palavras.</p>
+</div>
+</div>
+</div>
+
+<!-- XCARD 4: Banco de Dados Vetorial -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3>
+<span class="xcard-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+Banco de Dados Vetorial
+</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body">
+<div class="xcard-content">
+<p>Bancos de dados tradicionais foram projetados para buscas exatas &mdash; localizar registros onde um campo corresponde precisamente a um valor. Bancos de dados vetoriais operam sob uma logica completamente diferente: eles sao otimizados para encontrar os vizinhos mais proximos em um espaco de alta dimensionalidade.</p>
+<p>Quando voce armazena um embedding no banco vetorial, ele e indexado por sua posicao no espaco semantico. Uma consulta nao procura por correspondencia exata de palavras-chave &mdash; ela procura por <span class="highlight">proximidade de significado</span>. Isso permite que uma busca por "rescisao contratual" encontre documentos que falam sobre "termino de contrato" ou "encerramento de vinculo", mesmo que nenhuma dessas palavras apareca na consulta original.</p>
+<p>Os principais bancos vetoriais do ecossistema incluem:</p>
+<ul>
+<li><strong>ChromaDB</strong>: leve, ideal para prototipacao e projetos menores. Funciona localmente com armazenamento em disco.</li>
+<li><strong>Pinecone</strong>: solucao gerenciada na nuvem, com escala automatica e alta disponibilidade. Excelente para producao.</li>
+<li><strong>Weaviate</strong>: open-source com suporte nativo a busca hibrida (vetorial + keyword). Oferece modulos de vetorizacao integrados.</li>
+<li><strong>FAISS</strong> (Facebook AI Similarity Search): biblioteca de baixo nivel para busca vetorial extremamente rapida. Ideal para datasets massivos com controle fino de performance.</li>
+<li><strong>Qdrant</strong>: focado em performance e filtragem avancada. Suporta payloads complexos junto aos vetores.</li>
+</ul>
+<p>Independente da ferramenta escolhida, o principio e o mesmo: armazenar vetores de forma que a busca por similaridade aconteca em milissegundos, mesmo com milhoes de documentos indexados.</p>
+</div>
+</div>
+</div>
+
+<!-- XCARD 5: Fluxo Completo -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3>
+<span class="xcard-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+O Fluxo Completo do RAG
+</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body">
+<div class="xcard-content">
+<p>O pipeline RAG se divide em duas grandes fases: <strong>Indexacao</strong> (preparacao offline) e <strong>Consulta</strong> (processamento em tempo real).</p>
+<p><strong>Fase 1 &mdash; Indexacao:</strong></p>
+<div class="flow-diagram">
+<span class="flow-step">Carregar Docs</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Fragmentar (Chunk)</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Gerar Embeddings</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Armazenar no VectorDB</span>
+</div>
+<p>Nesta fase, os documentos sao carregados de diversas fontes (PDFs, paginas web, arquivos de texto, planilhas), divididos em fragmentos menores chamados <em>chunks</em>, convertidos em vetores (embeddings) e armazenados no banco de dados vetorial.</p>
+<p><strong>Fase 2 &mdash; Consulta:</strong></p>
+<div class="flow-diagram">
+<span class="flow-step">Pergunta do Usuario</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Embedding da Query</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Busca por Similaridade</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Recuperar top_k Chunks</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Prompt Aumentado</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Resposta do LLM</span>
+</div>
+<p>Na fase de consulta, a pergunta do usuario tambem e convertida em embedding. O sistema busca no banco vetorial os fragmentos mais similares (parametro <strong>top_k</strong>, geralmente entre 3 e 10) e os injeta no prompt enviado ao LLM. O modelo, entao, gera uma resposta ancorada exclusivamente no contexto fornecido.</p>
+<p><strong>Parametros criticos a calibrar:</strong></p>
+<ul>
+<li><strong>chunk_size</strong> (ex.: 512 tokens): tamanho de cada fragmento. Muito grande perde precisao; muito pequeno perde contexto.</li>
+<li><strong>chunk_overlap</strong> (ex.: 50 tokens): sobreposicao entre fragmentos consecutivos, evitando que informacoes sejam cortadas na fronteira.</li>
+<li><strong>top_k</strong> (ex.: 5): quantidade de fragmentos recuperados. Mais fragmentos aumentam contexto, mas podem introduzir ruido.</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ARQUITETURAS RAG -->
+<section id="arquiteturas" class="reveal">
+<div class="section-label">Arquiteturas</div>
+<h2 class="section-title">Arquiteturas RAG</h2>
+<p class="section-sub">Cada cenario de uso exige uma abordagem diferente. Conheca as principais variacoes arquiteturais e saiba quando aplicar cada uma.</p>
+
+<div class="xcards-grid">
+
+<!-- Vanilla RAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg></span>RAG Classico (Vanilla RAG)</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O RAG Classico e a implementacao mais direta e fundamental. Seu fluxo e estritamente linear, sem loops, sem memoria de sessao e sem mecanismos de autocorrecao. E puro encadeamento de etapas: entrada, processamento e saida.</p>
+<div class="flow-diagram">
+<span class="flow-step">Pergunta</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Embedding</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Busca Vetorial</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Recuperar Chunks</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Montar Prompt</span><span class="flow-arrow">&rarr;</span>
+<span class="flow-step">Gerar Resposta</span>
+</div>
+<p>Cada pergunta e tratada de forma isolada, sem nenhuma relacao com perguntas anteriores. Nao existe reescrita de consulta, nao existe validacao dos resultados recuperados e nao existe refinamento iterativo.</p>
+<p>Apesar de sua simplicidade, o Vanilla RAG ja resolve a maioria dos problemas de alucinacao em cenarios controlados. E o ponto de partida recomendado &mdash; so adicione complexidade quando houver evidencia concreta de que essa arquitetura basica nao atende.</p>
+<p><strong>Ideal para:</strong> chatbots de atendimento, consultas a bases de conhecimento internas, sistemas de perguntas e respostas com corpus estavel.</p>
+</div></div>
+</div>
+
+<!-- RAG com Memoria -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>RAG com Memoria</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O RAG com Memoria adiciona um componente essencial ao pipeline: um <strong>buffer de historico conversacional</strong>. Esse buffer armazena as trocas recentes entre usuario e sistema, permitindo que perguntas ambiguas sejam resolvidas automaticamente pelo contexto.</p>
+<p>Considere este dialogo:</p>
+<ul>
+<li>Usuario: "Quem inventou o aviao?"</li>
+<li>Sistema: "Santos Dumont realizou o primeiro voo publico autopropulsado com o 14-Bis em 1906."</li>
+<li>Usuario: "Onde ele nasceu?"</li>
+</ul>
+<p>Sem memoria, o sistema nao saberia a quem "ele" se refere. Com memoria, o modulo de reescrita transforma automaticamente a segunda pergunta em: <em>"Onde Santos Dumont nasceu?"</em>. Essa reformulacao contextual permite que a busca vetorial encontre documentos relevantes.</p>
+<p>A memoria transforma interacoes isoladas de perguntas e respostas em um <span class="highlight">dialogo fluido e coerente</span>, onde cada mensagem se conecta naturalmente a anterior. Implementacoes comuns utilizam Redis, DynamoDB ou ate mesmo estruturas em memoria com TTL (tempo de vida) para expirar conversas antigas.</p>
+<p><strong>Ideal para:</strong> assistentes virtuais, copilots juridicos, ferramentas de suporte ao cliente onde o dialogo se desdobra em multiplas trocas.</p>
+</div></div>
+</div>
+
+<!-- RAG Autonomo -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>RAG Autonomo (Agentic RAG)</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>No RAG Autonomo, o LLM deixa de ser um mero gerador de texto e assume o papel de <strong>agente decisor</strong>. Ele recebe um conjunto de ferramentas &mdash; busca vetorial, busca na web, execucao de codigo, consultas a bancos de dados, APIs externas &mdash; e decide autonomamente qual utilizar, em que ordem e quantas vezes.</p>
+<p>Diante de uma pergunta complexa, o agente analisa sua natureza, decompoe em subproblemas quando necessario e orquestra multiplas ferramentas em sequencia. Se o resultado de uma busca nao for satisfatorio, ele pode reformular a consulta e tentar novamente, ou complementar com uma fonte diferente.</p>
+<p>Esse paradigma transforma o sistema de <em>reativo</em> (responde ao que recebe) em <span class="highlight">proativo</span> (planeja, executa e valida). O agente possui um ciclo de raciocinio que inclui: observar o problema, planejar a estrategia, executar as acoes e avaliar os resultados.</p>
+<p>Frameworks populares para implementacao incluem <strong>LangChain Agents</strong>, <strong>CrewAI</strong>, <strong>AutoGen</strong> e <strong>LlamaIndex Agents</strong>. Cada um oferece abstracoes diferentes para definir ferramentas, agentes e fluxos de orquestracao.</p>
+<p><strong>Ideal para:</strong> assistentes de pesquisa avancada, analise de dados complexos, automacao de workflows que exigem multiplas fontes de informacao.</p>
+</div></div>
+</div>
+
+<!-- CRAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>RAG Corretivo (CRAG)</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O RAG Corretivo adiciona uma camada de <strong>avaliacao de qualidade</strong> entre a recuperacao e a geracao. Em vez de confiar cegamente nos chunks recuperados, um avaliador classifica cada resultado como CORRETO, AMBIGUO ou INCORRETO.</p>
+<p>Dependendo da classificacao, o sistema toma decisoes diferentes:</p>
+<ul>
+<li><strong>CORRETO:</strong> os chunks sao utilizados diretamente como contexto para geracao. Fluxo normal.</li>
+<li><strong>AMBIGUO:</strong> os chunks recuperados sao combinados com resultados de uma busca complementar na web, ampliando a base de evidencias antes da geracao.</li>
+<li><strong>INCORRETO:</strong> os chunks locais sao completamente descartados e o sistema recorre exclusivamente a fontes externas (busca web) para fundamentar a resposta.</li>
+</ul>
+<p>Esse mecanismo de <span class="highlight">autocorrecao no pipeline</span> e especialmente valioso em dominios onde a base de conhecimento pode estar desatualizada ou incompleta. O avaliador funciona como um filtro de qualidade que impede que informacoes irrelevantes ou erroneas contaminem a resposta final.</p>
+<p>A implementacao tipica utiliza o proprio LLM como avaliador, com prompts especificos que instruem o modelo a julgar a relevancia de cada chunk em relacao a pergunta original.</p>
+<p><strong>Ideal para:</strong> sistemas onde a confiabilidade da resposta e critica, como consultas juridicas, medicas ou regulatorias.</p>
+</div></div>
+</div>
+
+<!-- Adaptive RAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>RAG Adaptativo (Adaptive RAG)</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O RAG Adaptativo funciona como um <span class="highlight">sistema de triagem hospitalar</span> aplicado a consultas de IA. Antes de executar qualquer recuperacao, ele classifica a complexidade da pergunta e direciona para a estrategia mais adequada.</p>
+<p>As rotas de processamento sao:</p>
+<ul>
+<li><strong>Perguntas simples</strong> (fatuais, diretas): o LLM responde diretamente do seu conhecimento parametrico, sem necessidade de recuperacao. Exemplo: "Qual a capital da Franca?".</li>
+<li><strong>Perguntas de complexidade media</strong>: uma unica busca vetorial e suficiente. O sistema executa o pipeline RAG classico.</li>
+<li><strong>Perguntas complexas</strong> (multi-hop, comparativas): exigem decomposicao em subperguntas, multiplas buscas sequenciais e sintese dos resultados. Exemplo: "Compare as abordagens de protecao de dados pessoais entre a LGPD brasileira e o GDPR europeu.".</li>
+</ul>
+<p>O classificador de complexidade pode ser implementado como uma chamada ao proprio LLM com prompt especifico, ou como um modelo leve treinado especificamente para essa tarefa. A vantagem e evidente: perguntas simples sao respondidas rapidamente, sem o custo desnecessario de busca vetorial, enquanto perguntas complexas recebem o processamento profundo que necessitam.</p>
+<p><strong>Ideal para:</strong> plataformas com perfis variados de perguntas, sistemas que precisam otimizar latencia e custo sem sacrificar qualidade em consultas complexas.</p>
+</div></div>
+</div>
+
+<!-- GraphRAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><line x1="8.12" y1="7.88" x2="15.88" y2="15.12" /><line x1="15.88" y1="7.88" x2="8.12" y2="15.12"/></svg></span>GraphRAG</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Enquanto o RAG tradicional trabalha com fragmentos de texto isolados, o <strong>GraphRAG</strong> organiza o conhecimento em um <strong>Grafo de Conhecimento</strong> (Knowledge Graph). Nos desse grafo representam entidades (pessoas, organizacoes, conceitos, locais) e as arestas representam relacoes entre elas (trabalhou em, localizado em, criado por).</p>
+<p>Essa estrutura permite consultas que seriam impossiveis com busca vetorial pura. Por exemplo: "Quais inventores viveram na mesma cidade que o criador do 14-Bis?" requer navegar as relacoes entre entidades: identificar o criador do 14-Bis, descobrir sua cidade e buscar outros inventores associados a essa mesma localidade.</p>
+<p>O GraphRAG tipicamente opera em dois niveis:</p>
+<ul>
+<li><strong>Nivel local:</strong> consultas focadas em entidades especificas e suas relacoes imediatas.</li>
+<li><strong>Nivel global:</strong> sumarizacao e analise de temas amplos que atravessam multiplas comunidades de entidades no grafo.</li>
+</ul>
+<p>A construcao do grafo pode ser automatizada usando LLMs para extrair entidades e relacoes de textos, ou pode ser feita manualmente para dominios onde a precisao e critica. Ferramentas como <strong>Neo4j</strong>, <strong>Amazon Neptune</strong> e <strong>ArangoDB</strong> sao utilizadas para armazenar e consultar os grafos.</p>
+<p><strong>Ideal para:</strong> dominios com relacoes complexas entre entidades, como genealogia corporativa, analise de jurisprudencia interconectada e mapeamento de cadeias de suprimentos.</p>
+</div></div>
+</div>
+
+<!-- Hybrid RAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>RAG Hibrido (Hybrid RAG)</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O RAG Hibrido combina <strong>multiplas estrategias de recuperacao</strong> em um unico pipeline, extraindo o melhor de cada abordagem. As tres estrategias mais comuns sao:</p>
+<ul>
+<li><strong>Busca Vetorial (Dense Retrieval):</strong> captura similaridade semantica &mdash; entende que "rescisao de contrato" e "termino de acordo" falam do mesmo tema.</li>
+<li><strong>Busca por Palavras-chave (Sparse Retrieval / BM25):</strong> excelente para termos tecnicos, codigos, numeros de processos e nomes proprios que a busca vetorial pode diluir.</li>
+<li><strong>Grafos de Conhecimento:</strong> captura relacoes estruturadas entre entidades.</li>
+</ul>
+<p>Os resultados de cada estrategia sao combinados usando <strong>Reciprocal Rank Fusion (RRF)</strong>, um algoritmo que merge rankings de diferentes fontes. Documentos que aparecem bem posicionados em multiplos rankings recebem pontuacao superior, garantindo que os resultados mais consistentemente relevantes subam ao topo.</p>
+<p>Essa abordagem e particularmente poderosa porque cada estrategia compensa as fraquezas das outras. A busca semantica pode falhar com termos altamente especificos; o BM25 pode falhar com parafraseos; os grafos podem falhar com informacoes nao estruturadas. Juntas, formam um <span class="highlight">sistema de recuperacao robusto</span> que cobre a grande maioria dos cenarios.</p>
+<p><strong>Ideal para:</strong> sistemas de producao que nao podem tolerar falhas de recuperacao, plataformas com conteudo heterogeneo (textos, codigos, dados estruturados).</p>
+</div></div>
+</div>
+
+<!-- RAG-Fusion e HyDE -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>RAG-Fusion e HyDE</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Estas duas tecnicas atacam o mesmo problema por angulos diferentes: <strong>melhorar a qualidade da recuperacao</strong> manipulando a consulta antes da busca vetorial.</p>
+<p><strong>RAG-Fusion</strong> parte de uma premissa simples: uma unica formulacao da pergunta pode nao ser suficiente para encontrar todos os documentos relevantes. O sistema pede ao LLM que gere multiplas variacoes da consulta original &mdash; reformulacoes, sinonimos, perspectivas diferentes. Cada variacao e buscada independentemente no banco vetorial, e os resultados sao unificados usando Reciprocal Rank Fusion (RRF).</p>
+<p>Exemplo: a pergunta "Como funciona RAG?" gera variacoes como "O que e Retrieval-Augmented Generation?", "Qual o pipeline de um sistema RAG?", "Como LLMs combinam busca e geracao?". Cada busca captura documentos relevantes que as outras poderiam perder.</p>
+<p><strong>HyDE (Hypothetical Document Embeddings)</strong> adota uma abordagem mais audaciosa: em vez de buscar com a pergunta, o sistema pede ao LLM que <em>gere uma resposta hipotetica</em> (mesmo que imprecisa) e usa essa resposta como vetor de busca. A intuicao e que um documento hipotetico esta mais proximo semanticamente dos documentos reais do que a pergunta original.</p>
+<p>Ambas as tecnicas podem ser combinadas entre si e com outras arquiteturas RAG, funcionando como <span class="highlight">amplificadores de qualidade</span> na fase de recuperacao.</p>
+<p><strong>Ideal para:</strong> cenarios onde a formulacao das perguntas dos usuarios e inconsistente, ambigua ou utiliza terminologia diferente da presente nos documentos.</p>
+</div></div>
+</div>
+
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- IMPLEMENTACAO PRATICA -->
+<section id="implementacao" class="reveal">
+<div class="section-label">Codigo</div>
+<h2 class="section-title">Implementacao Pratica</h2>
+<p class="section-sub">Do conceito ao codigo funcional. Cada fase do pipeline RAG implementada em Python com explicacoes detalhadas.</p>
+
+<div class="xcards-grid">
+
+<!-- Indexacao -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Fase de Indexacao</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>A indexacao e a etapa de preparacao do acervo. Documentos sao carregados, fragmentados, vetorizados e armazenados. A qualidade dessa etapa determina o teto de performance de todo o sistema RAG.</p>
+<div class="prompt-block"><span class="lang-label">Python</span><code><span class="kw">from</span> sentence_transformers <span class="kw">import</span> SentenceTransformer
+<span class="kw">import</span> chromadb
+
+<span class="cm"># Inicializar o modelo de embedding</span>
+modelo_embedding = SentenceTransformer(<span class="st">"all-MiniLM-L6-v2"</span>)
+
+<span class="cm"># Inicializar o banco vetorial ChromaDB</span>
+cliente_chroma = chromadb.PersistentClient(path=<span class="st">"./banco_vetorial"</span>)
+colecao = cliente_chroma.get_or_create_collection(
+    name=<span class="st">"documentos"</span>,
+    metadata={<span class="st">"hnsw:space"</span>: <span class="st">"cosine"</span>}
+)
+
+<span class="kw">def</span> <span class="fn">fragmentar_texto</span>(texto, tamanho=<span class="nr">512</span>, sobreposicao=<span class="nr">50</span>):
+    <span class="st">"""Divide o texto em chunks com sobreposicao."""</span>
+    palavras = texto.split()
+    fragmentos = []
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="nr">0</span>, len(palavras), tamanho - sobreposicao):
+        chunk = <span class="st">" "</span>.join(palavras[i:i + tamanho])
+        <span class="kw">if</span> chunk.strip():
+            fragmentos.append(chunk)
+    <span class="kw">return</span> fragmentos
+
+<span class="kw">def</span> <span class="fn">indexar_documento</span>(texto, doc_id, metadados=<span class="kw">None</span>):
+    <span class="st">"""Indexa um documento no banco vetorial."""</span>
+    chunks = fragmentar_texto(texto)
+    embeddings = modelo_embedding.encode(chunks).tolist()
+
+    colecao.add(
+        documents=chunks,
+        embeddings=embeddings,
+        ids=[<span class="st">f"</span>{doc_id}<span class="st">_chunk_</span>{i}<span class="st">"</span> <span class="kw">for</span> i <span class="kw">in</span> range(len(chunks))],
+        metadatas=[metadados <span class="kw">or</span> {} <span class="kw">for</span> _ <span class="kw">in</span> chunks]
+    )
+    <span class="kw">return</span> len(chunks)</code></div>
+<p><strong>Pontos criticos:</strong> o <code>tamanho</code> do chunk deve ser calibrado para o dominio. Documentos juridicos, por exemplo, frequentemente exigem chunks maiores (800-1000 tokens) para preservar o contexto de artigos e paragrafos completos. Ja FAQs podem funcionar com chunks menores (200-300 tokens).</p>
+</div></div>
+</div>
+
+<!-- Recuperacao -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>Fase de Recuperacao</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>A recuperacao e o momento em que a pergunta do usuario se transforma em uma busca semantica. O texto da consulta e convertido em embedding e comparado com todos os vetores armazenados.</p>
+<div class="prompt-block"><span class="lang-label">Python</span><code><span class="kw">class</span> <span class="fn">Recuperador</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, colecao, modelo_embedding, top_k=<span class="nr">5</span>):
+        self.colecao = colecao
+        self.modelo = modelo_embedding
+        self.top_k = top_k
+
+    <span class="kw">def</span> <span class="fn">buscar</span>(self, consulta):
+        <span class="st">"""Recupera os chunks mais relevantes para a consulta."""</span>
+        embedding_consulta = self.modelo.encode([consulta]).tolist()
+
+        resultados = self.colecao.query(
+            query_embeddings=embedding_consulta,
+            n_results=self.top_k,
+            include=[<span class="st">"documents"</span>, <span class="st">"distances"</span>, <span class="st">"metadatas"</span>]
+        )
+
+        chunks_recuperados = []
+        <span class="kw">for</span> doc, dist <span class="kw">in</span> zip(
+            resultados[<span class="st">"documents"</span>][<span class="nr">0</span>],
+            resultados[<span class="st">"distances"</span>][<span class="nr">0</span>]
+        ):
+            chunks_recuperados.append({
+                <span class="st">"texto"</span>: doc,
+                <span class="st">"similaridade"</span>: <span class="nr">1</span> - dist
+            })
+
+        <span class="kw">return</span> chunks_recuperados
+
+<span class="cm"># Uso</span>
+recuperador = Recuperador(colecao, modelo_embedding, top_k=<span class="nr">5</span>)
+chunks = recuperador.buscar(<span class="st">"Quais sao os tipos de RAG?"</span>)</code></div>
+<p>O parametro <code>top_k</code> controla quantos chunks sao retornados. Valores entre 3 e 7 costumam oferecer o melhor equilibrio entre contexto e ruido. A distancia retornada pelo ChromaDB e convertida em similaridade subtraindo de 1.</p>
+</div></div>
+</div>
+
+<!-- Aumento -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>Fase de Aumento</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O aumento e a construcao do prompt enriquecido que sera enviado ao LLM. Os chunks recuperados sao organizados, delimitados e combinados com a pergunta original e instrucoes de sistema precisas.</p>
+<div class="prompt-block"><span class="lang-label">Python</span><code><span class="kw">class</span> <span class="fn">Aumentador</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, delimitador=<span class="st">"---"</span>):
+        self.delimitador = delimitador
+        self.template = <span class="st">"""Voce e um assistente especializado.
+Use EXCLUSIVAMENTE o contexto fornecido abaixo para responder.
+Se a informacao nao estiver no contexto, diga claramente
+que nao possui dados suficientes para responder.
+
+CONTEXTO:
+{contexto}
+
+PERGUNTA: {pergunta}
+
+RESPOSTA:"""</span>
+
+    <span class="kw">def</span> <span class="fn">construir_prompt</span>(self, pergunta, chunks):
+        <span class="st">"""Constroi o prompt aumentado com os chunks."""</span>
+        contexto = self.delimitador.join(
+            [chunk[<span class="st">"texto"</span>] <span class="kw">for</span> chunk <span class="kw">in</span> chunks]
+        )
+        <span class="kw">return</span> self.template.format(
+            contexto=contexto,
+            pergunta=pergunta
+        )
+
+<span class="cm"># Uso</span>
+aumentador = Aumentador()
+prompt = aumentador.construir_prompt(
+    <span class="st">"Quais sao os tipos de RAG?"</span>,
+    chunks_recuperados
+)</code></div>
+<p>O template do prompt e <strong>critico</strong> para a qualidade das respostas. A instrucao explicita de usar "exclusivamente o contexto fornecido" reduz drasticamente a tendencia do modelo de alucinar. O delimitador entre chunks ajuda o LLM a distinguir fronteiras entre trechos de diferentes fontes.</p>
+</div></div>
+</div>
+
+<!-- Geracao -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>Fase de Geracao</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>A geracao e a etapa final: o prompt aumentado e enviado ao LLM, que produz a resposta fundamentada nos chunks fornecidos. A classe de geracao funciona como um adaptador, abstraindo detalhes do provedor de LLM.</p>
+<div class="prompt-block"><span class="lang-label">Python</span><code><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+<span class="kw">class</span> <span class="fn">Gerador</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, modelo=<span class="st">"gpt-4o-mini"</span>, temperatura=<span class="nr">0.2</span>):
+        self.cliente = OpenAI()
+        self.modelo = modelo
+        self.temperatura = temperatura
+
+    <span class="kw">def</span> <span class="fn">gerar</span>(self, prompt_aumentado):
+        <span class="st">"""Envia o prompt ao LLM e retorna a resposta."""</span>
+        resposta = self.cliente.chat.completions.create(
+            model=self.modelo,
+            messages=[
+                {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: prompt_aumentado}
+            ],
+            temperature=self.temperatura,
+            max_tokens=<span class="nr">1024</span>
+        )
+        <span class="kw">return</span> resposta.choices[<span class="nr">0</span>].message.content
+
+<span class="cm"># Pipeline completo</span>
+recuperador = Recuperador(colecao, modelo_embedding)
+aumentador = Aumentador()
+gerador = Gerador()
+
+<span class="kw">def</span> <span class="fn">consultar_rag</span>(pergunta):
+    chunks = recuperador.buscar(pergunta)
+    prompt = aumentador.construir_prompt(pergunta, chunks)
+    <span class="kw">return</span> gerador.gerar(prompt)
+
+resposta = consultar_rag(<span class="st">"O que e RAG Corretivo?"</span>)
+print(resposta)</code></div>
+<p>A <code>temperatura</code> em 0.2 mantem as respostas focadas e deterministicas. Valores mais altos introduzem criatividade, que e indesejavel em sistemas de consulta factual. O padrao adapter permite trocar facilmente entre provedores (OpenAI, Anthropic, modelos locais) sem alterar o restante do pipeline.</p>
+</div></div>
+</div>
+
+<!-- Memoria com Redis -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>Adicionando Memoria com Redis</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Para transformar o pipeline em um sistema conversacional, adicionamos memoria usando Redis como armazenamento de historico com TTL (tempo de vida) automatico.</p>
+<div class="prompt-block"><span class="lang-label">Python</span><code><span class="kw">import</span> redis
+<span class="kw">import</span> json
+
+<span class="kw">class</span> <span class="fn">MemoriaConversacional</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, host=<span class="st">"localhost"</span>, porta=<span class="nr">6379</span>, ttl=<span class="nr">3600</span>):
+        self.cliente = redis.Redis(host=host, port=porta, db=<span class="nr">0</span>)
+        self.ttl = ttl  <span class="cm"># Expira em 1 hora</span>
+
+    <span class="kw">def</span> <span class="fn">adicionar_mensagem</span>(self, sessao_id, papel, conteudo):
+        <span class="st">"""Adiciona uma mensagem ao historico da sessao."""</span>
+        chave = <span class="st">f"chat:</span>{sessao_id}<span class="st">"</span>
+        mensagem = json.dumps({<span class="st">"papel"</span>: papel, <span class="st">"conteudo"</span>: conteudo})
+        self.cliente.rpush(chave, mensagem)
+        self.cliente.expire(chave, self.ttl)
+
+    <span class="kw">def</span> <span class="fn">obter_historico</span>(self, sessao_id, limite=<span class="nr">10</span>):
+        <span class="st">"""Recupera as ultimas mensagens da sessao."""</span>
+        chave = <span class="st">f"chat:</span>{sessao_id}<span class="st">"</span>
+        mensagens = self.cliente.lrange(chave, -limite, -<span class="nr">1</span>)
+        <span class="kw">return</span> [json.loads(m) <span class="kw">for</span> m <span class="kw">in</span> mensagens]
+
+    <span class="kw">def</span> <span class="fn">formatar_contexto</span>(self, sessao_id):
+        <span class="st">"""Formata o historico para inclusao no prompt."""</span>
+        historico = self.obter_historico(sessao_id)
+        linhas = []
+        <span class="kw">for</span> msg <span class="kw">in</span> historico:
+            prefixo = <span class="st">"Usuario"</span> <span class="kw">if</span> msg[<span class="st">"papel"</span>] == <span class="st">"user"</span> <span class="kw">else</span> <span class="st">"Assistente"</span>
+            linhas.append(<span class="st">f"</span>{prefixo}<span class="st">: </span>{msg[<span class="st">'conteudo'</span>]}<span class="st">"</span>)
+        <span class="kw">return</span> <span class="st">"\n"</span>.join(linhas)</code></div>
+<p>O TTL garante que sessoes inativas sejam automaticamente limpas, evitando acumulo de dados. O historico formatado e inserido no prompt junto com os chunks recuperados, permitindo que o LLM resolva referencias anaforicas e mantenha coerencia ao longo da conversa.</p>
+</div></div>
+</div>
+
+<!-- Agente RAG -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Construindo um Agente RAG</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Um agente RAG vai alem do pipeline linear: ele decide dinamicamente qual base de dados consultar e pode utilizar multiplas ferramentas. Abaixo, uma implementacao com registro de datasets e selecao automatica.</p>
+<div class="prompt-block"><span class="lang-label">Python</span><code><span class="kw">from</span> abc <span class="kw">import</span> ABC, abstractmethod
+
+<span class="kw">class</span> <span class="fn">AgenteRAGBase</span>(ABC):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self.datasets = {}
+
+    <span class="kw">def</span> <span class="fn">registrar_dataset</span>(self, nome, descricao, colecao):
+        <span class="st">"""Registra um dataset disponivel para consulta."""</span>
+        self.datasets[nome] = {
+            <span class="st">"descricao"</span>: descricao,
+            <span class="st">"colecao"</span>: colecao
+        }
+
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">selecionar_dataset</span>(self, consulta):
+        <span class="st">"""Seleciona o dataset mais adequado."""</span>
+        <span class="kw">pass</span>
+
+    @abstractmethod
+    <span class="kw">def</span> <span class="fn">executar</span>(self, consulta):
+        <span class="st">"""Executa a consulta completa."""</span>
+        <span class="kw">pass</span>
+
+<span class="kw">class</span> <span class="fn">AgenteRAG</span>(AgenteRAGBase):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, llm, modelo_embedding):
+        super().__init__()
+        self.llm = llm
+        self.modelo = modelo_embedding
+
+    <span class="kw">def</span> <span class="fn">selecionar_dataset</span>(self, consulta):
+        <span class="st">"""Usa o LLM para escolher o dataset ideal."""</span>
+        opcoes = <span class="st">"\n"</span>.join([
+            <span class="st">f"- </span>{nome}<span class="st">: </span>{info[<span class="st">'descricao'</span>]}<span class="st">"</span>
+            <span class="kw">for</span> nome, info <span class="kw">in</span> self.datasets.items()
+        ])
+        prompt = <span class="st">f"""Dada a consulta: "</span>{consulta}<span class="st">"
+Qual dataset e mais relevante?
+{opcoes}
+Responda APENAS o nome do dataset."""</span>
+        <span class="kw">return</span> self.llm.gerar(prompt).strip()
+
+    <span class="kw">def</span> <span class="fn">executar</span>(self, consulta):
+        dataset = self.selecionar_dataset(consulta)
+        colecao = self.datasets[dataset][<span class="st">"colecao"</span>]
+        recuperador = Recuperador(colecao, self.modelo)
+        chunks = recuperador.buscar(consulta)
+        prompt = Aumentador().construir_prompt(consulta, chunks)
+        <span class="kw">return</span> self.llm.gerar(prompt)</code></div>
+<p>O padrao de registro permite adicionar novos datasets dinamicamente. O agente analisa a consulta, identifica o dominio mais provavel e direciona a busca para a colecao correta. Isso viabiliza sistemas multi-dominio com uma unica interface.</p>
+</div></div>
+</div>
+
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- SEGURANCA E BOAS PRATICAS -->
+<section id="seguranca" class="reveal">
+<div class="section-label">Seguranca</div>
+<h2 class="section-title">Seguranca e Boas Praticas</h2>
+<p class="section-sub">Um sistema RAG em producao exige atencao rigorosa a qualidade dos dados, privacidade e robustez da infraestrutura.</p>
+
+<div class="xcards-grid">
+
+<!-- Qualidade dos Dados -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>Qualidade dos Dados</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>O principio fundamental e claro: <strong>dados ruins produzem respostas ruins</strong>. Nenhuma sofisticacao arquitetural compensa um corpus mal curado. As praticas essenciais incluem:</p>
+<ul>
+<li><strong>Curadoria rigorosa:</strong> revise cada documento antes de indexa-lo. Remova conteudo duplicado, desatualizado ou irrelevante.</li>
+<li><strong>Atualizacao periodica:</strong> estabeleca um calendario de revisao. Documentos juridicos, por exemplo, devem ser verificados apos cada mudanca legislativa.</li>
+<li><strong>Enriquecimento com metadados:</strong> adicione informacoes como data de criacao, area tematica, nivel de confiabilidade e fonte original. Metadados permitem filtragem pre-busca.</li>
+<li><strong>Normalizacao textual:</strong> padronize codificacao, remova caracteres invalidos e unifique formatacao antes de fragmentar.</li>
+<li><strong>Validacao pos-indexacao:</strong> execute consultas de teste para verificar se os documentos indexados sao recuperados corretamente.</li>
+</ul>
+<p>Investir tempo na qualidade do corpus e o fator de maior retorno em qualquer projeto RAG.</p>
+</div></div>
+</div>
+
+<!-- Prevencao de Alucinacoes -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></span>Prevencao de Alucinacoes</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Embora RAG reduza significativamente as alucinacoes, nao as elimina por completo. Estrategias complementares sao necessarias:</p>
+<ul>
+<li><strong>Instrucoes explicitas no prompt:</strong> inclua frases como "Responda EXCLUSIVAMENTE com base no contexto fornecido" e "Se a informacao nao estiver disponivel no contexto, informe que nao possui dados suficientes".</li>
+<li><strong>Temperatura baixa:</strong> mantenha entre 0.0 e 0.3 para respostas factuais. Temperaturas altas incentivam criatividade, que neste contexto se traduz em invencao.</li>
+<li><strong>Citacao de fontes:</strong> instrua o modelo a indicar de qual trecho do contexto extraiu cada informacao. Isso permite verificacao e aumenta transparencia.</li>
+<li><strong>Pontuacao de confianca:</strong> implemente um segundo passo onde o LLM avalia a propria resposta: "Qual a sua confianca nesta resposta, de 0 a 100, considerando apenas o contexto fornecido?".</li>
+<li><strong>Guardrails programaticos:</strong> valide a saida antes de entrega-la ao usuario. Verifique se a resposta menciona conceitos presentes nos chunks recuperados.</li>
+</ul>
+</div></div>
+</div>
+
+<!-- LGPD -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>LGPD e Dados Sensiveis</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Sistemas RAG frequentemente processam documentos contendo dados pessoais. A conformidade com a LGPD (Lei Geral de Protecao de Dados) exige cuidado em cada etapa do pipeline.</p>
+<p><strong>Classificacao de dados por nivel de sensibilidade:</strong></p>
+<ul>
+<li><span class="highlight" style="color:var(--c-green)">Verde</span> &mdash; dados publicos: legislacao, jurisprudencia publicada, artigos academicos. Podem ser indexados sem restricoes.</li>
+<li><span class="highlight" style="color:var(--c-gold)">Amarelo</span> &mdash; dados internos: politicas corporativas, manuais de procedimento, normas internas. Exigem controle de acesso.</li>
+<li><span class="highlight" style="color:var(--c-red)">Vermelho</span> &mdash; dados pessoais e sensiveis: contratos com dados de pessoas fisicas, prontuarios, registros financeiros. Exigem anonimizacao antes da indexacao.</li>
+</ul>
+<p><strong>Praticas obrigatorias:</strong></p>
+<ul>
+<li>Anonimize dados pessoais antes de gerar embeddings. CPFs, nomes completos, enderecos e dados financeiros devem ser substituidos por tokens genericos.</li>
+<li>Implemente controle de acesso por perfil: nem todos os usuarios devem acessar todos os datasets.</li>
+<li>Mantenha registro de consentimento e base legal para cada tipo de dado processado.</li>
+<li>Ofereca mecanismo de exclusao: se um titular solicitar a remocao de seus dados, o sistema deve ser capaz de remove-los do banco vetorial.</li>
+</ul>
+</div></div>
+</div>
+
+<!-- Seguranca da Infraestrutura -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Seguranca da Infraestrutura</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>A infraestrutura que sustenta o sistema RAG deve ser protegida com as mesmas praticas aplicadas a qualquer sistema critico:</p>
+<ul>
+<li><strong>Gerenciamento de chaves de API:</strong> nunca exponha chaves no codigo-fonte. Utilize variaveis de ambiente, cofres de segredos (AWS Secrets Manager, Azure Key Vault, HashiCorp Vault) e rotacione periodicamente.</li>
+<li><strong>Controle de acesso ao banco vetorial:</strong> implemente autenticacao e autorizacao. Restricoes por IP, tokens de acesso e RBAC (controle de acesso baseado em papeis) sao essenciais.</li>
+<li><strong>Criptografia em transito e em repouso:</strong> toda comunicacao entre componentes deve usar TLS/HTTPS. Dados armazenados no banco vetorial devem ser criptografados em disco.</li>
+<li><strong>Rate limiting e monitoramento:</strong> limite a quantidade de consultas por usuario e por periodo. Monitore padroes anomalos que possam indicar ataques de extracao de dados.</li>
+<li><strong>Protecao contra prompt injection:</strong> sanitize as entradas do usuario. Implemente camadas de validacao que detectem tentativas de manipular o comportamento do sistema atraves de instrucoes maliciosas.</li>
+</ul>
+</div></div>
+</div>
+
+<!-- Checklist de Deploy -->
+<div class="xcard">
+<div class="xcard-header" onclick="toggleXcard(this)">
+<h3><span class="xcard-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>Checklist de Deploy</h3>
+<span class="xcard-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="xcard-body"><div class="xcard-content">
+<p>Antes de colocar o sistema RAG em producao, verifique cada item desta lista:</p>
+<ul class="checklist">
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Corpus curado, atualizado e livre de dados pessoais nao autorizados.</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Parametros de chunking calibrados e validados com consultas de teste representativas.</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Chaves de API armazenadas em cofre de segredos, nunca em codigo ou variaveis expostas.</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Rate limiting configurado por usuario e por endpoint, com alertas para uso anomalo.</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pipeline de observabilidade ativo: logs estruturados, metricas de latencia, rastreamento de erros.</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Politica de fallback definida: o que o sistema faz quando o LLM esta indisponivel ou quando nenhum chunk relevante e encontrado.</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Plano de atualizacao do corpus documentado, com responsaveis e frequencia definidos.</li>
+</ul>
+</div></div>
+</div>
+
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- COMPARATIVO -->
+<section id="comparativo" class="reveal">
+<div class="section-label">Analise</div>
+<h2 class="section-title">Comparativo de Arquiteturas</h2>
+<p class="section-sub">Visao consolidada das oito arquiteturas RAG, comparadas em cinco dimensoes criticas para a tomada de decisao.</p>
+
+<div class="table-wrap">
+<table class="comp-table">
+<thead>
+<tr>
+<th>Arquitetura</th>
+<th>Complexidade</th>
+<th>Precisao</th>
+<th>Latencia</th>
+<th>Custo</th>
+<th>Melhor Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vanilla RAG</strong></td>
+<td><span class="pill pill-green">Baixa</span></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-green">Baixa</span></td>
+<td><span class="pill pill-green">Baixo</span></td>
+<td>Chatbots, FAQ, consultas simples</td>
+</tr>
+<tr>
+<td><strong>RAG com Memoria</strong></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-green">Baixa</span></td>
+<td><span class="pill pill-green">Baixo</span></td>
+<td>Assistentes conversacionais</td>
+</tr>
+<tr>
+<td><strong>Agentic RAG</strong></td>
+<td><span class="pill pill-red">Alta</span></td>
+<td><span class="pill pill-green">Alta</span></td>
+<td><span class="pill pill-red">Alta</span></td>
+<td><span class="pill pill-red">Alto</span></td>
+<td>Pesquisa complexa, multi-fonte</td>
+</tr>
+<tr>
+<td><strong>CRAG</strong></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-green">Alta</span></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-yellow">Medio</span></td>
+<td>Consultas de alta confiabilidade</td>
+</tr>
+<tr>
+<td><strong>Adaptive RAG</strong></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-green">Alta</span></td>
+<td><span class="pill pill-green">Variavel</span></td>
+<td><span class="pill pill-yellow">Medio</span></td>
+<td>Plataformas com perfis variados</td>
+</tr>
+<tr>
+<td><strong>GraphRAG</strong></td>
+<td><span class="pill pill-red">Alta</span></td>
+<td><span class="pill pill-green">Alta</span></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-red">Alto</span></td>
+<td>Dominios com relacoes complexas</td>
+</tr>
+<tr>
+<td><strong>Hybrid RAG</strong></td>
+<td><span class="pill pill-red">Alta</span></td>
+<td><span class="pill pill-green">Muito Alta</span></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-yellow">Medio</span></td>
+<td>Producao critica, alta exigencia</td>
+</tr>
+<tr>
+<td><strong>RAG-Fusion / HyDE</strong></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-green">Alta</span></td>
+<td><span class="pill pill-yellow">Media</span></td>
+<td><span class="pill pill-yellow">Medio</span></td>
+<td>Usuarios com perguntas ambiguas</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- FAQ -->
+<section id="faq" class="reveal">
+<div class="section-label">Duvidas</div>
+<h2 class="section-title">Perguntas Frequentes</h2>
+<p class="section-sub">Respostas diretas para as duvidas mais comuns sobre implementacao e uso de sistemas RAG.</p>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Qual a diferenca pratica entre RAG e um chatbot convencional?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Um chatbot convencional depende exclusivamente do conhecimento adquirido durante o treinamento do modelo. Suas respostas sao limitadas ao que foi aprendido ate a data de corte. Um sistema RAG, por outro lado, consulta uma base de conhecimento atualizada em tempo real, ancorando cada resposta em documentos concretos. Isso significa que o sistema pode responder sobre eventos recentes, regulamentacoes novas e dados que nao existiam quando o modelo foi treinado.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Preciso de GPU para rodar um sistema RAG?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Depende da arquitetura. Se voce usa uma API externa para o LLM (como GPT-4o ou Claude) e modelos de embedding leves (como all-MiniLM-L6-v2, que roda em CPU), nao precisa de GPU. O banco vetorial tambem funciona em CPU. GPU se torna necessaria apenas quando voce hospeda o proprio LLM localmente (modelos como Llama, Mistral) ou quando processa volumes massivos de embeddings na indexacao inicial.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Qual o tamanho ideal do chunk?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Nao existe um valor universal. O tamanho ideal depende do tipo de documento e do tipo de consulta. Em geral, valores entre 256 e 1024 tokens funcionam bem. Documentos com paragrafos densos (artigos juridicos, papers academicos) tendem a precisar de chunks maiores (512-1024) para preservar o contexto. FAQs e documentacao tecnica fragmentada funcionam melhor com chunks menores (256-512). A melhor abordagem e testar empiricamente com consultas representativas e medir a qualidade das respostas.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+RAG funciona com documentos em portugues?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Sim, plenamente. Modelos de embedding multilingues como o all-MiniLM-L6-v2 e o multilingual-e5-large suportam portugues nativamente. Os LLMs modernos (GPT-4o, Claude, Gemini) tambem possuem excelente capacidade em portugues. Para dominios muito especificos (juridico, medico), pode ser vantajoso usar modelos de embedding treinados especificamente em corpus lusofono, mas os modelos multilingues ja atendem a grande maioria dos cenarios.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Quanto custa implementar um sistema RAG?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Os custos variam enormemente conforme a escala. Um prototipo funcional pode ser construido com custo quase zero: ChromaDB (gratuito), modelos de embedding open-source (gratuitos) e API de LLM no tier gratuito. Para producao, os custos principais sao: chamadas de API ao LLM (tipicamente entre USD 0.01 e USD 0.10 por consulta completa), hospedagem do banco vetorial (a partir de USD 25/mes em solucoes gerenciadas como Pinecone) e infraestrutura de aplicacao. Um sistema medio atende centenas de milhares de consultas mensais por menos de USD 500/mes.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Posso usar RAG com dados confidenciais?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Sim, desde que tome as precaucoes adequadas. Para dados altamente confidenciais, considere: (1) hospedar o LLM localmente em vez de usar APIs externas, evitando que dados saiam do seu ambiente; (2) criptografar os embeddings no banco vetorial; (3) implementar controle de acesso granular por usuario e por colecao de documentos; (4) manter logs de auditoria de todas as consultas realizadas. Provedores como Azure OpenAI oferecem opcoes de deployment privado que nao utilizam dados para treinamento.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Como medir a qualidade de um sistema RAG?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Existem metricas especificas para cada componente. Para a recuperacao: <strong>Recall@k</strong> (percentual de documentos relevantes entre os k recuperados) e <strong>MRR</strong> (Mean Reciprocal Rank, posicao media do primeiro resultado relevante). Para a geracao: <strong>Faithfulness</strong> (a resposta e fiel ao contexto fornecido?), <strong>Relevance</strong> (a resposta atende a pergunta?) e <strong>Harmfulness</strong> (a resposta contem informacoes prejudiciais?). Frameworks como RAGAS e TruLens automatizam essas avaliacoes.</p>
+</div></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">
+Qual arquitetura RAG devo escolher para comecar?
+<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+</div>
+<div class="faq-a"><div class="faq-a-inner">
+<p>Comece pelo <strong>Vanilla RAG</strong>. Sempre. Ele e simples de implementar, facil de debugar e ja resolve a maioria dos problemas de alucinacao. So adicione complexidade quando identificar limitacoes concretas: se os usuarios fazem perguntas em sequencia, adicione memoria; se a qualidade da recuperacao e inconsistente, considere RAG-Fusion ou Hybrid RAG; se as perguntas variam muito em complexidade, implemente Adaptive RAG. A regra de ouro e: nao otimize prematuramente.</p>
+</div></div>
+</div>
+
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- CTA FINAL -->
+<section class="cta-section reveal">
+<h2>Pronto para transformar seu negocio com RAG?</h2>
+<p>Converse com quem ja implementou IA em dezenas de escritorios e negocios de servico &mdash; e participe da maior e mais completa Comunidade de Inteligencia Artificial para o Juridico e Prestadores de Servicos.</p>
+<a href="https://wa.me/message/NSPS5ULND5FNP1" target="_blank" rel="noopener" class="btn-primary">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+Fale com o time Super Inteligenc[IA]
+</a>
+</section>
+
+<!-- EXPERT SECTION -->
+<section class="expert-section reveal">
+<div class="expert-card">
+<img class="expert-photo" src="data:image/jpeg;base64,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" alt="Marcilio Guedes Drummond">
+<div class="expert-info">
+<h3>Marcilio Guedes Drummond</h3>
+<p class="expert-role">CEO e Fundador da Super Inteligenc[IA] &mdash; Advogado &amp; Empresario</p>
+<ul class="expert-bio">
+<li>
+<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<span>CEO e fundador da Super Inteligenc[IA] &mdash; empresa de IA aplicada que integra educacao executiva, consultoria de crescimento e desenvolvimento de produtos e sistemas, com mais de 100 mil clientes atendidos.</span>
+</li>
+<li>
+<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<span>Diretor de Projetos e Presidente da Comissao de IA do Instituto Juristas. Autor de 14 livros, incluindo 2 recomendados pelo STJ na tematica IA e Direito.</span>
+</li>
+<li>
+<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<span>Trajetoria com resultados comprovados &mdash; contribuiu para a geracao e expansao de mais de R$ 1,5 bilhao em faturamento para clientes ao longo da carreira.</span>
+</li>
+</ul>
+<div class="expert-tags">
+<span>Advogado &amp; Empresario</span>
+<span>Especialista em Design de Servicos e Produtos (MIT)</span>
+<span>Reconhecido pela FGV em inovacao juridica</span>
+<span>Ex-socio Marcelo Tostes Advogados</span>
+<span>Ex-socio e COO da EasyJur (investimento Google)</span>
+<span>Julgador de projetos de inovacao do CNJ</span>
+<span>Mentor Sebrae Nacional</span>
+</div>
+<div class="expert-stats">
+<div class="stat"><div class="stat-val">+460k</div><div class="stat-lbl">audiencia</div></div>
+<div class="stat"><div class="stat-val">+150k</div><div class="stat-lbl">no YouTube</div></div>
+<div class="stat"><div class="stat-val">+100k</div><div class="stat-lbl">clientes</div></div>
+<div class="stat"><div class="stat-val">14</div><div class="stat-lbl">livros publicados</div></div>
+<div class="stat"><div class="stat-val">+R$ 1,5 bi</div><div class="stat-lbl">em valor gerado</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+<div class="footer-links">
+<a href="https://www.youtube.com/@SuperInteligencIAOficial" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.instagram.com/marcilio.drummond/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://www.linkedin.com/in/marcilioguedesdrummond/" target="_blank" rel="noopener">LinkedIn</a>
+<a href="https://site.superinteligencia.org/" target="_blank" rel="noopener">Site</a>
+</div>
+<p class="footer-copy">Super Inteligenc[IA] &mdash; Todos os direitos reservados.</p>
+</footer>
+
+<!-- EXIT INTENT POPUP -->
+<div class="popup-overlay" id="exit-popup">
+<div class="popup-box">
+<button class="popup-close" id="popup-close" aria-label="Fechar">
+<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<div class="popup-icon">
+<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+</div>
+<h3>Quer dominar RAG e transformar seus projetos de IA?</h3>
+<p>Mande uma mensagem, temos condicoes especiais neste mes.</p>
+<a href="https://wa.me/message/NSPS5ULND5FNP1" target="_blank" rel="noopener" class="btn-primary">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+Falar no WhatsApp
+</a>
+</div>
+</div>
+
+<script>
+/* PROGRESS BAR */
+(function(){
+var bar=document.getElementById('progress-bar');
+window.addEventListener('scroll',function(){
+var h=document.documentElement,b=document.body;
+var st=h.scrollTop||b.scrollTop;
+var sh=h.scrollHeight||b.scrollHeight;
+var ch=h.clientHeight;
+var pct=(st/(sh-ch))*100;
+bar.style.width=pct+'%';
+});
+})();
+
+/* HAMBURGER */
+(function(){
+var btn=document.getElementById('hamburger-btn');
+var menu=document.getElementById('mobile-menu');
+btn.addEventListener('click',function(){
+menu.classList.toggle('active');
+});
+var links=menu.querySelectorAll('a');
+for(var i=0;i<links.length;i++){
+links[i].addEventListener('click',function(){menu.classList.remove('active');});
+}
+})();
+
+/* XCARD TOGGLE */
+function toggleXcard(header){
+var card=header.parentElement;
+card.classList.toggle('active');
+}
+
+/* FAQ TOGGLE */
+function toggleFaq(q){
+var item=q.parentElement;
+item.classList.toggle('active');
+}
+
+/* REVEAL ON SCROLL */
+(function(){
+var els=document.querySelectorAll('.reveal');
+function check(){
+for(var i=0;i<els.length;i++){
+var rect=els[i].getBoundingClientRect();
+if(rect.top<window.innerHeight*0.88){
+els[i].classList.add('visible');
+}
+}
+}
+window.addEventListener('scroll',check);
+window.addEventListener('load',check);
+check();
+})();
+
+/* EXIT INTENT POPUP */
+(function(){
+var popup=document.getElementById('exit-popup');
+var closeBtn=document.getElementById('popup-close');
+var fired=false;
+
+function showPopup(){
+if(fired)return;
+fired=true;
+popup.classList.add('active');
+}
+
+/* Desktop: mouse leaves viewport top */
+document.addEventListener('mouseout',function(e){
+if(e.clientY<5&&!e.relatedTarget){showPopup();}
+});
+
+/* Mobile: fast scroll up */
+var lastY=0;var lastT=Date.now();
+window.addEventListener('scroll',function(){
+var y=window.scrollY;var t=Date.now();
+var dy=lastY-y;var dt=t-lastT;
+if(dy>100&&dt<300&&y>300){showPopup();}
+lastY=y;lastT=t;
+});
+
+/* Tab switch */
+document.addEventListener('visibilitychange',function(){
+if(document.hidden){showPopup();}
+});
+
+/* Close popup */
+closeBtn.addEventListener('click',function(){popup.classList.remove('active');});
+popup.addEventListener('click',function(e){if(e.target===popup){popup.classList.remove('active');}});
+})();
+</script>
+</body>
+</html>
